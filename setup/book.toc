@@ -1,0 +1,8 @@
+book-title
+sub-title
+author
+affiliation
+*[Top Section](folder/filename)
+**[Mid Section](folder/filename)
+***[Low Section](folder/filename)
+*[Top Section<br/>Subtitle, no text file to insert]

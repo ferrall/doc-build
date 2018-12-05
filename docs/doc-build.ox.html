@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="oxdoc.css">
+<link rel="stylesheet" type="text/css" media="print" href="print.css">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<title>doc-build.ox - doc-build</title>
+</head>
+<body>
+<div class="header">
+[ <img class="icon" src="icons/project_s.png">&nbsp;<a href="default.html">Project home</a>
+ | <img class="icon" src="icons/index_s.png">&nbsp;<a href="index.html">Index</a>
+ | <img class="icon" src="icons/hierarchy_s.png">&nbsp;<a href="hierarchy.html">Class hierarchy</a> ]</div>
+<h1><span class="icon"><img class="icon" src="icons/file.png">&nbsp;</span><span class="text">doc-build.ox</span></h1>
+
+
+<a name="global"></a>
+<h2><span class="icon"><img class="icon" src="icons/global.png">&nbsp;</span><span class="text">Global functions, enumerations</span></h2>
+
+<table class="method_table">
+<tr><td colspan="3" class="header" valign="top">Functions</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/function_s.png">&nbsp;<a href="doc-build.ox.html#mreplace">mreplace</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr><td colspan="3" class="header" valign="top">Enumerations</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/enum_s.png">&nbsp;<a href="doc-build.ox.html#Anonymous enum 1">Anonymous enum 1</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/enum_s.png">&nbsp;<a href="doc-build.ox.html#Anonymous enum 2">Anonymous enum 2</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+</table>
+
+<a name="document"></a>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">document</span></h2>
+
+
+<table class="method_table">
+<tr><td colspan="3" class="header" valign="top">Public fields</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___affiliation">affiliation</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___atag">atag</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___bdir">bdir</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___bookauthor">bookauthor</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___booktitle">booktitle</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___contents">contents</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___dfbeg">dfbeg</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___dfcontl">dfcontl</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___dfcontr">dfcontr</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___dfend">dfend</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___exend">exend</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___exsec">exsec</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___exstart">exstart</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___figmarks">figmarks</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___fign">fign</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___fignicks">fignicks</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___figprefix">figprefix</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___figtag">figtag</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___figtypes">figtypes</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___fm">fm</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___fmlast">fmlast</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___footer">footer</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___head0">head0</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___headtitle">headtitle</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___inext">inext</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___lbr">lbr</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___lev">lev</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___lp">lp</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___ltypes">ltypes</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___lvtag">lvtag</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___mathjax">mathjax</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___outext">outext</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___rbr">rbr</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___rp">rp</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___sdir">sdir</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___SKIP">SKIP</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___spref">spref</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___tocext">tocext</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___TOCFILE">TOCFILE</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___ttag">ttag</a></td>
+<td class="modifiers">static const</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#document___version">version</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr><td colspan="3" class="header" valign="top">Public methods</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#document___build">build</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#document___lbeg">lbeg</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#document___lend">lend</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#document___printheader">printheader</a></td>
+<td class="modifiers">static</td>
+<td class="description"></td>
+</tr>
+</table>
+
+<a name="exercises"></a>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">exercises : <a href="doc-build.ox.html#section">section</a> : <a href="doc-build.ox.html#document">document</a></span></h2>
+
+
+<table class="method_table">
+<tr><td colspan="3" class="header" valign="top">Public fields</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#exercises___exdoc">exdoc</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr><td colspan="3" class="header" valign="top">Public methods</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#exercises___accum">accum</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#exercises___append">append</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#exercises___entry">entry</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#exercises___exercises">exercises</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#exercises___make">make</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+</table>
+
+<dl class="inherited">
+<dt>Inherited methods from <a href="doc-build.ox.html#section">section</a>:</dt><dd><a href="doc-build.ox.html#section___glossentry">glossentry</a>, <a href="doc-build.ox.html#section___parse">parse</a>, <a href="doc-build.ox.html#section___section">section</a>, <a href="doc-build.ox.html#section___slides">slides</a></dd>
+<dt>Inherited methods from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___build">build</a>, <a href="doc-build.ox.html#document___lbeg">lbeg</a>, <a href="doc-build.ox.html#document___lend">lend</a>, <a href="doc-build.ox.html#document___printheader">printheader</a></dd>
+</dl>
+
+<dl class="inherited">
+<dt>Inherited fields from <a href="doc-build.ox.html#section">section</a>:</dt><dd><a href="doc-build.ox.html#section___anch">anch</a>, <a href="doc-build.ox.html#section___child">child</a>, <a href="doc-build.ox.html#section___dir">dir</a>, <a href="doc-build.ox.html#section___index">index</a>, <a href="doc-build.ox.html#section___level">level</a>, <a href="doc-build.ox.html#section___myexer">myexer</a>, <a href="doc-build.ox.html#section___ndefn">ndefn</a>, <a href="doc-build.ox.html#section___notempty">notempty</a>, <a href="doc-build.ox.html#section___ord">ord</a>, <a href="doc-build.ox.html#section___output">output</a>, <a href="doc-build.ox.html#section___parent">parent</a>, <a href="doc-build.ox.html#section___pref">pref</a>, <a href="doc-build.ox.html#section___source">source</a>, <a href="doc-build.ox.html#section___title">title</a>, <a href="doc-build.ox.html#section___uplev">uplev</a></dd>
+<dt>Inherited fields from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___affiliation">affiliation</a>, <a href="doc-build.ox.html#document___atag">atag</a>, <a href="doc-build.ox.html#document___bdir">bdir</a>, <a href="doc-build.ox.html#document___bookauthor">bookauthor</a>, <a href="doc-build.ox.html#document___booktitle">booktitle</a>, <a href="doc-build.ox.html#document___contents">contents</a>, <a href="doc-build.ox.html#document___dfbeg">dfbeg</a>, <a href="doc-build.ox.html#document___dfcontl">dfcontl</a>, <a href="doc-build.ox.html#document___dfcontr">dfcontr</a>, <a href="doc-build.ox.html#document___dfend">dfend</a>, <a href="doc-build.ox.html#document___exend">exend</a>, <a href="doc-build.ox.html#document___exsec">exsec</a>, <a href="doc-build.ox.html#document___exstart">exstart</a>, <a href="doc-build.ox.html#document___figmarks">figmarks</a>, <a href="doc-build.ox.html#document___fign">fign</a>, <a href="doc-build.ox.html#document___fignicks">fignicks</a>, <a href="doc-build.ox.html#document___figprefix">figprefix</a>, <a href="doc-build.ox.html#document___figtag">figtag</a>, <a href="doc-build.ox.html#document___figtypes">figtypes</a>, <a href="doc-build.ox.html#document___fm">fm</a>, <a href="doc-build.ox.html#document___fmlast">fmlast</a>, <a href="doc-build.ox.html#document___footer">footer</a>, <a href="doc-build.ox.html#document___head0">head0</a>, <a href="doc-build.ox.html#document___headtitle">headtitle</a>, <a href="doc-build.ox.html#document___inext">inext</a>, <a href="doc-build.ox.html#document___lbr">lbr</a>, <a href="doc-build.ox.html#document___lev">lev</a>, <a href="doc-build.ox.html#document___lp">lp</a>, <a href="doc-build.ox.html#document___ltypes">ltypes</a>, <a href="doc-build.ox.html#document___lvtag">lvtag</a>, <a href="doc-build.ox.html#document___mathjax">mathjax</a>, <a href="doc-build.ox.html#document___outext">outext</a>, <a href="doc-build.ox.html#document___rbr">rbr</a>, <a href="doc-build.ox.html#document___rp">rp</a>, <a href="doc-build.ox.html#document___sdir">sdir</a>, <a href="doc-build.ox.html#document___SKIP">SKIP</a>, <a href="doc-build.ox.html#document___spref">spref</a>, <a href="doc-build.ox.html#document___tocext">tocext</a>, <a href="doc-build.ox.html#document___TOCFILE">TOCFILE</a>, <a href="doc-build.ox.html#document___ttag">ttag</a>, <a href="doc-build.ox.html#document___version">version</a></dd>
+</dl>
+
+<a name="section"></a>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">section : <a href="doc-build.ox.html#document">document</a></span></h2>
+
+
+<table class="method_table">
+<tr><td colspan="3" class="header" valign="top">Public fields</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___anch">anch</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___child">child</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___dir">dir</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___index">index</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___level">level</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___myexer">myexer</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___ndefn">ndefn</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___notempty">notempty</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___ord">ord</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___output">output</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___parent">parent</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___pref">pref</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___source">source</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___title">title</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#section___uplev">uplev</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr><td colspan="3" class="header" valign="top">Public methods</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___entry">entry</a></td>
+<td class="modifiers">virtual</td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___glossentry">glossentry</a></td>
+<td class="modifiers">virtual</td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___make">make</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___parse">parse</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___section">section</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#section___slides">slides</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+</table>
+
+<dl class="inherited">
+<dt>Inherited methods from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___build">build</a>, <a href="doc-build.ox.html#document___lbeg">lbeg</a>, <a href="doc-build.ox.html#document___lend">lend</a>, <a href="doc-build.ox.html#document___printheader">printheader</a></dd>
+</dl>
+
+<dl class="inherited">
+<dt>Inherited fields from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___affiliation">affiliation</a>, <a href="doc-build.ox.html#document___atag">atag</a>, <a href="doc-build.ox.html#document___bdir">bdir</a>, <a href="doc-build.ox.html#document___bookauthor">bookauthor</a>, <a href="doc-build.ox.html#document___booktitle">booktitle</a>, <a href="doc-build.ox.html#document___contents">contents</a>, <a href="doc-build.ox.html#document___dfbeg">dfbeg</a>, <a href="doc-build.ox.html#document___dfcontl">dfcontl</a>, <a href="doc-build.ox.html#document___dfcontr">dfcontr</a>, <a href="doc-build.ox.html#document___dfend">dfend</a>, <a href="doc-build.ox.html#document___exend">exend</a>, <a href="doc-build.ox.html#document___exsec">exsec</a>, <a href="doc-build.ox.html#document___exstart">exstart</a>, <a href="doc-build.ox.html#document___figmarks">figmarks</a>, <a href="doc-build.ox.html#document___fign">fign</a>, <a href="doc-build.ox.html#document___fignicks">fignicks</a>, <a href="doc-build.ox.html#document___figprefix">figprefix</a>, <a href="doc-build.ox.html#document___figtag">figtag</a>, <a href="doc-build.ox.html#document___figtypes">figtypes</a>, <a href="doc-build.ox.html#document___fm">fm</a>, <a href="doc-build.ox.html#document___fmlast">fmlast</a>, <a href="doc-build.ox.html#document___footer">footer</a>, <a href="doc-build.ox.html#document___head0">head0</a>, <a href="doc-build.ox.html#document___headtitle">headtitle</a>, <a href="doc-build.ox.html#document___inext">inext</a>, <a href="doc-build.ox.html#document___lbr">lbr</a>, <a href="doc-build.ox.html#document___lev">lev</a>, <a href="doc-build.ox.html#document___lp">lp</a>, <a href="doc-build.ox.html#document___ltypes">ltypes</a>, <a href="doc-build.ox.html#document___lvtag">lvtag</a>, <a href="doc-build.ox.html#document___mathjax">mathjax</a>, <a href="doc-build.ox.html#document___outext">outext</a>, <a href="doc-build.ox.html#document___rbr">rbr</a>, <a href="doc-build.ox.html#document___rp">rp</a>, <a href="doc-build.ox.html#document___sdir">sdir</a>, <a href="doc-build.ox.html#document___SKIP">SKIP</a>, <a href="doc-build.ox.html#document___spref">spref</a>, <a href="doc-build.ox.html#document___tocext">tocext</a>, <a href="doc-build.ox.html#document___TOCFILE">TOCFILE</a>, <a href="doc-build.ox.html#document___ttag">ttag</a>, <a href="doc-build.ox.html#document___version">version</a></dd>
+</dl>
+
+<a name="titlepage"></a>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">titlepage : <a href="doc-build.ox.html#section">section</a> : <a href="doc-build.ox.html#document">document</a></span></h2>
+
+
+<table class="method_table">
+<tr><td colspan="3" class="header" valign="top">Public fields</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#titlepage___made">made</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#titlepage___subtitle">subtitle</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="even">
+<td class="declaration"><img class="icon" src="icons/field_s.png">&nbsp;<a href="doc-build.ox.html#titlepage___title">title</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr><td colspan="3" class="header" valign="top">Public methods</td></tr><tr class="even">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#titlepage___make">make</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+<tr class="odd">
+<td class="declaration"><img class="icon" src="icons/method_s.png">&nbsp;<a href="doc-build.ox.html#titlepage___titlepage">titlepage</a></td>
+<td class="modifiers"></td>
+<td class="description"></td>
+</tr>
+</table>
+
+<dl class="inherited">
+<dt>Inherited methods from <a href="doc-build.ox.html#section">section</a>:</dt><dd><a href="doc-build.ox.html#section___entry">entry</a>, <a href="doc-build.ox.html#section___glossentry">glossentry</a>, <a href="doc-build.ox.html#section___parse">parse</a>, <a href="doc-build.ox.html#section___section">section</a>, <a href="doc-build.ox.html#section___slides">slides</a></dd>
+<dt>Inherited methods from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___build">build</a>, <a href="doc-build.ox.html#document___lbeg">lbeg</a>, <a href="doc-build.ox.html#document___lend">lend</a>, <a href="doc-build.ox.html#document___printheader">printheader</a></dd>
+</dl>
+
+<dl class="inherited">
+<dt>Inherited fields from <a href="doc-build.ox.html#section">section</a>:</dt><dd><a href="doc-build.ox.html#section___anch">anch</a>, <a href="doc-build.ox.html#section___child">child</a>, <a href="doc-build.ox.html#section___dir">dir</a>, <a href="doc-build.ox.html#section___index">index</a>, <a href="doc-build.ox.html#section___level">level</a>, <a href="doc-build.ox.html#section___myexer">myexer</a>, <a href="doc-build.ox.html#section___ndefn">ndefn</a>, <a href="doc-build.ox.html#section___notempty">notempty</a>, <a href="doc-build.ox.html#section___ord">ord</a>, <a href="doc-build.ox.html#section___output">output</a>, <a href="doc-build.ox.html#section___parent">parent</a>, <a href="doc-build.ox.html#section___pref">pref</a>, <a href="doc-build.ox.html#section___source">source</a>, <a href="doc-build.ox.html#section___uplev">uplev</a></dd>
+<dt>Inherited fields from <a href="doc-build.ox.html#document">document</a>:</dt><dd><a href="doc-build.ox.html#document___affiliation">affiliation</a>, <a href="doc-build.ox.html#document___atag">atag</a>, <a href="doc-build.ox.html#document___bdir">bdir</a>, <a href="doc-build.ox.html#document___bookauthor">bookauthor</a>, <a href="doc-build.ox.html#document___booktitle">booktitle</a>, <a href="doc-build.ox.html#document___contents">contents</a>, <a href="doc-build.ox.html#document___dfbeg">dfbeg</a>, <a href="doc-build.ox.html#document___dfcontl">dfcontl</a>, <a href="doc-build.ox.html#document___dfcontr">dfcontr</a>, <a href="doc-build.ox.html#document___dfend">dfend</a>, <a href="doc-build.ox.html#document___exend">exend</a>, <a href="doc-build.ox.html#document___exsec">exsec</a>, <a href="doc-build.ox.html#document___exstart">exstart</a>, <a href="doc-build.ox.html#document___figmarks">figmarks</a>, <a href="doc-build.ox.html#document___fign">fign</a>, <a href="doc-build.ox.html#document___fignicks">fignicks</a>, <a href="doc-build.ox.html#document___figprefix">figprefix</a>, <a href="doc-build.ox.html#document___figtag">figtag</a>, <a href="doc-build.ox.html#document___figtypes">figtypes</a>, <a href="doc-build.ox.html#document___fm">fm</a>, <a href="doc-build.ox.html#document___fmlast">fmlast</a>, <a href="doc-build.ox.html#document___footer">footer</a>, <a href="doc-build.ox.html#document___head0">head0</a>, <a href="doc-build.ox.html#document___headtitle">headtitle</a>, <a href="doc-build.ox.html#document___inext">inext</a>, <a href="doc-build.ox.html#document___lbr">lbr</a>, <a href="doc-build.ox.html#document___lev">lev</a>, <a href="doc-build.ox.html#document___lp">lp</a>, <a href="doc-build.ox.html#document___ltypes">ltypes</a>, <a href="doc-build.ox.html#document___lvtag">lvtag</a>, <a href="doc-build.ox.html#document___mathjax">mathjax</a>, <a href="doc-build.ox.html#document___outext">outext</a>, <a href="doc-build.ox.html#document___rbr">rbr</a>, <a href="doc-build.ox.html#document___rp">rp</a>, <a href="doc-build.ox.html#document___sdir">sdir</a>, <a href="doc-build.ox.html#document___SKIP">SKIP</a>, <a href="doc-build.ox.html#document___spref">spref</a>, <a href="doc-build.ox.html#document___tocext">tocext</a>, <a href="doc-build.ox.html#document___TOCFILE">TOCFILE</a>, <a href="doc-build.ox.html#document___ttag">ttag</a>, <a href="doc-build.ox.html#document___version">version</a></dd>
+</dl>
+
+<h2><span class="icon"><img class="icon" src="icons/global.png">&nbsp;</span><span class="text">Global </span></h2>
+
+<table class="enum_table">
+<tr><td colspan="3" class="header" valign="top">Enumerations</td></tr><tr class="even">
+<td class="declaration"><a name="Anonymous enum 1"></a>Anonymous enum 1</td>
+<td class="description"></td>
+<td class="elements">FEND, fmname, fmtitle, fptr, FMparts</td>
+</tr>
+<tr class="odd">
+<td class="declaration"><a name="Anonymous enum 2"></a>Anonymous enum 2</td>
+<td class="description"></td>
+<td class="elements">TOC, FIG, DEF, ALG, TAB, GLOSS, Fsections</td>
+</tr>
+</table>
+
+<a name="mreplace"></a>
+<h3><span class="icon"><img class="icon" src="icons/function.png">&nbsp;</span><span class="text">mreplace</span></h3>
+
+<span class="declaration">mreplace ( tmplt , list )</span>
+<dl><dd>
+
+</dd></dl>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">document</span></h2>
+
+<a name="document___affiliation"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">affiliation</span></h3>
+
+<span class="declaration">static decl affiliation [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___atag"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">atag</span></h3>
+
+<span class="declaration">static const decl atag [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___bdir"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">bdir</span></h3>
+
+<span class="declaration">static decl bdir [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___bookauthor"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">bookauthor</span></h3>
+
+<span class="declaration">static decl bookauthor [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___booktitle"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">booktitle</span></h3>
+
+<span class="declaration">static decl booktitle [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___build"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">build</span></h3>
+
+<span class="declaration">static document :: build ( sdir , bdir , tocfile )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___contents"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">contents</span></h3>
+
+<span class="declaration">static decl contents [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___dfbeg"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">dfbeg</span></h3>
+
+<span class="declaration">static const decl dfbeg [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___dfcontl"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">dfcontl</span></h3>
+
+<span class="declaration">static const decl dfcontl [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___dfcontr"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">dfcontr</span></h3>
+
+<span class="declaration">static const decl dfcontr [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___dfend"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">dfend</span></h3>
+
+<span class="declaration">static const decl dfend [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___exend"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">exend</span></h3>
+
+<span class="declaration">static const decl exend [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___exsec"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">exsec</span></h3>
+
+<span class="declaration">static decl exsec [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___exstart"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">exstart</span></h3>
+
+<span class="declaration">static const decl exstart [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___figmarks"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">figmarks</span></h3>
+
+<span class="declaration">static const decl figmarks [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___fign"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">fign</span></h3>
+
+<span class="declaration">static decl fign [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___fignicks"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">fignicks</span></h3>
+
+<span class="declaration">static decl fignicks [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___figprefix"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">figprefix</span></h3>
+
+<span class="declaration">static const decl figprefix [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___figtag"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">figtag</span></h3>
+
+<span class="declaration">static const decl figtag [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___figtypes"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">figtypes</span></h3>
+
+<span class="declaration">static const decl figtypes [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___fm"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">fm</span></h3>
+
+<span class="declaration">static decl fm [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___fmlast"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">fmlast</span></h3>
+
+<span class="declaration">static const decl fmlast [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___footer"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">footer</span></h3>
+
+<span class="declaration">static decl footer [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___head0"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">head0</span></h3>
+
+<span class="declaration">static decl head0 [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___headtitle"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">headtitle</span></h3>
+
+<span class="declaration">static decl headtitle [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___inext"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">inext</span></h3>
+
+<span class="declaration">static const decl inext [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lbeg"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">lbeg</span></h3>
+
+<span class="declaration">static document :: lbeg ( f , nlev , tclass )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lbr"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">lbr</span></h3>
+
+<span class="declaration">static const decl lbr [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lend"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">lend</span></h3>
+
+<span class="declaration">static document :: lend ( f )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lev"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">lev</span></h3>
+
+<span class="declaration">static decl lev [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lp"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">lp</span></h3>
+
+<span class="declaration">static const decl lp [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___ltypes"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">ltypes</span></h3>
+
+<span class="declaration">static const decl ltypes [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___lvtag"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">lvtag</span></h3>
+
+<span class="declaration">static const decl lvtag [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___mathjax"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">mathjax</span></h3>
+
+<span class="declaration">static decl mathjax [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___outext"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">outext</span></h3>
+
+<span class="declaration">static const decl outext [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___printheader"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">printheader</span></h3>
+
+<span class="declaration">static document :: printheader ( h , title )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___rbr"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">rbr</span></h3>
+
+<span class="declaration">static const decl rbr [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___rp"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">rp</span></h3>
+
+<span class="declaration">static const decl rp [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___sdir"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">sdir</span></h3>
+
+<span class="declaration">static decl sdir [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___SKIP"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">SKIP</span></h3>
+
+<span class="declaration">static const decl SKIP [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___spref"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">spref</span></h3>
+
+<span class="declaration">static const decl spref [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___tocext"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">tocext</span></h3>
+
+<span class="declaration">static const decl tocext [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___TOCFILE"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">TOCFILE</span></h3>
+
+<span class="declaration">static decl TOCFILE [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___ttag"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">ttag</span></h3>
+
+<span class="declaration">static const decl ttag [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="document___version"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">version</span></h3>
+
+<span class="declaration">static decl version [public]</span>
+<dl><dd>
+
+</dd></dl>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">exercises</span></h2>
+
+<a name="exercises___accum"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">accum</span></h3>
+
+<span class="declaration">exercises :: accum ( line )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="exercises___append"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">append</span></h3>
+
+<span class="declaration">exercises :: append ( ord , fn )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="exercises___entry"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">entry</span></h3>
+
+<span class="declaration">exercises :: entry ( f )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="exercises___exdoc"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">exdoc</span></h3>
+
+<span class="declaration">decl exdoc [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="exercises___exercises"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">exercises</span></h3>
+
+<span class="declaration">exercises :: exercises ( sect )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="exercises___make"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">make</span></h3>
+
+<span class="declaration">exercises :: make ( inh )</span>
+<dl><dd>
+
+</dd></dl>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">section</span></h2>
+
+<a name="section___anch"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">anch</span></h3>
+
+<span class="declaration">decl anch [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___child"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">child</span></h3>
+
+<span class="declaration">decl child [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___dir"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">dir</span></h3>
+
+<span class="declaration">decl dir [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___entry"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">entry</span></h3>
+
+<span class="declaration">virtual section :: entry ( f )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___glossentry"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">glossentry</span></h3>
+
+<span class="declaration">virtual section :: glossentry ( line )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___index"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">index</span></h3>
+
+<span class="declaration">decl index [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___level"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">level</span></h3>
+
+<span class="declaration">decl level [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___make"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">make</span></h3>
+
+<span class="declaration">section :: make ( inh )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___myexer"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">myexer</span></h3>
+
+<span class="declaration">decl myexer [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___ndefn"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">ndefn</span></h3>
+
+<span class="declaration">decl ndefn [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___notempty"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">notempty</span></h3>
+
+<span class="declaration">decl notempty [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___ord"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">ord</span></h3>
+
+<span class="declaration">decl ord [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___output"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">output</span></h3>
+
+<span class="declaration">decl output [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___parent"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">parent</span></h3>
+
+<span class="declaration">decl parent [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___parse"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">parse</span></h3>
+
+<span class="declaration">section :: parse ( line )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___pref"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">pref</span></h3>
+
+<span class="declaration">decl pref [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___section"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">section</span></h3>
+
+<span class="declaration">section :: section ( index )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___slides"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">slides</span></h3>
+
+<span class="declaration">section :: slides ( )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___source"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">source</span></h3>
+
+<span class="declaration">decl source [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___title"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">title</span></h3>
+
+<span class="declaration">decl title [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="section___uplev"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">uplev</span></h3>
+
+<span class="declaration">decl uplev [public]</span>
+<dl><dd>
+
+</dd></dl>
+<h2><span class="icon"><img class="icon" src="icons/class.png">&nbsp;</span><span class="text">titlepage</span></h2>
+
+<a name="titlepage___made"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">made</span></h3>
+
+<span class="declaration">decl made [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="titlepage___make"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">make</span></h3>
+
+<span class="declaration">titlepage :: make ( inh )</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="titlepage___subtitle"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">subtitle</span></h3>
+
+<span class="declaration">decl subtitle [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="titlepage___title"></a>
+<h3><span class="icon"><img class="icon" src="icons/field.png">&nbsp;</span><span class="text">title</span></h3>
+
+<span class="declaration">decl title [public]</span>
+<dl><dd>
+
+</dd></dl>
+
+<hr>
+<a name="titlepage___titlepage"></a>
+<h3><span class="icon"><img class="icon" src="icons/method.png">&nbsp;</span><span class="text">titlepage</span></h3>
+
+<span class="declaration">titlepage :: titlepage ( tocf )</span>
+<dl><dd>
+
+</dd></dl>
+<div class="footer">
+Generated by <a href="http://oxdoc.sourceforge.net">oxdoc 1.1-beta</a> &copy Copyright 2005-2014 by Y. Zwols<br>
+Math typesetting by <a href="http://www.mathjax.org/">Mathjax</a>
+</div>

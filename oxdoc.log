@@ -1,0 +1,32 @@
+Log file created at 12/05/18 16:02:38
+oxdoc 1.1-beta [05/22/14]
+(c) Copyright 2005-2014 by Y. Zwols [yorizwols@users.sourceforge.net]
+
+oxdoc is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+See the LICENSE file for distribution details.
+
+Loading configuration file oxdoc.xml
+Reading file C:\Users\Chris\Documents\OFFICE\software\Microeconometrics\doc-build\doc-build.ox
+Warning: Included file oxstd.h could not be opened. File will be ignored.
+Successfully wrote icons/function_s.png
+Successfully wrote icons/enum_s.png
+Successfully wrote icons/global.png
+Successfully wrote icons/class.png
+Successfully wrote icons/field_s.png
+Successfully wrote icons/method_s.png
+Successfully wrote icons/function.png
+Successfully wrote icons/field.png
+Successfully wrote icons/method.png
+Successfully wrote icons/project_s.png
+Successfully wrote icons/index_s.png
+Successfully wrote icons/hierarchy_s.png
+Successfully wrote icons/file.png
+Successfully wrote icons/files.png
+Successfully wrote icons/file_s.png
+Successfully wrote icons/project.png
+Successfully wrote icons/class_s.png
+Successfully wrote icons/index.png
+Successfully wrote icons/hierarchy.png
+Successfully wrote oxdoc.css
+Successfully wrote print.css

@@ -1,0 +1,20 @@
+
+Let's review the different kinds of things that can be stored in an Ox variable.  First there are <em>scalar</em> types, which are things that represent a single concept at any time during program.
+<DD><code>int</code>: stores a single signed binary integer like 5</DD>
+<DD><code>double</code>: stores a single floating-point real (in double precision) like 5.0 or -1.333</DD>
+<DD><code>pointer</code>: stores a pointer to an Ox variable (or other data types) using the <q>location of</q> operator, <code>&amp;</code></DD>
+<DD><code>function</code>: store a pointer-like thing for a function that can be called in program.</DD>
+
+And there are several  <em>array</em> types in Ox.  In computer lingo, an <em>array</em> is a generic term for a data structure that is made up of multiple scalar data types or even multiple other array types.  We have already talked about
+<DD><code>vector and matrix</code>.  Vectors are really just a special case of a matrix.  Ox does not distinguish between them as different types but sometimes in the syntax it matters if a variable currently holds vector or a non-vector matrix.</DD>
+<dd><code>string</code> which is a vector of characters (called <code>char</code> in Ox and in some cases treated like its own scalar type.  It is unlikely your program will ever distinguish between a string of one character and <code>char</code>.  (On the other hand program you write may distinguish between a <code>double</code> and <code>1\times 1</code> matrix, which is a close analogy to the <code>char/string</code> distinction.</p>
+<DD><code>oxarray</code> which I like to call a <code>list</code> because it is a way to put any sorts of things into a vector or matrix like structure.</DD>
+
+This section discusses another scalar type in Ox: <code>file</code>: holds a pointer-like value that lets the user read and write information from a file on disk.  Note that the disk file is information stored in long-term stable area (disk, SD card, USB stick, etc.).  On the other hand, the Ox <code>file</code> is a variable that currently can read or write information to a particular disk file.</p>
+
+You create a <code>file</code> and store it in a variable using the <code>fclose()</code> function.  Then you can read and write to it using functions such as <code>fprint()</code> and <code>fscan()</code>.  For the most part we won't need to use open files, but they are important in some types of programs.
+
+<H4>Creating Pretty or Complex Output using <code>fprint()</code></H4>
+
+<h4>Reading in Data using <code>fscan()</code></h4>
+

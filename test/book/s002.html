@@ -1,0 +1,43 @@
+<!DOCTYPE html><html>
+<head><meta name="author" content="%author%"><link             href='http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek' rel='stylesheet' type='text/css'></link>
+<link rel="icon" href="img/452.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="css/doc.css"></link>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]], processEscapes: true}});</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script><title>Mid Section</title></head><body>
+
+<OL  type="A" "><h2><a name="s002"><LI value=1>Mid Section</a></LI></h2></OL>
+
+<mark><img src="img/underc.png" width="10%"/> This section is under construction.</mark>
+
+Interpreted languages like Ox, Matlab and Python have overhead costs in terms of computational time relative to compiled languages like C and FORTRAN. You might think this makes this comparison true:
+<DD><pre>compiled languages = fast?
+interpreted languages = slow?</pre></DD>
+This section builds up a way to see the costs and benefits of the interpreted-language overhead.</p>
+
+To simplify the discussion, the term <q>i-code</q> refers to a program in an interpreted language and <q>c-code</q> to one in a compiled language that does the same thing. First, the reason interpreted languages have overheads is because code written in them does not get translated to machine code.  It gets interpreted by other machine code.  So on top of the instructions to do the job there must be instructions to do the interpreting.  Thus, in principle, i-code must run no faster equivalent c-code.  But how much slower matters a great deal on what the code is doing and who wrote both programs (in the sense of how skilled they were and their concern for execution speed).  </p>
+
+The "in principle" qualification is that the two codes are both equally well-crafted and optimized for speed.  If, instead, suppose two conditions hold.  First, the interpreter was written and compiled with great care and the i-code it is running is written carefully.  Second, the c-code was written by a neophyte economics student.  Then it is quite possible that the i-code will get the job done as fast or even faster than the c-code. </p>
+
+It is also quite likely that the i-code would be much easier for the neophyte to write and debug if, for example a mathematical i-language is used. And for a neophyte to write good c-code for a complex problem to exploit the inherent speed advantage of a compiled language may required much more <code>CodingTime</code> than using a good interpreted language.</p>
+
+Let's see this in action.  You can do this demonstrate yourself if you have a complete tool box described earlier, including <code>Ox</code> and <code>gcc</code> running on the same Unix machine.  As before, we start with two very short and not-quite identical Ox and C programs:</DD>
+
+
+<DD>Loops <code>c-loop.c</code> versus <code>ox-loop.ox</code>
+<pre>
+gcc c-loop.c ./a.out
+    Experiment 1.  1 loop, 10 million trips
+        time = 0.260000 ; x=100000000
+
+    Experiment 2.  1 loop, 10 million trips, entering a loop each time
+        time = 0.430000 ; x=100000000
+
+oxl ox-loop.ox
+    Experiment 1. 1 loop, 10 million trips
+            time= 11.81 ; x=100000000
+    Experiment 2. 1 loop, 10 million trips, entering a loop each time
+            time= 26.04 ; x=100000000
+</pre></DD>
+
+<footer><table width="100%"><tr><td width="20px"><a href="s001.html">&larr;</a></td><td style="text-align:center">&copy; %author% %year%.  %affiliation%.</td><td width="20px"><a href="s003.html">&rarr;</a></td></tr></table></footer></body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html><html>
+<head><meta name="author" content="%author%"><link             href='http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek' rel='stylesheet' type='text/css'></link>
+<link rel="icon" href="img/452.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="css/doc.css"></link>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]], processEscapes: true}});</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script><title>book-title</title></head><body>
+
+<div class="tp" style="background:url(img/452big.png) no-repeat  bottom center; background-size:70%;" ><h1>book-title</h1><hr/>sub-title<br/>&nbsp;<br/>&nbsp;<br/><h3 class="preface">author<br/></h3><br/>Version 1.0<br/>Printed: 2017-06-28<br/>&nbsp;</br>&nbsp;</br>CODE:  __________</div>
+<h1 class="preface">Front Matter</h1><OL type="i">
+<h2 class="preface"><LI>Table of Contents</LI></h2><div id="split">
+<span style="font-size:small;">
+<OL>
+<OL type="I" class="toc1">
+<LI><a href="s001.html" target="contentx">Top Section</a></LI>
+<OL type="A" class="toc2">
+<LI><a href="s002.html" target="contentx">Mid Section</a></LI>
+<OL type="1" class="toc3">
+<details class="toc" open><summary>sections</summary>
+<LI><a href="s003.html" target="contentx">Low Section</a></LI>
+</details>
+</OL>
+</OL>
+<DT><a href="ex001.html" target="contentx">Exercises for <em>Top Section</em></a></DT>
+<LI><a href="s004.html" target="contentx">Top Section<br/>Subtitle, no text file to insert</a></LI>
+<DT><a href="ex004.html" target="contentx">Exercises for <em>Top Section<br/>Subtitle, no text file to insert</em></a></DT>
+<a href="figlist.html" target="contentx">List of Figures &amp; Definitions &amp; Results</a>
+<a href="glossary.html" target="contentx">Glossary of Defined Terms &amp; Special Symbols</a>
+</span>
+</div><div class="break"> </div>
+<h2 class="preface"><LI>List of Figures &amp; Definitions &amp; Results</LI></h2><div id="split">
+<span style="font-size:small;">
+<OL>
+</OL>
+</span>
+</div><div class="break"> </div>
+<h2 class="preface"><LI>Glossary of Defined Terms &amp; Special Symbols</LI></h2><div id="split">
+<span style="font-size:small;">
+<OL>
+</OL>
+</span>
+</div><div class="break"> </div>
+</OL>
+<OL  type="I" class="toc1" >
+<h1><a name="s001"><LI>Top Section</LI></a></h1>
+
+Let's review the different kinds of things that can be stored in an Ox variable.  First there are <em>scalar</em> types, which are things that represent a single concept at any time during program.
+<DD><code>int</code>: stores a single signed binary integer like 5</DD>
+<DD><code>double</code>: stores a single floating-point real (in double precision) like 5.0 or -1.333</DD>
+<DD><code>pointer</code>: stores a pointer to an Ox variable (or other data types) using the <q>location of</q> operator, <code>&amp;</code></DD>
+<DD><code>function</code>: store a pointer-like thing for a function that can be called in program.</DD>
+
+And there are several  <em>array</em> types in Ox.  In computer lingo, an <em>array</em> is a generic term for a data structure that is made up of multiple scalar data types or even multiple other array types.  We have already talked about
+<DD><code>vector and matrix</code>.  Vectors are really just a special case of a matrix.  Ox does not distinguish between them as different types but sometimes in the syntax it matters if a variable currently holds vector or a non-vector matrix.</DD>
+<dd><code>string</code> which is a vector of characters (called <code>char</code> in Ox and in some cases treated like its own scalar type.  It is unlikely your program will ever distinguish between a string of one character and <code>char</code>.  (On the other hand program you write may distinguish between a <code>double</code> and <code>1\times 1</code> matrix, which is a close analogy to the <code>char/string</code> distinction.</p>
+<DD><code>oxarray</code> which I like to call a <code>list</code> because it is a way to put any sorts of things into a vector or matrix like structure.</DD>
+
+This section discusses another scalar type in Ox: <code>file</code>: holds a pointer-like value that lets the user read and write information from a file on disk.  Note that the disk file is information stored in long-term stable area (disk, SD card, USB stick, etc.).  On the other hand, the Ox <code>file</code> is a variable that currently can read or write information to a particular disk file.</p>
+
+You create a <code>file</code> and store it in a variable using the <code>fclose()</code> function.  Then you can read and write to it using functions such as <code>fprint()</code> and <code>fscan()</code>.  For the most part we won't need to use open files, but they are important in some types of programs.
+
+<H4>Creating Pretty or Complex Output using <code>fprint()</code></H4>
+
+<h4>Reading in Data using <code>fscan()</code></h4>
+
+<OL  type="A" class="toc2" >
+<h2><a name="s002"><LI>Mid Section</LI></a></h2>
+
+<mark><img src="img/underc.png" width="10%"/> This section is under construction.</mark>
+
+Interpreted languages like Ox, Matlab and Python have overhead costs in terms of computational time relative to compiled languages like C and FORTRAN. You might think this makes this comparison true:
+<DD><pre>compiled languages = fast?
+interpreted languages = slow?</pre></DD>
+This section builds up a way to see the costs and benefits of the interpreted-language overhead.</p>
+
+To simplify the discussion, the term <q>i-code</q> refers to a program in an interpreted language and <q>c-code</q> to one in a compiled language that does the same thing. First, the reason interpreted languages have overheads is because code written in them does not get translated to machine code.  It gets interpreted by other machine code.  So on top of the instructions to do the job there must be instructions to do the interpreting.  Thus, in principle, i-code must run no faster equivalent c-code.  But how much slower matters a great deal on what the code is doing and who wrote both programs (in the sense of how skilled they were and their concern for execution speed).  </p>
+
+The "in principle" qualification is that the two codes are both equally well-crafted and optimized for speed.  If, instead, suppose two conditions hold.  First, the interpreter was written and compiled with great care and the i-code it is running is written carefully.  Second, the c-code was written by a neophyte economics student.  Then it is quite possible that the i-code will get the job done as fast or even faster than the c-code. </p>
+
+It is also quite likely that the i-code would be much easier for the neophyte to write and debug if, for example a mathematical i-language is used. And for a neophyte to write good c-code for a complex problem to exploit the inherent speed advantage of a compiled language may required much more <code>CodingTime</code> than using a good interpreted language.</p>
+
+Let's see this in action.  You can do this demonstrate yourself if you have a complete tool box described earlier, including <code>Ox</code> and <code>gcc</code> running on the same Unix machine.  As before, we start with two very short and not-quite identical Ox and C programs:</DD>
+
+
+<DD>Loops <code>c-loop.c</code> versus <code>ox-loop.ox</code>
+<pre>
+gcc c-loop.c ./a.out
+    Experiment 1.  1 loop, 10 million trips
+        time = 0.260000 ; x=100000000
+
+    Experiment 2.  1 loop, 10 million trips, entering a loop each time
+        time = 0.430000 ; x=100000000
+
+oxl ox-loop.ox
+    Experiment 1. 1 loop, 10 million trips
+            time= 11.81 ; x=100000000
+    Experiment 2. 1 loop, 10 million trips, entering a loop each time
+            time= 26.04 ; x=100000000
+</pre></DD>
+
+<OL  type="1" class="toc3" >
+<h3><a name="s003"><LI>Low Section</LI></a></h3>
+
+<blockquote class="quote">
+<em>Pay no attention to that man behind the curtain.</em>
+<b><br>--The Wizard of Oz</br></b></blockquote>
+
+We look at a simple Ox program that poses a puzzle about how computers do math.  The answer to the puzzle must wait for a later chapter, but the puzzle may motivate you to learn about how computers works before trusting them with your own research.</p>
+
+<DT>Does $10x=\sum_{i=1}^{10}\ x$?</DT>
+<DD><pre><span class="fname"><em><a href="./code/If6was9.ox" download>If6was9.ox</a></em></span>
+<object height="400" width="95%" type="text/plain" data="./code/If6was9.ox" border="1" ></object></pre></dd>
+<DT>The program does something simple twice. </DT>
+<DD>A number is assigned to a variable, <code>x</code>.  </DD>
+<DD>Then <var>10x</var> is compared to the value of adding <var>x</var> to itself 10 times.  </DD>
+<DD>This is done first for <var>x=0.1</var> and then <var>x=0.25</var>.  </DD>
+<DD>The program is supposed to print out <q>Yes</q> or <q>No</q> based on the comparison of the two expressions.</DD>
+
+Of course, in <em>symbolic</em> mathematics the results are identical to each other.  But these operations are being carried out on a computer using digital mathematics not symbolic mathematics. The output when <code>10x.ox</code> is run is:
+<DD><pre>--------------- Ox at 13:13:35 on 07-Sep-2012 ---------------
+
+Ox Console version 6.21 (Windows/U) (C) J.A. Doornik, 1994-2011
+This version may be used for academic research and teaching only<pre>
+Is 2.5=10*(0.25)? Yes
+Is 1.0=10*(0.10)? No</pre></dd>
+
+<img src="img/stop_sign.png"/>
+You are supposed to be surprised by this output. Please stop and be surprise for a second.<br/>&hellip;</p>
+
+If you can explain the output you might read the next few chapters quickly.  If you cannot explain the output then as a student of economics you should be thinking, <q>Perhaps I cannot trust Ox to do arithmetic.</q> After all, if you cannot rely on adding x to itself 10 times always being the same as 10x, for all values x, then how can we rely on it to, say, find a consumption bundle at which marginal utility equals the slope of the budget line?
+
+<p/>
+Is this is a flaw in Ox, a misunderstanding of the code, or something deeper?  The short answer is that it is indeed an inherent feature of numerical math and it illustrates a danger is naively using a language like Ox. if you use Stata can verify that it will produce the same puzzling output with this interactive output
+
+<DD><pre><span class="dt">Stata also has a 10x 'problem</span>
+. scalar x = 0.25
+. di 2.5==x+x+x+x+x+x+x+x+x+x
+1
+. sca x = 0.1
+. di 1.0==x+x+x+x+x+x+x+x+x+x
+0
+</pre></DD>
+The outputs <code>1</code> and <code>0</code> are equivalent to <q>yes</q> and <q>no</q>. (Mathematica and Maple are designed to carry out symbolic operations, so this question would not apply to them, at least when they are in symbolic mode.)</p>
+
+The reason for this puzzling behavior turns out to be a subtle feature of rational numbers. This is a curiosity but not ultimately a major issue in programming.  It is trotted out now to motivate you to be a bit curious and a bit wary about what is happening when you use the computer to do math.  Knowing how and why this happens will not make you a great economist, but it is a lesson along the way towards doing economics on the computer.</p>
+
+<dT>You can run this program to try different values of <var>x</var>:</dT>
+<DD><pre><span class="dt">Do It Again</span>
+<em><a href="./code/If6was9reprise.ox" download>If6was9reprise.ox</a></em>
+<object width="95%" type="text/plain" data="./code/If6was9reprise.ox" border="1" ></object></pre></dd>
+
+<h4>Some remarks about the Ox programs above.</h4>
+
+In each case <code>main()</code> consists of the statements between the opening bracket (<code>{</code>) and its close (<code>}</code>). This makes <code>main()</code> a <em>function</em>, also called a <em>procedure</em>, a <em>routine</em>, and similar to things called <em>subroutines</em> and <em>methods</em>.   In these notes a function or method will usually be referred to with empty parentheses, like  <code>main()</code> instead of just <code>main</code>.  This might help the reader keep track of whether a variable or some other kind of object is being talked about rather than a function. The code inside <code>main()</code> consists of <em>statements</em>.  Ox is a kind of computer program in which the programmer tells the computer what to do in a sequence. A complete statement in Ox ends with a semicolon, <q>;</q>.</p>
+
+The <code>if (condition) &hellip; ; else &hellip; ;</code> is a programming <em>structure</em>.   Like a function it includes other statements inside the structure.  At least two statements must appear, one after <code>if ()</code> and one after <code>else</code>.  Ox will check whether the condition inside <code>(&nbsp;)</code> is true (<code>then</code>) or not (<code>else</code>) and execute the corresponding statement.  But a <em>block</em> of statements is treated the same as a single statement. A block is created by putting statements inside curly brackets, just like <code>main()</code>.  If the logic of the program said that something should be done <code>then</code> but nothing has to happen <code>else</code>, then the program has two options.   Ox also has <code> if (condition) then </code>.  That is, you do not need to include <code>else</code> if it is not needed.  Or, you could put an empty block in your code: <code>else { }</code>.</p>
+
+The statements that belong to <code>main()</code> and to <code>if () then else </code> are indented and preceded by four spaces, so that they appear to be inside, to belong to, <code>main()</code>.  The use of <em>indentation</em> in computer code is a simple thing that helps both you and any reader of your code to follow its logic. Later on we discuss other aspects of programming that do not affect what it does but does affect how humans can understand the code. My personal style of indentation is not the only way.  Some people may place <code>{</code> on the line after <code>main()</code> so that it is isolated and treated symmetrically with its partner <code>}</code>.   </p>
+
+Those stylistic differences can be distracting but are less important than, say, following conventions of punctuation in English.  That's because in computer programming the syntax either reflects the programmer's intention <u>or not </u> regardless of the style of the coding. The reader of the source code can see the exact intention of the code whether if follows their preferred style or not (as long as the reader understands the computer languages rules of syntax and definition of things like <code>if () &hellip; else &hellip; </code>).  But in English punctuation and other conventions are followed in the hope of transmitting the meaning as accurately to the reader.  Unexpected notation could possibly change the meaning in the reader's mind.
+
+You might be surprised, or perhaps not, that computer scientists have been known to actually argue about <a href="http:://en.wikipedia.org/wiki/Indent_style">indent style</a>.</p>
+The program <code>If6was9reprise.ox</code> can do much more than <code>hello world.ox</code> and in fewer lines.  It uses  an <em>iterative</em> statement  (<code>do { } while()</code>) to repeat a statement (or block of statements) more than once, which eliminates the need to have almost duplicate lines.  And it uses the conditional statement <code> A ? B : C</code> to check a condition (A) and return different values (B and C) depending on whether the condition is true or false.</p>
+
+If the Ox code looks familiar it might be because you have already done some programming in C or other C-like languages.  This similarity was by design, but in many ways the similarities are only skin deep.  Ox is very different from C in how does things even when the programs look nearly identical and produce the same output.  More on that will be discussed later.
+
+
+</OL>
+</OL>
+<h1><a name="s004"><LI>Top Section<br/>Subtitle, no text file to insert</LI></a></h1>
+</OL>
+<footer><table width="100%"><tr><td width="20px"><a href="s.html">&larr;</a></td><td style="text-align:center">&copy; %author% %year%.  %affiliation%.</td><td width="20px"><a href="s.html">&rarr;</a></td></tr></table></footer></body></html>

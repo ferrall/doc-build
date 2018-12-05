@@ -1,0 +1,1472 @@
+22 Patch Control
+
+0
+0
+1
+doc-build.ox
+487
+12
+5
+
+doc-build.ox
+Ox
+1049586 4 345 64 345 65 52 52 1310 312 0 0 927 308 -1 -1 0 0 25 0 0 25 1 0 65 345  0 0 0
+build.ox
+Ox
+1049586 0 10 1 7 32 130 130 1366 450 0 0 465 196 -1 -1 0 0 20 0 0 20 1 0 32 7  0 0 0
+build-test.ox
+Ox
+1049586 0 3 49 0 5 0 0 1236 320 0 0 87 0 -1 -1 0 0 20 0 0 20 1 0 5 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\CodeExercisesToAdd\week3Wed.ox
+Ox
+1049586 0 0 1 0 1 78 78 1336 338 0 0 31 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\LinearAlgebra.htm
+HTML
+17827835 0 -1 16246 -1 16819 130 130 1362 391 0 1 1027 264 -1 -1 0 0 2 -1 -1 2 1 0 16819 -1  0 -1 0
+:\Users\Chris\Desktop\QC\Fit.types.optobj
+DATA:UNIX
+273776882 0 0 1 0 1 156 156 1534 624 1 0 109 0 -1 -1 0 0 6 0 0 6 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\CodeExercisesToAdd\A06.ox
+Ox
+1049586 1 28 1 54 1 0 0 1258 260 0 0 31 280 -1 -1 0 0 19 0 0 19 1 0 1 54  0 0 0
+test\source\book.toc
+TeX:AUX
+1060850 0 6 25 6 28 26 26 1262 346 0 0 409 168 -1 -1 0 0 11 0 0 11 1 0 28 6  0 0 0
+doc-build.oxh
+Ox
+1049586 2 2 2 2 10 78 78 1336 338 0 0 157 56 -1 -1 0 0 19 0 0 19 1 0 10 2  0 0 0
+setup\book.toc
+ASCII
+5252986 2 0 6 0 11 26 26 1284 286 1 0 249 0 -1 -1 0 0 11 0 0 11 1 0 11 0  0 0 0
+Makefile
+TeX
+1060859 0 -1 0 -1 0 104 104 1362 364 0 1 53 0 -1 -1 0 0 23 -1 -1 23 1 0 0 -1  0 0 0
+oxdoc.xml
+DATA
+5243122 0 4 56 0 8 0 0 1258 260 1 0 207 0 -1 -1 0 0 8 0 0 8 1 0 8 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\schedule.html
+HTML
+286263282 1 1 1 16 10 78 78 1336 327 0 1 148 368 -1 -1 0 0 1 0 0 1 1 0 10 16  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Text\book.toc
+TeX:AUX
+269496306 0 0 1 0 1 26 26 1284 286 0 0 31 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\gather.htm
+HTML
+269486075 0 -1 1375 -1 3234 234 234 1612 703 0 1 752 198 -1 -1 0 0 8 -1 -1 8 1 0 3234 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part3\Marshall.htm
+HTML
+1050619 2 -1 2099 -1 2101 156 156 1534 613 0 1 917 220 -1 -1 0 0 2 -1 -1 2 1 0 2101 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part3\ExamplesRevisisted.htm
+HTML
+17827835 2 -1 623 -1 632 78 78 1336 327 0 1 741 132 -1 -1 0 0 9 -1 -1 9 1 0 632 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part3\Euler.htm
+HTML
+1050619 0 -1 3144 -1 49 182 182 1560 639 0 1 565 22 -1 -1 0 0 0 -1 -1 0 1 0 49 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Simulation.htm
+HTML
+17827835 4 -1 4167 -1 4168 130 130 1362 391 0 1 180 88 -1 -1 0 0 0 -1 -1 0 1 0 4168 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\SimApps.htm
+HTML
+17827835 0 -1 1582 -1 1320 52 52 1310 282 0 1 92 154 -1 -1 0 0 0 -1 -1 0 1 0 1320 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization3.htm
+HTML
+1050619 0 -1 3053 -1 3079 104 104 1336 365 0 1 1225 242 -1 -1 0 0 343 -1 -1 343 1 0 3079 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization2a.htm
+HTML
+17827835 2 -1 6582 -1 6593 78 78 1336 308 0 1 565 198 -1 -1 0 0 24 -1 -1 24 1 0 6593 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization2.htm
+HTML
+1050619 0 -1 1422 -1 1434 78 78 1310 339 0 1 895 66 -1 -1 0 0 2 -1 -1 2 1 0 1434 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization1.htm
+HTML
+1050619 0 -1 5021 -1 5024 52 52 1284 313 0 1 103 198 -1 -1 0 0 2 -1 -1 2 1 0 5024 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization0.htm
+HTML
+1050619 0 -1 77 -1 5926 52 52 1284 313 0 1 48 110 -1 -1 0 0 2 -1 -1 2 1 0 5926 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Non-Linear-Systems.htm
+HTML
+17827835 2 -1 13071 -1 13080 0 0 1232 261 0 1 169 220 -1 -1 0 0 8 -1 -1 8 1 0 13080 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\constrained.htm
+HTML
+1050619 0 -1 5003 -1 8735 104 104 1482 561 0 1 48 286 -1 -1 0 0 0 -1 -1 0 1 0 8735 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\calculus2.htm
+HTML
+1050619 0 -1 4929 -1 4976 104 104 1336 365 0 1 532 308 -1 -1 0 0 22 -1 -1 22 1 0 4976 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\calculus.htm
+HTML
+17827835 4 -1 13163 -1 13164 78 78 1310 339 0 1 895 330 -1 -1 0 0 2 -1 -1 2 1 0 13164 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\files.htm
+HTML
+17827835 0 -1 32 -1 45 104 104 1362 334 0 1 521 22 -1 -1 0 0 0 -1 -1 0 1 0 45 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\elements.htm
+HTML
+1050619 2 -1 16562 -1 16571 234 234 1612 703 0 1 191 198 -1 -1 0 0 1726 -1 -1 1726 1 0 16571 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\finalcode\visual.oxh
+Ox
+1049586 0 4 1 0 1 52 52 1310 301 0 0 31 0 -1 -1 0 0 16 0 0 16 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\finalcode\visual.ox
+Ox:UNIX
+1147890 0 9 1 0 1 0 0 1258 249 0 0 31 0 -1 -1 0 0 4 0 0 4 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\finalcode\main.ox
+Ox
+1049586 0 17 26 20 1 26 26 1284 256 0 0 31 308 -1 -1 0 0 17 0 0 17 1 0 1 20  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\css\pdfslides.css
+DATA
+5308658 0 254 1 269 1 182 182 1560 658 1 0 109 252 -1 -1 0 0 7 0 0 7 1 0 1 269  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\Week1Mon.html
+HTML
+17827835 0 -1 2008 -1 4099 78 78 1456 535 0 1 202 264 -1 -1 0 0 21 -1 -1 21 1 0 4099 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\midterm1.html
+HTML
+17827835 2 -1 5819 -1 5828 104 104 1362 315 0 1 147 264 -1 -1 0 0 21 -1 -1 21 1 0 5828 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\index.html
+HTML
+1050619 2 -1 212 -1 218 52 52 1430 528 0 1 114 110 -1 -1 0 0 15 -1 -1 15 1 0 218 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\contents-small.html
+HTML
+1050619 2 -1 210 -1 216 78 78 1336 346 0 1 180 88 -1 -1 0 0 23 -1 -1 23 1 0 216 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\contents-large.html
+HTML
+1050619 0 -1 0 -1 475 130 130 1508 606 0 1 136 176 -1 -1 0 0 15 -1 -1 15 1 0 475 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\title.html
+HTML
+1050619 0 -1 0 -1 736 52 52 1310 282 0 1 48 242 -1 -1 0 0 57 -1 -1 57 1 0 736 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book.toc
+ASCII
+5252986 0 45 44 8 1 26 26 828 421 1 0 109 168 -1 -1 0 0 1 0 0 1 1 0 1 8  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\takehomeA.html
+HTML
+17827835 2 -1 557 -1 559 104 104 1284 534 0 1 576 198 -1 -1 0 0 57 -1 -1 57 1 0 559 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\doc-build.oxh
+Ox
+269485042 2 13 26 13 31 0 0 1258 249 0 0 451 224 -1 -1 0 0 19 0 0 19 1 0 31 13  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\doc-build.ox
+Ox
+269485042 0 166 173 0 1 0 0 1378 619 0 0 31 0 -1 -1 0 0 25 0 0 25 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\express.htm
+HTML
+269486075 0 -1 7221 -1 11412 0 0 1378 469 0 1 796 352 -1 -1 0 0 0 -1 -1 0 1 0 11412 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Style.htm
+HTML
+286263291 2 -1 24815 -1 24817 104 104 1362 353 0 1 807 88 -1 -1 0 0 19 -1 -1 19 1 0 24817 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Puzzle.htm
+HTML
+269486075 0 -1 3688 -1 3736 104 104 1482 580 0 1 48 220 -1 -1 0 0 0 -1 -1 0 1 0 3736 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\ProgFAQ.htm
+HTML
+269486075 0 -1 5252 -1 5258 78 78 1456 554 0 1 158 198 -1 -1 0 0 0 -1 -1 0 1 0 5258 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\ProgCycle.htm
+HTML
+269486075 2 -1 9600 -1 9602 52 52 1430 528 0 1 334 198 -1 -1 0 0 1048 -1 -1 1048 1 0 9602 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Plans.htm
+HTML
+286263291 0 -1 10004 -1 0 26 26 1404 502 0 1 48 0 -1 -1 0 0 4427 -1 -1 4427 1 0 0 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\greatdivide.htm
+HTML
+269486075 0 -1 27234 -1 27233 26 26 1404 495 0 1 1203 330 -1 -1 0 0 716 -1 -1 716 1 0 27233 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Binding.htm
+HTML
+269486075 0 -1 24138 -1 2 208 208 1586 677 0 1 48 22 -1 -1 0 0 20 -1 -1 20 1 0 2 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Addresses.htm
+HTML
+269486075 0 -1 3162 -1 3462 182 182 1560 651 0 1 895 308 -1 -1 0 0 2 -1 -1 2 1 0 3462 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\AddItUp.htm
+HTML
+286263291 0 -1 20860 -1 21101 156 156 1534 625 0 1 92 352 -1 -1 0 0 1167 -1 -1 1167 1 0 21101 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\css\doc.css
+DATA
+273744114 0 50 5 0 1 182 182 1560 658 1 0 109 0 -1 -1 0 0 7 0 0 7 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\numlimits.ox
+Ox
+269485042 2 14 39 14 41 26 26 1284 275 0 0 591 308 -1 -1 0 0 19 0 0 19 1 0 41 14  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\OxFunctions.htm
+HTML
+286263291 0 -1 14038 -1 14895 156 156 1534 632 0 1 48 154 -1 -1 0 0 478 -1 -1 478 1 0 14895 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\morethings.htm
+HTML
+269486075 0 -1 26 -1 1197 208 208 1586 684 0 1 1588 330 -1 -1 0 0 24 -1 -1 24 1 0 1197 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\CFMPI\MPI_FAQ
+TeX
+269496315 1 -1 0 -1 9134 182 182 1560 639 0 1 109 1008 -1 -1 0 0 34 -1 -1 34 1 0 9134 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\why.htm
+HTML
+269486075 2 -1 3416 -1 3419 104 104 1482 573 0 1 708 198 -1 -1 0 0 8 -1 -1 8 1 0 3419 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\plan.htm
+HTML
+286263291 0 -1 2239 -1 0 104 104 1362 353 0 1 48 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\nash.htm
+HTML
+286263291 0 -1 5295 -1 0 26 26 1284 275 0 1 48 0 -1 -1 0 0 67 -1 -1 67 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\Hello.htm
+HTML
+269486075 2 -1 640 -1 654 26 26 1404 495 0 1 983 198 -1 -1 0 0 8 -1 -1 8 1 0 654 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\examples.htm
+HTML
+286263291 0 -1 0 -1 783 208 208 1586 677 0 1 1060 132 -1 -1 0 0 219 -1 -1 219 1 0 783 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\edgeworth.htm
+HTML
+286263291 0 -1 11824 -1 11829 104 104 1362 353 0 1 103 286 -1 -1 0 0 0 -1 -1 0 1 0 11829 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\Matrices.htm
+HTML
+286263291 0 -1 17494 -1 18958 104 104 1482 723 0 1 48 905 -1 -1 0 0 21 -1 -1 21 1 0 18958 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\MachineHead.htm
+HTML
+286263291 2 -1 9104 -1 9106 182 182 1560 658 0 1 752 198 -1 -1 0 0 22 -1 -1 22 1 0 9106 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\hpc2.htm
+HTML
+286263291 0 -1 15263 -1 15275 0 0 1258 249 0 1 235 154 -1 -1 0 0 124 -1 -1 124 1 0 15275 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\hpc1.htm
+HTML
+269486075 1 -1 45 -1 33 26 26 1284 275 0 1 389 22 -1 -1 0 0 92 -1 -1 92 1 0 33 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\HardwareForDummies.htm
+HTML
+269486075 0 -1 12181 -1 12180 156 156 1534 632 0 1 1346 154 -1 -1 0 0 751 -1 -1 751 1 0 12180 -1  0 -1 0
+:\Users\Chris\Desktop\QC\Main.ox
+Ox:UNIX
+269583346 0 4 30 4 29 104 104 1482 573 0 0 423 112 -1 -1 0 0 13 0 0 13 1 0 29 4  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part3\Tobin.htm
+HTML
+269486075 0 -1 32 -1 45 130 130 1508 587 0 1 521 22 -1 -1 0 0 94 -1 -1 94 1 0 45 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\FiveO\Objective.ox
+Ox
+269485042 2 81 13 81 15 52 52 1310 301 0 0 227 140 -1 -1 0 0 23 0 0 23 1 0 15 81  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\AllTestOpt.ox
+Ox
+269485042 1 24 1 35 1 52 52 1310 301 0 0 31 280 -1 -1 0 0 24 0 0 24 1 0 1 35  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\AllTestOpt.h
+Ox
+269485042 1 20 1 25 1 78 78 1336 308 0 0 31 280 -1 -1 0 0 42 0 0 42 1 0 1 25  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\FiveO\Algorithms.ox
+Ox
+269485042 2 0 10 0 14 78 78 1336 327 0 0 213 0 -1 -1 0 0 24 0 0 24 1 0 14 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\Algorithms.h
+Ox
+269485042 2 189 24 189 26 104 104 1362 353 0 0 381 140 -1 -1 0 0 17 0 0 17 1 0 26 189  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\book.html
+HTML
+269486075 0 -1 108569 -1 108569 26 26 1284 275 0 1 48 220 -1 -1 0 0 21 -1 -1 21 1 0 108569 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part2\Optimization.htm
+HTML
+269486075 0 -1 7014 -1 6919 26 26 1258 287 0 1 48 110 -1 -1 0 0 8 -1 -1 8 1 0 6919 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\basics\normdist.tex
+TeX
+269496315 2 -1 28 -1 34 52 52 1310 282 0 1 403 28 -1 -1 0 0 7 -1 -1 7 1 0 34 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\NormalDistribution.html
+HTML
+269486075 2 -1 732 -1 740 78 78 1336 289 0 1 367 66 -1 -1 0 0 57 -1 -1 57 1 0 740 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Text\source\what\NormalDistribution.htm
+HTML
+269486075 2 -1 3464 -1 3468 0 0 1258 211 0 1 147 154 -1 -1 0 0 0 -1 -1 0 1 0 3468 -1  0 -1 0
+:\Users\Chris\Desktop\QC\QC.ox
+Ox:UNIX
+269583346 0 216 29 36 1 0 0 1378 469 0 0 31 0 -1 -1 0 0 16 0 0 16 1 0 1 36  0 0 0
+:\Users\Chris\Desktop\QC\QCVariables.ox
+Ox:UNIX
+269583346 0 78 1 91 3 182 182 1560 651 0 0 101 252 -1 -1 0 0 27 0 0 27 1 0 3 91  0 0 0
+:\Users\Chris\Desktop\QC\QCShared.oxh
+Ox:UNIX
+269583346 0 54 78 54 91 208 208 1586 677 0 0 983 217 -1 -1 0 0 17 0 0 17 1 0 91 54  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\midVersionA.html
+HTML
+269486075 0 -1 2803 -1 938 78 78 1336 308 0 1 290 264 -1 -1 0 0 57 -1 -1 57 1 0 938 -1  0 -1 0
+:\Users\Chris\Desktop\QC\logs\Data--25-09-2016-20-54-04.log
+DATA
+273678578 2 226 1 226 9 26 26 1284 237 1 0 221 140 -1 -1 0 0 -1 -1 -1 -1 1 0 9 226  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\parpgm-mpi-client-server.tex
+TeX
+269496315 0 -1 0 -1 11 75 75 1041 484 0 1 207 0 -1 -1 0 0 75 -1 -1 75 1 0 11 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\parpgm-arch.tex
+TeX
+269496315 0 -1 0 -1 0 25 25 991 434 0 1 53 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\parpgm-mpi-peers.tex
+TeX
+269496315 2 -1 0 -1 11 100 100 1066 509 0 1 207 0 -1 -1 0 0 11 -1 -1 11 1 0 11 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\parpgm.tex
+TeX
+269496315 2 -1 0 -1 11 125 125 1091 534 0 1 207 0 -1 -1 0 0 11 -1 -1 11 1 0 11 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\parpgm-depend.tex
+TeX
+269496315 1 -1 13 -1 1390 50 50 1016 459 0 1 333 756 -1 -1 0 0 11 -1 -1 11 1 0 1390 -1  0 0 0
+:\Users\Chris\Downloads\ferrallc123@gmail.com.ical\ferrallc@queensu.ca_ferrallc123@gmail.com.ics
+Binary
+269615330 0 0 1 14844 1 52 52 1760 509 1 0 73 646 -1 -1 0 0 65 0 0 65 1 0 1 14844  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\Projects\Anuj\finalcode\timingv1p1.ox
+Ox
+269485042 0 0 1 138 1 26 26 1284 275 0 0 31 280 -1 -1 0 0 19 0 0 19 1 0 1 138  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\takehomeB.html
+HTML
+286263291 0 -1 2042 -1 5904 130 130 1310 560 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 5904 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\new20.ox
+Ox
+269485042 0 3 23 3 25 104 104 1362 334 0 0 367 84 -1 -1 0 0 19 0 0 19 1 0 25 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\HTMLversion\Euler.html
+HTML
+269486075 0 -1 742 -1 614 104 104 1482 561 0 1 48 22 -1 -1 0 0 57 -1 -1 57 1 0 614 -1  0 -1 0
+:\Users\Chris\Downloads\Sample Text File.txt
+ASCII
+273688442 0 0 1 0 1 0 0 1258 230 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\ox\OxEdit.tool
+DATA
+273678578 0 0 1 0 1 208 208 1916 665 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\fgrad-eps.ox
+Ox
+269485042 0 0 1 0 1 78 78 1336 327 0 0 31 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\scanM.ox
+Ox
+269485042 1 0 1 7 1 78 78 1336 327 0 0 31 196 -1 -1 0 0 19 0 0 19 1 0 1 7  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\fpr-lims.ox
+Ox
+269485042 0 2 7 4 2 0 0 1258 249 0 0 45 112 -1 -1 0 0 19 0 0 19 1 0 2 4  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\plans.txt
+HTML
+286263295 4 -1 29 -1 28 78 78 1336 327 0 1 356 0 -1 -1 0 0 34 -1 -1 34 1 0 28 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\css\main.css
+DATA
+273678578 0 156 4 157 11 208 208 1586 684 1 0 249 196 -1 -1 0 0 1 0 0 1 1 0 11 157  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\finalcode\plottrajectories.ox
+Ox:UNIX
+269583346 0 0 1 12 1 104 104 1362 353 0 0 31 112 -1 -1 0 0 -1 -1 -1 -1 1 0 1 12  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\fpr-limits.ox
+Ox
+269485042 0 0 1 7 1 0 0 1258 249 0 0 31 196 -1 -1 0 0 -1 -1 -1 -1 1 0 1 7  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\opt-amoeba2.tex
+TeX
+269496315 0 -1 0 -1 409 52 52 1310 301 0 1 53 196 -1 -1 0 0 -1 -1 -1 -1 1 0 409 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\opt-amoeba.tex
+TeX
+269496315 0 -1 0 -1 0 26 26 1284 275 0 1 53 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\part1\moreexpress.htm
+HTML
+286263291 0 -1 25 -1 6389 130 130 1508 606 0 1 48 330 -1 -1 0 0 4569 -1 -1 4569 1 0 6389 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\probability.html
+HTML
+269486075 0 -1 787 -1 18889 104 104 1362 353 0 1 48 286 -1 -1 0 0 -1 -1 -1 -1 1 0 18889 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\code\scan.ox
+Ox
+269485042 0 0 1 4 1 78 78 1336 327 0 0 31 112 -1 -1 0 0 19 0 0 19 1 0 1 4  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\title.html
+HTML
+269486075 2 -1 173 -1 177 78 78 1456 554 0 1 928 44 -1 -1 0 0 -1 -1 -1 -1 1 0 177 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\contents.html
+HTML
+269486075 0 -1 424 -1 355 78 78 1336 346 0 1 323 132 -1 -1 0 0 23 -1 -1 23 1 0 355 -1  0 -1 0
+:\Users\Chris\Desktop\QC\QCFit.weighted.optobj
+DATA
+273678578 0 26 1 35 1 78 78 1362 269 1 0 109 896 -1 -1 0 0 8 0 0 8 1 0 1 35  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\CFoxdoc\OxDoc.ox
+Ox
+269485042 0 5 9 0 1 104 104 1362 353 0 0 31 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\oxdoc\src\entities\OxClass.java
+DATA
+273678578 1 56 1 58 1 0 0 1258 249 1 0 109 168 -1 -1 0 0 -1 -1 -1 -1 1 0 1 58  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\CFoxdoc\OxDoc.oxh
+Ox
+269485042 0 6 39 8 1 78 78 1336 327 0 0 31 224 -1 -1 0 0 -1 -1 -1 -1 1 0 1 8  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\oxdoc\src\OxDoc.java
+DATA
+273678578 0 0 1 0 1 78 78 1336 327 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\print.css
+DATA
+273678578 0 0 1 0 1 26 26 1284 275 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\css\paper.css
+DATA
+273678578 0 0 1 0 1 78 78 1336 327 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book\css\print\paper.css
+DATA
+273678578 0 0 1 9 1 78 78 1336 327 1 0 109 252 -1 -1 0 0 -1 -1 -1 -1 1 0 1 9  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\oxdoc.css
+DATA
+273744114 0 57 54 57 62 0 0 1378 615 1 0 963 168 -1 -1 0 0 7 0 0 7 1 0 62 57  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\ColorEffects.ini
+DATA:INI:EDT
+269485050 0 17 31 0 1 52 52 987 301 1 1 89 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\Switches.ini
+DATA:INI:EDT
+269485050 0 0 1 142 36 104 104 1039 353 1 1 369 0 -1 -1 0 0 -1 -1 -1 -1 1 0 36 142  0 -1 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\FilterSets.ini
+DATA:INI:EDT
+269485050 0 628 17 628 18 26 26 961 275 1 1 225 204 -1 -1 0 0 -1 -1 -1 -1 1 0 18 628  0 -1 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\Keywords.ini
+DATA:INI:EDT
+269485050 0 1987 11 2064 10 0 0 935 249 1 1 161 102 -1 -1 0 0 -1 -1 -1 -1 1 0 10 2064  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\header.html
+HTML
+17827834 2 0 462 0 465 52 52 1430 671 0 1 1335 0 -1 -1 0 0 -1 -1 -1 -1 1 0 465 0  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\xx.html
+HTML
+17827835 0 -1 0 -1 73 78 78 1258 489 0 1 48 44 -1 -1 0 0 -1 -1 -1 -1 1 0 73 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\toc.html
+Ox
+1049586 0 7 14 5 13 130 130 1508 606 0 0 199 84 -1 -1 0 0 -1 -1 -1 -1 1 0 13 5  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S4a.ox
+Ox
+1049586 0 17 1 0 1 52 52 1310 320 0 0 31 0 -1 -1 0 0 1 2 2 1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\SUMMARY.hold
+DATA
+5243122 0 2 1 0 39 26 26 828 421 1 0 641 0 -1 -1 0 0 10 99 99 10 1 0 39 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\README.md
+HTML
+17827835 0 15 5 -1 0 130 130 1508 768 0 1 48 0 -1 -1 0 0 194 -1 -1 194 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S3a.ox
+Ox
+1049586 0 1 6 0 1 26 26 1284 294 0 0 31 0 -1 -1 0 0 1 3 3 1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\TommysChoice.ox
+Ox
+1049586 0 34 1 0 1 104 104 1362 372 0 0 31 0 -1 -1 0 0 14 0 0 14 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\TommyChoice1.ox
+Ox
+1049586 0 43 20 0 1 78 78 1336 346 0 0 31 0 -1 -1 0 0 14 0 0 14 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S6a.ox
+Ox
+1049586 0 11 1 33 1 52 52 1310 320 0 0 31 112 -1 -1 0 0 1 4 4 1 1 0 1 33  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S5a.ox
+Ox
+1049586 1 33 1 39 1 52 52 1310 320 0 0 31 252 -1 -1 0 0 1 5 5 1 1 0 1 39  0 0 0
+:\Users\Chris\Desktop\Dope\Dope.h
+Ox:UNIX
+1147890 0 16 1 19 1 78 78 880 473 0 0 31 532 -1 -1 0 0 17 0 0 17 1 0 1 19  0 0 0
+:\Users\Chris\Desktop\QC\QCParams.ox
+Ox:UNIX
+1147890 0 8 38 0 1 182 182 1554 651 0 0 31 0 -1 -1 0 0 24 0 0 24 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S2a.ox
+Ox
+1049586 0 1 6 0 1 0 0 1258 268 0 0 31 0 -1 -1 0 0 1 1 1 1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S1a.ox
+Ox
+1049586 0 0 1 25 1 104 104 1362 372 0 0 31 280 -1 -1 0 0 17 0 0 17 1 0 1 25  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S0.ox
+Ox
+1049586 1 22 1 26 1 52 52 1310 301 0 0 31 560 -1 -1 0 0 14 0 0 14 1 0 1 26  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\source\preface\README.md
+HTML
+269486075 0 -1 0 -1 0 104 104 1362 372 0 1 48 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\SUMMARY.md
+HTML
+286263291 0 -1 1321 -1 9 26 26 828 421 0 1 147 0 -1 -1 0 0 9 -1 -1 9 1 0 9 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\build.ox
+Ox
+269485042 0 0 1 0 1 0 0 1630 619 0 0 31 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\Dope\Dope.ox
+Ox
+269485042 0 25 1 0 1 104 104 906 499 0 0 31 0 -1 -1 0 0 18 0 0 18 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\archX.html
+HTML:UNIX
+269584379 0 -1 716 -1 1331 182 182 1362 612 0 1 114 352 -1 -1 0 0 109 -1 -1 109 1 0 1331 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\book.json
+ASCII
+273688434 0 1 26 0 1 0 0 802 395 1 0 109 0 -1 -1 0 0 2 0 0 2 1 0 1 0  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\Modes.ini
+DATA:INI:EDT
+269485050 0 22 66 22 70 156 156 1013 567 1 1 641 374 -1 -1 0 0 83 0 0 83 1 0 70 22  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\TommysChoice1.ox
+Ox
+1049586 1 32 32 32 17 78 78 1336 346 0 0 255 140 -1 -1 0 0 14 0 0 14 1 0 17 32  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\.bookignore
+DATA
+273678578 0 0 1 6 7 156 156 958 551 1 0 193 168 -1 -1 0 0 -1 -1 -1 -1 1 0 7 6  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\preface\WhyMeWhyThis.html
+HTML
+269486075 1 -1 745 -1 13792 182 182 984 577 0 1 48 418 -1 -1 0 0 -1 -1 -1 -1 1 0 13792 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\C4E\.gitignore
+DATA
+273678578 0 0 1 0 1 156 156 958 551 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\archive.html
+HTML:UNIX
+269584379 0 -1 283 -1 283 182 182 1362 612 0 1 48 154 -1 -1 0 0 -1 -1 -1 -1 1 0 283 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\.gitignore
+DATA
+273678578 0 0 1 1 1 156 156 1336 586 1 0 109 28 -1 -1 0 0 -1 -1 -1 -1 1 0 1 1  0 0 0
+:\Users\Chris\Desktop\QC\README.md
+DATA
+273678578 0 0 1 0 1 104 104 1284 534 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Windows\System32\drivers\etc\hosts
+TeX
+269496315 0 -1 0 -1 0 26 26 1206 456 0 1 53 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Desktop\spain.txt
+ASCII
+273688446 0 30 21 0 1 0 0 802 395 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\index.html
+HTML
+286263291 0 -1 65803 -1 65799 78 78 1336 346 0 1 488 44 -1 -1 0 0 15 -1 -1 15 1 0 65799 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\print\pdf.css
+DATA
+273678578 0 4 41 4 51 52 52 1284 313 1 0 809 112 -1 -1 0 0 -1 -1 -1 -1 1 0 51 4  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\oxdoc-lite.css
+DATA
+273744114 0 14 16 252 1 52 52 1284 313 1 0 109 336 -1 -1 0 0 1 0 0 1 1 0 1 252  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\theme\serif.css
+DATA
+273678578 0 92 3 287 1 52 52 1232 444 1 0 109 336 -1 -1 0 0 4 0 0 4 1 0 1 287  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S5.txt
+ASCII
+273688443 0 128 1 143 1 0 0 1232 261 1 0 109 280 -1 -1 0 0 -1 -1 -1 -1 1 0 1 143  0 0 0
+:\Users\Chris\Documents\OFFICE\DATA\SSP\ssptext\Binder2.pdf
+DATA
+273744114 0 0 1 0 1 26 26 1258 287 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Shared\Shared.ox
+Ox
+269485042 0 31 9 0 1 78 78 1336 346 0 0 31 0 -1 -1 0 0 20 0 0 20 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Data.ox
+Ox
+269485042 4 1418 26 1418 27 104 104 1362 372 0 0 395 196 -1 -1 0 0 18 0 0 18 1 0 27 1418  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\DP.ox
+Ox
+269485042 2 384 39 384 42 26 26 1284 294 0 0 605 168 -1 -1 0 0 -1 -1 -1 -1 1 0 42 384  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Hybrids\DPSystems.ox
+Ox
+269485042 0 134 34 0 1 0 0 1258 268 0 0 31 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\StateVariable.ox
+Ox
+269485042 0 84 16 86 3 52 52 1306 328 0 0 101 224 -1 -1 0 0 27 0 0 27 1 0 3 86  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Methods.ox
+Ox
+269485042 0 82 8 132 1 104 104 1362 372 0 0 31 308 -1 -1 0 0 -1 -1 -1 -1 1 0 1 132  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\main.ox
+Ox
+269485042 2 21 27 21 34 78 78 1336 327 0 0 731 196 -1 -1 0 0 -1 -1 -1 -1 1 0 34 21  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\AllTest.ox
+Ox
+269485042 0 204 15 11 1 52 52 1310 320 0 0 31 308 -1 -1 0 0 -1 -1 -1 -1 1 0 1 11  0 0 0
+:\Users\Chris\Desktop\QC\QCParams.oxh
+Ox:UNIX
+269583346 0 12 71 7 1 208 208 1586 677 0 0 31 196 -1 -1 0 0 22 0 0 22 1 0 1 7  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\DDPShared.ox
+Ox
+269485042 2 34 15 34 22 0 0 1258 249 0 0 325 168 -1 -1 0 0 -1 -1 -1 -1 1 0 22 34  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\DDP.oxdoc
+HTML
+269486075 2 -1 344 -1 346 666 13 1878 793 0 1 202 154 -1 -1 0 0 78 -1 -1 78 1 0 346 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Clock.ox
+Ox
+269485042 0 47 1 47 1 26 26 1284 275 0 0 31 140 -1 -1 0 0 -1 -1 -1 -1 1 0 1 47  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\Shared.h
+Ox
+269485042 2 37 9 37 15 104 104 1362 372 0 0 227 168 -1 -1 0 0 101 0 0 101 1 0 15 37  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Bellman.ox
+Ox
+269485042 2 953 63 953 78 52 52 1310 320 0 0 1109 308 -1 -1 0 0 21 0 0 21 1 0 78 953  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\Methods.h
+Ox
+269485042 0 114 4 114 12 26 26 1284 275 0 0 185 168 -1 -1 0 0 -1 -1 -1 -1 1 0 12 114  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\DPSystems.h
+Ox
+269485042 2 63 119 63 125 78 78 1336 346 0 0 1190 168 -1 -1 0 0 -1 -1 -1 -1 1 0 125 63  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\WstarTestb.ox
+Ox
+269485042 1 4 64 4 30 104 104 1362 372 0 0 437 112 -1 -1 0 0 -1 -1 -1 -1 1 0 30 4  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\Tommy1trimmed.txt
+ASCII
+273688443 0 9 1 0 19 0 0 1258 268 1 0 361 0 -1 -1 0 0 -1 -1 -1 -1 1 0 19 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S1.txt
+ASCII
+273688443 1 63 1 69 1 26 26 1284 294 1 0 109 327 -1 -1 0 0 1 0 0 1 1 0 1 69  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\Tommy0trimmed.txt
+ASCII
+273688443 0 27 1 391 1 26 26 1284 294 1 0 109 328 -1 -1 0 0 1 5 5 1 1 0 1 391  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S2trimmed.txt
+ASCII
+273688443 1 0 1 9 1 52 52 1310 301 1 0 109 252 -1 -1 0 0 -1 -1 -1 -1 1 0 1 9  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S4.txt
+ASCII
+273688443 0 9 1 15 1 104 104 1362 353 1 0 109 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 15  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S3.txt
+ASCII
+273688443 1 63 1 69 1 78 78 1336 327 1 0 109 308 -1 -1 0 0 -1 -1 -1 -1 1 0 1 69  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\index.html
+HTML
+269486075 0 -1 841 -1 709 78 78 1336 350 0 1 48 176 -1 -1 0 0 2474 -1 -1 2474 1 0 709 -1  0 -1 0
+:\Users\Chris\Desktop\QC\QC.h
+Ox:UNIX
+269583346 0 0 1 0 1 156 156 1534 625 0 0 31 0 -1 -1 0 0 17 0 0 17 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\Bellman.h
+Ox
+269485042 0 234 8 249 24 52 52 1310 320 0 0 395 224 -1 -1 0 0 -1 -1 -1 -1 1 0 24 249  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\Data.h
+Ox
+269485042 2 238 5 238 18 0 0 1258 268 0 0 269 224 -1 -1 0 0 19 0 0 19 1 0 18 238  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\DP.h
+Ox
+269485042 0 256 55 256 63 26 26 1284 294 0 0 899 168 -1 -1 0 0 20 0 0 20 1 0 63 256  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\include\CGI.oxh
+Ox
+269485042 0 9 23 0 9 52 52 1284 313 0 0 143 0 -1 -1 0 0 19 0 0 19 1 0 9 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\reveal.css
+DATA:UNIX
+273776882 2 11 112 11 115 78 78 1310 339 1 0 1313 112 -1 -1 0 0 4 0 0 4 1 0 115 11  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Shared\CGI.ox
+Ox
+269485042 0 28 12 0 6 26 26 1258 287 0 0 101 0 -1 -1 0 0 19 0 0 19 1 0 6 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Shared\oxcgi.ox
+Ox
+269485042 0 5 19 5 21 104 104 1482 573 0 0 311 140 -1 -1 0 0 14 0 0 14 1 0 21 5  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Shared\oxcgi.html
+HTML
+286263291 0 -1 16 -1 171 130 130 1362 391 0 1 48 176 -1 -1 0 0 6 -1 -1 6 1 0 171 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Shared\urlcode.ox
+Ox
+269485042 0 34 1 0 1 0 0 1232 261 0 0 31 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\theme\default.css
+DATA
+273678578 2 137 23 137 28 26 26 1206 418 1 0 487 252 -1 -1 0 0 -1 -1 -1 -1 1 0 28 137  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\S2.txt
+ASCII
+273688443 0 4 1 4 1 52 52 1310 301 1 0 109 112 -1 -1 0 0 -1 -1 -1 -1 1 0 1 4  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S5.ox
+Ox
+269485042 0 57 28 1 1 52 52 1310 320 0 0 31 28 -1 -1 0 0 17 0 0 17 1 0 1 1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S4.ox
+Ox
+269485042 0 27 1 32 1 52 52 1310 320 0 0 31 224 -1 -1 0 0 1 0 0 1 1 0 1 32  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S3.ox
+Ox
+269485042 0 22 13 22 8 26 26 1284 294 0 0 129 252 -1 -1 0 0 17 0 0 17 1 0 8 22  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S2.ox
+Ox
+269485042 0 0 1 24 31 0 0 1258 268 0 0 451 56 -1 -1 0 0 17 0 0 17 1 0 31 24  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\S1.ox
+Ox
+269485042 0 10 31 1 10 104 104 1362 372 0 0 157 28 -1 -1 0 0 17 0 0 17 1 0 10 1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\theme\README.md
+DATA:UNIX
+273776883 0 0 1 5 1 0 0 1180 392 1 0 109 140 -1 -1 0 0 -1 -1 -1 -1 1 0 1 5  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Variables.oxdoc
+HTML
+269486075 0 -1 22071 -1 25520 78 78 1332 354 0 1 48 66 -1 -1 0 0 103 -1 -1 103 1 0 25520 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\Tommy1.txt
+ASCII
+273688443 0 4 1 12 1 0 0 1258 268 1 0 103 264 -1 -1 0 0 -1 -1 -1 -1 1 0 1 12  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\.gitignore
+DATA
+273678578 0 0 1 21 10 26 26 1258 287 1 0 220 336 -1 -1 0 0 10 0 0 10 1 0 10 21  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\output\Tommy0.txt
+ASCII
+273688443 0 71 1 1 1 26 26 1284 294 1 0 103 24 -1 -1 0 0 1 0 0 1 1 0 1 1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\snakeoil.html
+HTML
+269486075 0 -1 1386 -1 1841 78 78 1336 346 0 1 48 242 -1 -1 0 0 -1 -1 -1 -1 1 0 1841 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\BobsChoiceD1.ox
+Ox
+269485042 0 0 1 0 1 104 104 1362 372 0 0 30 0 -1 -1 0 0 14 0 0 14 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\reveal.min.css
+DATA
+273678578 0 0 1 6 2 52 52 1284 313 1 0 116 144 -1 -1 0 0 21 0 0 21 1 0 2 6  0 0 0
+:\Users\Chris\Desktop\QC\logs\Data--10-05-2016-7-08-49.log
+DATA
+273678578 0 0 1 122 7 0 0 1232 261 1 0 181 312 -1 -1 0 0 44 0 0 44 1 0 7 122  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\doc.css
+DATA
+273744114 0 449 1 0 1 0 0 1258 268 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Hello.html
+HTML
+286263291 0 -1 825 -1 0 52 52 1310 324 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 0 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\css\myhl.css
+DATA:UNIX
+273776882 0 5 17 35 1 26 26 1258 287 1 0 103 336 -1 -1 0 0 -1 -1 -1 -1 1 0 1 35  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\plugin\highlight\highlight.js
+DATA:UNIX
+273776882 0 0 1 14 1 0 0 1232 261 1 0 103 264 -1 -1 0 0 -1 -1 -1 -1 1 0 1 14  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\plugin\highlight\ox.js
+DATA:UNIX
+273776882 0 5 1 5 1 130 130 1362 391 1 0 103 120 -1 -1 0 0 -1 -1 -1 -1 1 0 1 5  0 0 0
+:\Users\Chris\Desktop\QC\logs\Data--2-05-2016-12-41-52.log
+DATA
+273678578 0 0 1 0 1 130 130 1812 599 1 0 103 -7306 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\QC\logs\Data--2-05-2016-12-52-50.log
+DATA
+273678578 0 0 1 0 1 234 234 1916 703 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\slides\oxsyntax.html
+HTML
+269486075 0 -1 1531 -1 1683 78 78 1310 339 0 1 675 154 -1 -1 0 0 -1 -1 -1 -1 1 0 1683 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\plugin\highlight\cpp.js
+DATA:UNIX
+273776882 1 1 1 5 1 130 130 1362 391 1 0 103 120 -1 -1 0 0 3 0 0 3 1 0 1 5  0 0 0
+:\Program Files\OxMetrics7\ox\include\oxstd.oxh
+Ox
+269485042 0 327 1 0 1 104 104 1336 365 0 0 30 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\slides\css\oxdoc-lite.css
+DATA
+273744114 0 0 1 0 1 104 104 1336 365 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\text\lib\css\zenburn.css
+DATA:UNIX
+273776882 0 0 1 0 1 26 26 1258 287 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\ox-doc\oxsyntax.html
+HTML
+286263291 0 -1 5129 -1 33 78 78 1310 339 0 1 48 66 -1 -1 0 0 15 -1 -1 15 1 0 33 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\CforE.html
+HTML
+286263291 0 -1 27729 -1 0 50 50 1287 334 0 1 48 0 -1 -1 0 0 13095 -1 -1 13095 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\ox-doc\oxconst.html
+HTML
+269486075 0 -1 0 -1 300 130 130 1362 391 0 1 48 154 -1 -1 0 0 -1 -1 -1 -1 1 0 300 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\ox-doc\oxtutlan.html
+HTML
+269486075 0 -1 37908 -1 0 104 104 1336 365 0 1 48 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\doc\ox-doc\oxpackages.html
+HTML
+269486075 0 -1 0 -1 709 0 0 1232 261 0 1 48 0 -1 -1 0 0 -1 -1 -1 -1 1 0 709 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Style.html
+HTML
+17827835 0 12 19 -1 728 78 -34 1258 377 0 1 257 220 -1 -1 0 0 57 -1 -1 57 1 0 728 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\OxFunctions.html
+HTML
+1050619 0 -1 0 -1 0 26 26 1310 236 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 0 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Optimization3.html
+HTML
+1050619 2 -1 3782 -1 3785 156 156 1534 775 0 1 92 497 -1 -1 0 0 57 -1 -1 57 1 0 3785 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\print.css
+DATA:UNIX
+5341426 1 67 1 68 1 78 78 1258 508 1 0 103 240 -1 -1 0 0 1 0 0 1 1 0 1 68  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\doc.css
+HTML
+1116155 0 -1 146 -1 6 0 0 1258 272 1 0 157 0 -1 -1 0 0 7 26 26 7 1 0 6 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Optimization1.html
+HTML
+17827835 0 -1 4162 -1 2714 52 -60 1232 351 0 1 653 242 -1 -1 0 0 57 -1 -1 57 1 0 2714 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Simulation.html
+HTML
+1050619 1 -1 4016 -1 4144 260 260 1638 898 0 1 48 242 -1 -1 0 0 57 -1 -1 57 1 0 4144 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\ProgCycle.html
+HTML
+17827835 1 -1 11387 -1 11569 26 26 1310 243 0 1 48 242 -1 -1 0 0 57 -1 -1 57 1 0 11569 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Non-Linear-Systems.html
+HTML
+17827835 0 -1 10508 -1 7730 26 26 1206 437 0 1 48 242 -1 -1 0 0 57 -1 -1 57 1 0 7730 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\TheGreatDivide.html
+HTML
+17827835 0 -1 11570 -1 11663 52 -60 1336 157 0 1 510 242 -1 -1 0 0 29043 -1 -1 29043 1 0 11663 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Tobin.html
+HTML
+17827835 0 -1 781 -1 770 52 52 1310 324 0 1 48 198 -1 -1 0 0 941 -1 -1 941 1 0 770 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\ExpressYourself.html
+HTML
+17827835 0 -1 1552 -1 1667 104 104 1362 376 0 1 213 176 -1 -1 0 0 119 -1 -1 119 1 0 1667 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Addresses.html
+HTML
+17827835 0 -1 5400 -1 6323 0 0 1284 217 0 1 48 132 -1 -1 0 0 6323 -1 -1 6323 1 0 6323 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\AddItUp.html
+HTML
+17827839 0 720 37 365 102 0 0 1258 272 0 1 1071 242 -1 -1 0 0 21063 -1 -1 21063 1 0 102 365  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Euler.html
+HTML
+17827835 0 -1 2340 -1 2310 52 52 1310 324 0 1 147 242 -1 -1 0 0 731 -1 -1 731 1 0 2310 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Exercises.html
+HTML
+17827835 0 -1 4772 -1 0 52 52 1310 324 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 0 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\calculus.html
+HTML
+17827835 0 -1 12136 -1 14321 0 0 1258 253 0 1 48 66 -1 -1 0 0 5457 -1 -1 5457 1 0 14321 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Nash.html
+HTML
+286263291 0 -1 2839 -1 4094 52 52 1310 324 0 1 48 308 -1 -1 0 0 58 78 78 58 1 0 4094 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Marshall.html
+HTML
+286263291 0 -1 3676 -1 3676 52 52 1310 324 0 1 48 88 -1 -1 0 0 3963 -1 -1 3963 1 0 3676 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Edgeworth.html
+HTML
+286263291 0 -1 1777 -1 746 52 52 1310 324 0 1 48 88 -1 -1 0 0 2304 -1 -1 2304 1 0 746 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\HumDimChal\Leach2008\final_code.ox
+Ox
+269485042 0 754 1 646 1 78 78 1258 489 0 0 30 168 -1 -1 0 0 60 0 0 60 1 0 1 646  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Assignment Part 2\Eric Richert_208547_assignsubmission_file_empricalmicrosimulation.m
+DATA
+273678578 1 57 1 57 25 286 286 1916 924 1 0 415 312 -1 -1 0 0 -1 -1 -1 -1 1 0 25 57  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Assignment Part 2\Yang Mu_208544_assignsubmission_file_hw3.m
+DATA:UNIX
+273776882 1 66 1 68 1 0 0 1378 638 1 0 103 630 -1 -1 0 0 -1 -1 -1 -1 1 0 1 68  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Assignment Part 2\Tom Stringham_208542_assignsubmission_file_asst2-2.r
+DATA
+273678578 0 0 1 70 29 130 130 1310 541 1 0 467 192 -1 -1 0 0 -1 -1 -1 -1 1 0 29 70  0 0 0
+:\Users\Chris\Google Drive\Work\HumDimChal\QEDHD\humdim_initial_version.ox
+Ox
+269485042 0 0 1 0 1 156 156 1336 567 0 0 30 0 -1 -1 0 0 20 0 0 20 1 0 1 0  0 0 0
+:\Users\Chris\Downloads\Midterm Take Home - Attempt Details.csv
+DATA
+273678578 0 0 1 26 565 52 52 1682 690 1 0 1871 624 -1 -1 0 0 -1 -1 -1 -1 1 0 565 26  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\midterm.html
+HTML
+286263291 0 -1 2741 -1 3372 182 182 1362 593 1 1 936 308 -1 -1 0 0 4539 -1 -1 4539 1 0 3372 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Course Documents_files\print.css
+DATA:UNIX
+273776882 0 0 1 0 1 78 78 1258 508 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\doc.css
+HTML
+269551611 0 -1 7900 -1 7900 0 0 1258 272 1 0 102 396 -1 -1 0 0 6 -1 -1 6 1 0 7900 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\midterm.txt
+HTML
+286263291 0 -1 255 -1 260 182 182 1362 593 0 1 103 154 -1 -1 0 0 1200 -1 -1 1200 1 0 260 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\group-week7.html
+HTML
+286263291 0 -1 1445 -1 972 156 156 1090 551 0 1 48 264 -1 -1 0 0 -1 -1 -1 -1 1 0 972 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\ProgFAQ.html
+HTML
+286263291 2 -1 18963 -1 18966 52 -60 1310 212 0 1 488 528 -1 -1 0 0 21533 -1 -1 21533 1 0 18966 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Optimization2.html
+HTML
+269486075 0 84 62 -1 3766 130 130 1508 749 0 1 796 880 -1 -1 0 0 57 -1 -1 57 1 0 3766 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\HumDimChal\QEDHD\README-CF.txt
+ASCII
+273688443 0 18 41 0 1 182 182 1362 593 1 0 103 0 -1 -1 0 0 66 0 0 66 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\example.do
+DATA
+273678578 0 0 1 36 1 130 130 1310 541 1 0 103 864 -1 -1 0 0 1 0 0 1 1 0 1 36  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\hecksim.ado
+DATA
+273678578 0 0 1 0 1 104 104 1284 515 1 0 103 0 -1 -1 0 0 23 0 0 23 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\numerical-limits.ox
+Ox
+269485042 0 8 53 9 47 26 26 1284 260 0 0 628 216 -1 -1 0 0 97 0 0 97 1 0 47 9  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Puzzle.html
+HTML
+286263291 0 -1 3210 -1 3864 0 0 1258 272 0 1 48 154 -1 -1 0 0 9401 -1 -1 9401 1 0 3864 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\character.tex
+TeX
+269496315 0 -1 0 -1 569 26 26 1284 279 0 1 258 120 -1 -1 0 0 11 -1 -1 11 1 0 569 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Oz2016\syllabus.txt
+ASCII
+273688442 0 0 1 0 1 26 26 1284 279 1 0 103 0 -1 -1 0 0 55 0 0 55 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\PROF\VITAE\review.txt
+ASCII
+273688443 0 61 1 1 1 0 0 1180 411 1 0 103 24 -1 -1 0 0 1 0 0 1 1 0 1 1  0 0 0
+:\Users\Chris\Documents\OFFICE\DATA\NSG\shaq86.log
+DATA
+273678578 0 0 1 0 1 26 26 1656 645 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\training2015MERGED.tex
+TeX
+269496315 0 -1 55350 -1 55484 0 0 1180 411 0 1 583 168 -1 -1 0 0 19 -1 -1 19 1 0 55484 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\hw1.do
+DATA:UNIX
+273776882 0 0 1 0 1 156 156 1336 567 1 0 103 -1080 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\HumDimChal\QEDHD\include\humdim.ox
+Ox
+269485042 0 365 4 0 1 26 26 1206 437 0 0 30 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\HumDimChal\QEDHD\include\humdim.oxh
+Ox
+269485042 0 41 40 41 50 52 52 1232 463 0 0 667 432 -1 -1 0 0 -1 -1 -1 -1 1 0 50 41  0 0 0
+:\Users\Chris\Google Drive\Work\HumDimChal\QEDHD\main.ox
+Ox
+269485042 0 14 43 15 49 0 0 1180 411 0 0 654 360 -1 -1 0 0 -1 -1 -1 -1 1 0 49 15  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\inclass-quiz.txt
+ASCII
+5252986 0 28 3 0 1 52 52 1310 305 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\step2.do
+DATA
+5243122 0 7 1 0 1 0 -112 1630 507 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Eric\econ861a1q1r2.do
+DATA
+5243122 1 288 1 288 60 0 326 1916 764 1 0 870 216 -1 -1 0 0 -1 -1 -1 -1 1 0 60 288  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Margaux\A1_code.do
+DATA
+5243122 1 559 1 560 1 222 121 1852 740 1 0 103 240 -1 -1 0 0 -1 -1 -1 -1 1 0 1 560  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Aaron\Aaron Gladstone_167186_assignsubmission_file_Assignment 1 Do File.do
+DATA:UNIX
+5341426 0 620 1 531 22 104 -8 1734 611 1 0 376 264 -1 -1 0 0 -1 -1 -1 -1 1 0 22 531  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Tom\asst1.do
+DATA
+5243122 0 201 1 0 1 130 18 1760 637 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Daniel\FULL DO A1.do
+DATA
+5243122 1 2023 1 2024 1 182 70 1345 464 1 0 103 264 -1 -1 0 0 -1 -1 -1 -1 1 0 1 2024  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\ass1.txt
+ASCII
+5252986 0 53 74 53 57 0 -112 1916 326 1 0 831 168 -1 -1 0 0 -1 -1 -1 -1 1 0 57 53  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Farrisaa\assignment1.do
+DATA
+5243122 0 210 14 208 1 26 -86 1656 533 1 0 103 240 -1 -1 0 0 -1 -1 -1 -1 1 0 1 208  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Alex\Estimation A1.do
+DATA
+5243122 0 20 1 21 1 0 0 1378 438 1 0 103 168 -1 -1 0 0 -1 -1 -1 -1 1 0 1 21  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Yang\hw1.do
+DATA:UNIX
+5341426 0 168 1 168 1 156 156 1319 550 1 0 103 24 -1 -1 0 0 -1 -1 -1 -1 1 0 1 168  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Makefile
+TeX
+1060859 0 -1 0 -1 800 182 182 1812 801 0 1 427 576 -1 -1 0 0 -1 -1 -1 -1 1 0 800 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\Makefile.inc
+DATA
+5243122 1 13 11 13 55 208 208 1838 827 1 0 844 240 -1 -1 0 0 -1 -1 -1 -1 1 0 55 13  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\edgeworth2\doc.bat
+Application
+1049586 0 0 120 1 1 234 234 1864 853 0 0 30 24 -1 -1 0 0 -1 -1 -1 -1 1 0 1 1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\calculus2.html
+HTML
+1050619 0 -1 735 -1 4052 -15 101 1363 739 0 1 895 220 -1 -1 0 0 57 -1 -1 57 1 0 4052 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\LinearAlgebra.html
+HTML
+17827835 2 -1 1985 -1 1991 104 104 1362 376 0 1 224 176 -1 -1 0 0 7944 -1 -1 7944 1 0 1991 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\address2.tex
+TeX
+1060859 1 -1 229 -1 748 0 0 1258 253 0 1 50 168 -1 -1 0 0 7 -1 -1 7 1 0 748 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\characterB.tex
+TeX
+1060859 1 -1 13 -1 1260 52 52 1310 305 0 1 50 168 -1 -1 0 0 11 -1 -1 11 1 0 1260 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\arguments2.ox
+Ox
+1049586 0 0 1 3 14 78 78 1336 312 0 0 199 72 -1 -1 0 0 19 0 0 19 1 0 14 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\no-return.ox
+Ox
+1049586 0 8 6 0 1 104 104 1362 338 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Documents\To File\chetty.html
+HTML
+1050619 0 -1 6180 -1 0 104 104 1362 338 0 1 48 0 -1 -1 0 0 48 -1 -1 48 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\pat.mat
+ASCII
+5252987 0 0 23 0 1 -47 33 1331 671 1 0 103 0 -1 -1 0 0 70 0 0 70 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\jordan.mat
+ASCII
+5252987 0 0 26 0 1 -37 46 1341 684 1 0 103 0 -1 -1 0 0 73 0 0 73 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Binding.html
+HTML
+17827835 4 -1 33955 -1 33956 78 78 1258 489 0 1 59 330 -1 -1 0 0 57 -1 -1 57 1 0 33956 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\edgeworth2\CheckPareto.ox
+Ox
+1049586 0 0 21 8 1 156 156 1786 775 0 0 30 -236 -1 -1 0 0 -1 -1 -1 -1 1 0 1 8  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\Yang\._hw1.do
+DATA
+5243122 0 0 1 0 1 78 78 1708 697 1 0 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\projects.txt
+ASCII
+273688443 1 2 1 36 1 78 78 1786 539 1 0 103 342 -1 -1 0 0 -1 -1 -1 -1 1 0 1 36  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\assign2.html
+HTML
+286263291 1 -1 0 -1 2550 0 0 1258 253 0 1 48 308 -1 -1 0 0 -1 -1 -1 -1 1 0 2550 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\DATA\Published\Lmas.zip
+DATA:UNIX
+273776882 0 0 1 0 1 26 26 1284 279 1 0 103 0 -1 -1 0 0 5 0 0 5 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\humdim.ppk
+DATA
+273678578 0 0 1 0 1 130 130 1838 591 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\CforEcannabilized.tex
+TeX
+269496315 0 -1 81 -1 4382 50 50 1287 334 0 1 50 168 -1 -1 0 0 29602 -1 -1 29602 1 0 4382 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\Simulation.html
+HTML
+269486075 0 -1 4540 -1 5040 260 260 1638 898 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 5040 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\HardwareForDummies.html
+HTML
+269486075 0 -1 23638 -1 23478 26 26 1284 298 0 1 48 418 -1 -1 0 0 23638 -1 -1 23638 1 0 23478 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\MachineHead.html
+HTML
+269486075 0 298 18 -1 18550 26 26 1284 298 0 1 752 418 -1 -1 0 0 18940 -1 -1 18940 1 0 18550 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\GatherYourTools.html
+HTML
+286263291 0 52 2 -1 1909 52 52 1310 324 0 1 48 154 -1 -1 0 0 4285 -1 -1 4285 1 0 1909 -1  0 -1 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\Exec\Ox\OxDoc.edt
+ASCII:EDT
+269494138 0 3 83 4 148 100 100 1128 396 1 0 1249 68 -1 -1 0 0 64 0 0 64 1 0 148 4  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\edgeworth.ox
+Ox
+269485042 0 0 1 5 41 0 0 1254 223 0 0 550 120 -1 -1 0 0 -1 -1 -1 -1 1 0 41 5  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ860\econ861a1q1r2.do
+DATA
+273678578 0 0 1 271 1 26 26 1404 487 1 0 103 30 -1 -1 0 0 -1 -1 -1 -1 1 0 1 271  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\numerical-limits.ox
+Ox
+269485042 0 3 1 0 57 26 26 1284 260 0 0 758 0 -1 -1 0 0 -1 -1 -1 -1 1 0 57 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\code\second.ox
+Ox
+269485042 0 0 1 0 1 26 26 1284 260 0 0 30 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\round-off.ox
+Ox
+269485042 0 0 1 0 1 0 0 1258 234 0 0 30 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\arguments2.ox
+Ox
+269485042 0 3 10 3 11 78 78 1336 312 0 0 160 72 -1 -1 0 0 -1 -1 -1 -1 1 0 11 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ354\key\arguments.ox
+Ox
+269485042 0 3 10 3 11 78 78 1336 312 0 0 160 72 -1 -1 0 0 -1 -1 -1 -1 1 0 11 3  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\no-return.ox
+Ox
+269485042 0 8 6 0 1 104 104 1362 338 0 0 30 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\arguments.ox
+Ox
+269485042 0 0 1 7 9 78 78 1336 312 0 0 134 168 -1 -1 0 0 -1 -1 -1 -1 1 0 9 7  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Addresses.tex
+TeX
+269496315 0 -1 0 -1 0 25 25 939 287 0 1 50 0 -1 -1 0 0 25 -1 -1 25 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\Optimization.html
+HTML
+286263291 0 -1 6160 -1 0 52 52 1232 463 0 1 48 0 -1 -1 0 0 57 -1 -1 57 1 0 0 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\pat.mat
+ASCII
+273688443 0 0 23 0 1 26 26 1656 664 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\code\jordan.mat
+ASCII
+273688443 0 0 26 0 1 52 52 1682 690 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\FinalProjectGradesByGroup.txt
+ASCII
+273688446 0 0 9 3 11 78 78 1336 331 1 0 285 72 -1 -1 0 0 9 0 0 9 1 0 11 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\Likelihood.html
+HTML
+269486075 2 -1 4296 -1 4305 26 26 1284 298 0 1 147 154 -1 -1 0 0 5064 -1 -1 5064 1 0 4305 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\PRELIMINARYFinalProjectGradesByGroup.txt
+ASCII
+273688447 0 0 13 0 14 52 52 1310 305 1 0 272 0 -1 -1 0 0 15 0 0 15 1 0 14 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\text\A Puzzle.html
+HTML
+269486075 0 -1 790 -1 4968 26 26 1284 298 0 1 125 88 -1 -1 0 0 38 -1 -1 38 1 0 4968 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\CforEMERGED.tex
+TeX
+269496315 0 -1 54359 -1 0 50 50 1287 334 0 1 50 0 -1 -1 0 0 52 -1 -1 52 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\WhyMeWhyThis.html
+HTML
+286263291 0 -1 1755 -1 1704 104 104 1362 376 0 1 642 44 -1 -1 0 0 57 -1 -1 57 1 0 1704 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\text\default.html
+HTML
+269486075 0 -1 0 -1 0 26 26 1336 206 0 1 48 0 -1 -1 0 0 38 -1 -1 38 1 0 0 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\text\Gather Your Tools.html
+HTML
+269486075 0 -1 0 -1 6719 104 104 1362 376 0 1 48 330 -1 -1 0 0 -1 -1 -1 -1 1 0 6719 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\index.html
+HTML
+269486075 0 -1 1046 -1 1928 104 104 1362 376 0 1 48 330 -1 -1 0 0 -1 -1 -1 -1 1 0 1928 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\HTMLversion\shell.html
+HTML
+286263291 0 -1 726 -1 825 104 104 1362 376 0 1 48 308 -1 -1 0 0 57 -1 -1 57 1 0 825 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\text\Why this Book, Why Me.html
+HTML
+269486075 0 -1 14593 -1 0 26 26 1284 298 0 1 48 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+:\Users\Chris\Google Drive\Work\TeXBook\preamble.tex
+TeX
+269496315 0 -1 273 -1 848 50 50 1269 309 0 1 50 336 -1 -1 0 0 78 -1 -1 78 1 0 848 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\DummyVariables.html
+HTML
+269486075 0 -1 797 -1 7 52 52 1310 324 0 1 125 0 -1 -1 0 0 -1 -1 -1 -1 1 0 7 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\Notes\doc.css
+DATA
+273744114 0 0 1 555 1 0 0 1258 272 1 0 103 312 -1 -1 0 0 -1 -1 -1 -1 1 0 1 555  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\oxdoc.log
+DATA:UNIX
+273776882 0 0 1 4 1 52 52 1336 225 1 0 103 96 -1 -1 0 0 -1 -1 -1 -1 1 0 1 4  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\oxdoc.xml
+DATA
+5243122 0 0 1 3 1 26 26 1310 199 1 0 103 72 -1 -1 0 0 -1 -1 -1 -1 1 0 1 3  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\A Puzzle
+TeX
+1060859 0 -1 0 -1 0 50 50 1287 346 0 1 50 0 -1 -1 0 0 58 -1 -1 58 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Book
+TeX
+1060859 0 -1 0 -1 0 150 150 1312 553 0 1 50 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Digital Mathematics
+TeX
+1060859 0 -1 3059 -1 0 50 50 1287 346 0 1 50 0 -1 -1 0 0 111 -1 -1 111 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Digitial Arithmetic
+TeX
+1060859 0 -1 0 -1 0 100 100 1337 396 0 1 50 0 -1 -1 0 0 15 -1 -1 15 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Fast, Flexibile, and Portable
+TeX
+1060859 0 -1 0 -1 0 125 125 1362 421 0 1 50 0 -1 -1 0 0 82 -1 -1 82 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Gather Your Tools
+TeX
+1060859 0 -1 0 -1 0 0 0 1237 296 0 1 50 0 -1 -1 0 0 63 -1 -1 63 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Good Programming Style
+TeX
+1060859 0 -1 0 -1 0 78 78 1362 251 0 1 50 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Makefile
+TeX
+1060859 0 -1 10 -1 0 125 125 1287 528 0 1 50 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Why this Book, Why Me
+TeX
+1060859 0 -1 0 -1 0 75 75 1312 371 0 1 50 0 -1 -1 0 0 84 -1 -1 84 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\What an Economist Should Know About Hardware
+TeX
+1060859 0 -1 0 -1 0 25 25 1262 321 0 1 50 0 -1 -1 0 0 18 -1 -1 18 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\The Programming Cycle
+TeX
+1060859 0 -1 2813 -1 42330 75 75 1312 371 0 1 141 216 -1 -1 0 0 85 -1 -1 85 1 0 42330 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\text.xml
+DATA:UNIX
+273776882 0 0 1 128 1 0 0 1284 173 1 0 103 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 128  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\c-loop.c
+DATA
+5243122 0 0 1 1 1 25 25 1312 240 1 0 103 24 -1 -1 0 0 19 0 0 19 1 0 1 1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\six.ox
+Ox
+1049586 0 0 1 0 1 125 125 1362 447 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\power.ox
+Ox
+1049586 0 0 1 0 1 100 100 1337 422 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\ox-loop2.ox
+Ox
+1049586 0 0 1 0 1 75 75 1312 397 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\ox-loop-1trip.ox
+Ox
+1049586 0 0 1 0 1 50 50 1287 372 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\ox-loop.ox
+Ox
+1049586 0 0 1 7 1 50 50 1337 265 0 0 30 168 -1 -1 0 0 19 0 0 19 1 0 1 7  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\nothing.ox
+Ox
+1049586 0 0 1 0 1 0 0 1237 322 0 0 30 0 -1 -1 0 0 11 0 0 11 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\If6was9reprise.ox
+Ox
+1049586 0 0 1 0 1 125 125 1362 447 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\If6was9.ox
+Ox
+1049586 0 0 1 0 1 100 100 1337 422 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\hello world.ox
+Ox
+1049586 0 0 1 0 1 75 75 1312 397 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\hello world no include.ox
+Ox
+1049586 0 0 1 0 1 50 50 1287 372 0 0 30 0 -1 -1 0 0 77 0 0 77 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\express.ox
+Ox
+1049586 0 0 1 0 1 25 25 1262 347 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\code\bang-head-wall.ox
+Ox
+1049586 0 0 1 0 1 0 0 1237 322 0 0 30 0 -1 -1 0 0 19 0 0 19 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\SecondLife\preamble15.tex
+TeX
+1060859 0 -1 238 -1 501 225 225 1568 734 0 1 258 216 -1 -1 0 0 26 -1 -1 26 1 0 501 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\SecondLife\fall2015MERGED.tex
+TeX
+1060859 0 -1 167586 -1 109045 75 75 1418 584 0 1 115 168 -1 -1 0 0 17 -1 -1 17 1 0 109045 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\stata.toc
+TeX:AUX
+1060850 0 4 44 11 1 52 52 1310 324 0 0 30 192 -1 -1 0 0 4 0 0 4 1 0 1 11  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\text\Makefile
+TeX
+1060859 0 -1 0 -1 0 150 150 1312 553 0 1 50 0 -1 -1 0 0 0 -1 -1 0 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\lab8.pkg
+DATA
+273678578 0 9 15 6 18 0 0 1258 272 1 0 324 144 -1 -1 0 0 4 0 0 4 1 0 18 6  0 0 0
+:\Users\Chris\Desktop\Econ452demo\headstart.txt
+ASCII
+273688443 0 34 47 0 1 26 26 1284 298 1 0 73 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Desktop\Econ452demo\headstart.do
+ASCII
+273688443 0 6 1 4 1 0 0 1258 272 1 0 73 68 -1 -1 0 0 -1 -1 -1 -1 1 0 1 4  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\HomerSimpson.pkg
+DATA
+273678578 0 0 1 14 1 52 52 1310 324 1 0 103 288 -1 -1 0 0 -1 -1 -1 -1 1 0 1 14  0 0 0
+:\Users\Chris\Desktop\Econ452demo\GROUPC.do
+DATA
+273678578 1 0 1 5 1 52 52 1310 324 1 0 103 120 -1 -1 0 0 16 0 0 16 1 0 1 5  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\lab7.pkg
+DATA
+273678578 0 9 1 3 2 0 0 1258 272 1 0 116 72 -1 -1 0 0 4 0 0 4 1 0 2 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\lab8-UScity.txt
+ASCII
+273688443 0 41 53 0 1 26 26 1284 298 1 0 73 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\lab8-UScity.log
+DATA
+273678578 0 0 1 428 1 104 104 1362 376 1 0 103 312 -1 -1 0 0 -1 -1 -1 -1 1 0 1 428  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\StataF15\lab8.log
+DATA
+273678578 1 5161 1 5175 1 78 78 1336 350 1 0 103 144 -1 -1 0 0 -1 -1 -1 -1 1 0 1 5175  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\ppl12.tex
+TeX
+269496315 1 -1 509 -1 535 25 25 1368 534 0 1 50 504 -1 -1 0 0 34 -1 -1 34 1 0 535 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\btxmac.tex
+TeX:UNIX
+1159163 0 -1 0 -1 33449 125 125 1468 634 0 1 50 446 -1 -1 0 0 12 -1 -1 12 1 0 33449 -1  0 0 0
+:\Users\Chris\AppData\Roaming\MiKTeX\2.9\tex\generic\font-change\font_charter.tex
+TeX
+269496315 1 -1 5465 -1 5454 25 25 1262 321 0 1 50 0 -1 -1 0 0 44 -1 -1 44 1 0 5454 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\verbatimb.tex
+TeX:UNIX
+269594619 2 -1 180 -1 183 0 0 1378 490 0 1 219 96 -1 -1 0 0 36 -1 -1 36 1 0 183 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ452\SecondLife\macros.tex
+TeX
+269496315 0 -1 1505 -1 1505 100 100 1443 609 0 1 50 624 -1 -1 0 0 23 -1 -1 23 1 0 1505 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\macros.tex
+TeX
+269496315 0 -1 896 -1 0 100 100 1337 396 0 1 50 0 -1 -1 0 0 69 -1 -1 69 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\verbatim_2.tex
+TeX:UNIX
+286371835 0 -1 1889 -1 2738 125 125 1362 421 0 1 50 432 -1 -1 0 0 36 -1 -1 36 1 0 2738 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\globals.tex
+TeX
+269496315 0 -1 1498 -1 1498 0 0 1237 296 0 1 50 1152 -1 -1 0 0 31 -1 -1 31 1 0 1498 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\pdfslides.tex
+TeX
+269496315 0 13 13 -1 0 250 250 1593 759 0 1 50 0 -1 -1 0 0 23 -1 -1 23 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\lecture.tex
+TeX
+269496315 2 -1 2565 -1 2571 100 100 1472 715 0 1 642 -1329 -1 -1 0 0 26 -1 -1 26 1 0 2571 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\html.tex
+TeX
+269496315 0 -1 0 -1 0 200 200 1543 709 0 1 42 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\macros.tex
+TeX
+269496315 1 -1 0 -1 39 50 50 1716 559 0 1 42 38 -1 -1 0 0 -1 -1 -1 -1 1 0 39 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\preamble10.tex
+TeX
+269496315 0 -1 0 -1 0 25 25 1691 534 0 1 42 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\probit.tex
+TeX
+269496315 2 -1 989 -1 991 50 50 1422 528 0 1 122 171 -1 -1 0 0 0 -1 -1 0 1 0 991 -1  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\Exec\Ox\OxCompile.edt
+ASCII:EDT
+269494138 0 0 1 3 1 125 125 1153 421 1 0 72 51 -1 -1 0 0 83 0 0 83 1 0 1 3  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\source\DDP\Makefile
+TeX
+286273531 0 -1 662 -1 1228 50 50 1078 346 0 1 172 209 -1 -1 0 0 23 -1 -1 23 1 0 1228 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\tools.tex
+TeX
+269561851 0 16 51 -1 8911 25 25 1278 685 0 1 42 399 -1 -1 0 0 84 -1 -1 84 1 0 8911 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\puzzle.tex
+TeX
+269561851 0 -1 6865 -1 0 0 0 1162 403 0 1 42 0 -1 -1 0 0 90 0 0 90 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\DArithmetic.tex
+TeX
+269561851 2 -1 7303 -1 7310 100 100 1337 396 0 1 92 399 -1 -1 0 0 34 -1 -1 34 1 0 7310 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\DynamicTyping.tex
+TeX
+269496315 0 -1 261 -1 117 175 175 1141 584 0 1 362 57 -1 -1 0 0 0 -1 -1 0 1 0 117 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\GPS.tex
+TeX
+286339067 4 -1 7438 -1 7439 200 200 1362 603 0 1 982 399 -1 -1 0 0 21 -1 -1 21 1 0 7439 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\FFP.tex
+TeX
+269561851 0 211 42 -1 25730 175 175 1337 578 0 1 42 399 -1 -1 0 0 36 -1 -1 36 1 0 25730 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\hardware.tex
+TeX
+286339067 0 -1 27712 -1 0 25 25 1187 428 0 1 42 0 -1 -1 0 0 258 -1 -1 258 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Simulation.tex
+TeX
+269496315 2 -1 3146 -1 3148 0 0 1256 252 0 1 382 285 -1 -1 0 0 106 -1 -1 106 1 0 3148 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Parameters.tex
+TeX
+269496315 0 -1 0 -1 0 100 100 1014 362 0 1 42 0 -1 -1 0 0 27 -1 -1 27 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Sequential.tex
+TeX
+269496315 0 -1 9324 -1 10033 0 0 966 409 0 1 602 380 -1 -1 0 0 0 -1 -1 0 1 0 10033 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\section.tex
+TeX
+269496315 0 -1 3761 -1 6938 50 50 1422 665 0 1 42 380 -1 -1 0 0 19 -1 -1 19 1 0 6938 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\TPC.tex
+TeX
+286339067 0 -1 1587 -1 2603 50 50 1212 453 0 1 622 380 -1 -1 0 0 33 -1 -1 33 1 0 2603 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\OxExpressions.tex
+TeX
+269496315 0 8 151 -1 972 0 0 914 262 0 1 432 190 -1 -1 0 0 60 -1 -1 60 1 0 972 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\OxIntro.tex
+TeX
+269496315 2 -1 4591 -1 4601 125 125 1362 402 0 1 952 380 -1 -1 0 0 34 -1 -1 34 1 0 4601 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\DP0.tex
+TeX
+269496315 0 240 112 -1 29000 22 24 980 667 0 1 502 361 -1 -1 0 0 38 -1 -1 38 1 0 29000 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Parallel.tex
+TeX
+286273531 0 -1 4597 -1 2730 150 150 1505 669 0 1 362 342 -1 -1 0 0 53 -1 -1 53 1 0 2730 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\binding.tex
+TeX
+269496315 0 -1 0 -1 0 50 50 964 312 0 1 42 0 -1 -1 0 0 54 -1 -1 54 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\CIdivide.tex
+TeX
+286273531 0 -1 8438 -1 17686 0 0 1287 215 0 1 652 361 -1 -1 0 0 84 -1 -1 84 1 0 17686 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\DCalculus.tex
+TeX
+286339067 0 -1 664 -1 1085 2 3 1324 677 0 1 1132 228 -1 -1 0 0 0 -1 -1 0 1 0 1085 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\Interpolation.tex
+TeX
+269496315 0 -1 0 -1 0 75 75 989 337 0 1 42 0 -1 -1 0 0 43 -1 -1 43 1 0 0 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\DAlgebra.tex
+TeX
+269496315 4 -1 9822 -1 9823 25 25 1397 533 0 1 1152 361 -1 -1 0 0 56 -1 -1 56 1 0 9823 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\CforE.tex
+TeX
+420491259 0 -1 0 -1 1146 150 150 1522 765 0 1 192 320 -1 -1 0 0 711 -1 -1 711 1 0 1146 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\quiz\quiz1_2014.tex
+TeX
+269496315 1 -1 1804 -1 5397 125 125 1582 627 0 1 42 684 -1 -1 0 0 50 -1 -1 50 1 0 5397 -1  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 9\ConfigEx\MainMenu.ini
+DATA:INI:EDT
+269485050 0 3307 13 3309 16 75 75 1103 371 1 1 208 221 -1 -1 0 0 -1 -1 -1 -1 1 0 16 3309  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\code\OxTemplate2014\search.ox
+Ox
+269485042 0 0 1 5 19 100 100 1557 602 0 0 204 95 -1 -1 0 0 -1 -1 -1 -1 1 0 19 5  0 0 0
+:\Users\Chris\Desktop\Econ954\Task2\New Text Document.txt
+ASCII:UTF-8
+273688442 0 18 1 3 1 75 75 1532 577 1 0 72 51 -1 -1 0 0 -1 -1 -1 -1 1 0 1 3  0 0 0
+:\Users\Chris\Documents\GradLeage\gradleague2014-5.txt
+ASCII
+273688443 2 179 2 179 6 75 75 1532 577 1 0 112 374 -1 -1 0 0 -1 -1 -1 -1 1 0 6 179  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\pdfcolor.tex
+TeX
+1060859 2 -1 1827 -1 1830 125 125 1287 528 0 1 128 272 -1 -1 0 0 16 -1 -1 16 1 0 1830 -1  0 0 0
+:\Users\Chris\AppData\Roaming\MiKTeX\2.9\tex\eplain\eplain.tex
+TeX:UNIX
+1159163 2 -1 40976 -1 40986 100 100 1472 590 0 1 152 323 -1 -1 0 0 12 -1 -1 12 1 0 40986 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\Econ954\notes.tex
+TeX
+269496315 1 -1 125 -1 28178 75 75 1331 327 0 1 40 323 -1 -1 0 0 -1 -1 -1 -1 1 0 28178 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter2\doc00.tex
+TeX
+269496315 1 -1 733 -1 742 25 25 1281 277 0 1 40 323 -1 -1 0 0 -1 -1 -1 -1 1 0 742 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\CforE.toc
+TeX:AUX
+269496306 0 44 12 44 26 125 125 1362 421 0 0 224 136 -1 -1 0 0 72 0 0 72 1 0 26 44  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 8\ConfigEx\Input.ini
+DATA:INI:EDT
+269485050 0 143 70 143 102 0 0 1422 442 1 1 896 459 -1 -1 0 0 -1 -1 -1 -1 1 0 102 143  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\training2013MERGED.tex
+TeX
+1060859 0 2225 217 -1 171007 100 100 1262 503 0 1 816 340 -1 -1 0 0 19 -1 -1 19 1 0 171007 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\DCalculus.tex
+TeX
+269561851 0 -1 12 -1 31 75 75 1237 478 0 1 280 17 -1 -1 0 0 2 0 0 2 1 0 31 -1  0 -1 0
+:\Users\Chris\AppData\Roaming\MiKTeX\2.9\tex\generic\font-change\default-amssymbols.tex
+TeX
+269496315 0 -1 0 -1 0 0 0 661 261 0 1 40 0 -1 -1 0 0 44 -1 -1 44 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\preamble2010.tex
+TeX
+269496315 0 -1 546 -1 1727 175 175 1553 665 0 1 40 425 -1 -1 0 0 26 -1 -1 26 1 0 1727 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\ppl.tex
+TeX
+269496315 1 -1 897 -1 909 225 225 1603 715 0 1 136 197 -1 -1 0 0 25 -1 -1 25 1 0 909 -1  0 0 0
+:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty
+TeX:STY:UNIX
+269594610 0 136 19 142 1 0 0 1673 490 0 0 24 476 -1 -1 0 0 3 0 0 3 1 0 1 142  0 0 0
+:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty
+TeX:STY
+269496306 0 0 1 0 1 75 75 1748 565 0 0 24 0 -1 -1 0 0 3 0 0 3 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\CforE.log
+DATA
+307233010 0 0 1 0 1 150 150 1841 658 1 0 72 0 -1 -1 0 0 104 0 0 104 1 0 1 0  0 0 0
+:\Users\Chris\Downloads\verb-pl.tex
+TeX:UNIX
+269594619 0 -1 11145 -1 1452 25 25 1698 515 0 1 40 221 -1 -1 0 0 -1 -1 -1 -1 1 0 1452 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\DATA\norge\norge_text\context.tex
+TeX
+269496315 0 -1 0 -1 0 225 225 1898 715 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\macros.tex
+TeX
+269496315 1 -1 0 -1 713 100 100 1337 396 0 1 40 374 -1 -1 0 0 -1 -1 -1 -1 1 0 713 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\EMTEX\toc.tex
+TeX
+269496315 0 -1 709 -1 692 75 75 1453 690 0 1 136 357 -1 -1 0 0 15 -1 -1 15 1 0 692 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc82.tex
+TeX
+269496315 1 -1 9 -1 1659 0 0 1162 403 0 1 40 272 -1 -1 0 0 -1 -1 -1 -1 1 0 1659 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc81.tex
+TeX
+269496315 0 -1 0 -1 0 200 200 1362 603 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc80.tex
+TeX
+269496315 1 -1 9 -1 1546 175 175 1337 578 0 1 40 493 -1 -1 0 0 -1 -1 -1 -1 1 0 1546 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc79.tex
+TeX
+269496315 1 -1 11 -1 1779 150 150 1312 553 0 1 40 306 -1 -1 0 0 -1 -1 -1 -1 1 0 1779 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc85.tex
+TeX
+269496315 0 -1 0 -1 0 50 50 1212 453 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc83.tex
+TeX
+269496315 1 -1 0 -1 934 75 75 1262 484 0 1 40 187 -1 -1 0 0 -1 -1 -1 -1 1 0 934 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter3\doc84.tex
+TeX
+269496315 1 -1 0 -1 2238 25 25 1187 428 0 1 40 510 -1 -1 0 0 -1 -1 -1 -1 1 0 2238 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter2\doc26.tex
+TeX
+269496315 0 -1 0 -1 0 75 75 1237 478 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter2\doc29.tex
+TeX
+269496315 0 -1 0 -1 0 125 125 1287 528 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter2\doc34.tex
+TeX
+269496315 0 -1 0 -1 0 100 100 1262 503 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter6\doc67.tex
+TeX
+269496315 0 -1 0 -1 0 50 50 1212 453 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\ec351\lectures\NewNotes\chapter8\doc15b.tex
+TeX
+269496315 0 -1 0 -1 0 25 25 1187 428 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\preamble2012.tex
+TeX
+269496315 1 -1 0 -1 1748 150 150 1528 765 0 1 40 578 -1 -1 0 0 27 -1 -1 27 1 0 1748 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\htmltolatex\htmltolatex
+TeX:UNIX
+269594619 1 -1 189 -1 217 200 200 1362 603 0 1 264 136 -1 -1 0 0 -1 -1 -1 -1 1 0 217 -1  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\htmltolatex\text.xml
+DATA:UNIX
+273776882 0 133 22 133 22 100 100 1337 396 1 0 240 289 -1 -1 0 0 39 0 0 39 1 0 22 133  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\htmltolatex\h2t.bat
+Application
+269485042 0 3 99 0 1 0 0 1162 403 0 0 24 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Google Drive\Work\TeXBook\h2t.bat
+Application
+269485042 0 4 67 9 55 0 0 1162 403 0 0 456 153 -1 -1 0 0 -1 -1 -1 -1 1 0 55 9  0 0 0
+:\Users\Chris\Documents\OFFICE\PROF\VITAE\mkcv4.bat
+Application
+269485042 0 0 1 3 1 175 175 1337 578 0 0 24 51 -1 -1 0 0 -1 -1 -1 -1 1 0 1 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Makefile
+TeX
+269496315 1 -1 204 -1 420 200 200 1362 603 0 1 40 187 -1 -1 0 0 -1 -1 -1 -1 1 0 420 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\What an Economist Should Know About Hardware
+HTML
+269486075 0 -1 36062 -1 37411 125 125 1287 528 0 1 40 374 -1 -1 0 0 18 -1 -1 18 1 0 37411 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Gather Your Tools
+HTML
+269486075 0 -1 162 -1 1743 150 150 1312 553 0 1 40 170 -1 -1 0 0 67 -1 -1 67 1 0 1743 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Fast, Flexibile, and Portable
+HTML
+286263291 0 -1 242 -1 0 100 100 1478 715 0 1 40 0 -1 -1 0 0 86 -1 -1 86 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Digitial Arithmetic
+HTML
+269486075 0 -1 10898 -1 13900 75 75 1453 697 0 1 40 544 -1 -1 0 0 18 -1 -1 18 1 0 13900 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\The Programming Cycle
+HTML
+286263291 0 -1 60866 -1 0 300 300 1678 915 0 1 40 0 -1 -1 0 0 54 -1 -1 54 1 0 0 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Digital Mathematics
+HTML
+269748219 0 -1 4376 -1 7570 150 150 1528 765 0 1 80 306 -1 -1 0 0 115 -1 -1 115 1 0 7570 -1  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\A Puzzle
+HTML
+269486075 0 -1 5393 -1 0 150 150 1312 553 0 1 40 0 -1 -1 0 0 61 -1 -1 61 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Why this Book, Why Me
+HTML
+269486075 0 -1 229 -1 13310 125 125 1287 528 0 1 40 578 -1 -1 0 0 86 -1 -1 86 1 0 13310 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\text\Makefile
+TeX
+269496315 0 -1 0 -1 0 175 175 1337 578 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Desktop\jdi-summer.txt
+ASCII
+5269371 0 0 1 59 1 25 25 1262 321 1 0 72 102 -1 -1 0 0 59 0 0 59 1 0 1 59  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\oxdoc.xml
+DATA
+5243122 0 3 1 3 1 75 75 1453 690 1 0 72 51 -1 -1 0 0 8 0 0 8 1 0 1 3  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\text\let it be.txt
+ASCII
+5252987 0 0 1 0 1 200 200 1578 815 1 0 72 0 -1 -1 0 0 65 0 0 65 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Good Programming Style
+HTML
+17827835 1 -1 46 -1 60 50 50 1428 665 0 1 40 68 -1 -1 0 0 19 -1 -1 19 1 0 60 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\Book
+HTML
+17827835 0 -1 31 -1 31 25 25 1403 640 0 1 40 68 -1 -1 0 0 0 -1 -1 0 1 0 31 -1  0 0 0
+:\Program Files (x86)\OxMetrics7\OxEdit\bin\ox.def
+TeX:STY
+269496306 0 0 1 13 5 150 150 1287 548 0 0 56 221 -1 -1 0 0 -1 -1 -1 -1 1 0 5 13  0 0 0
+:\Program Files (x86)\OxMetrics7\OxEdit\bin\cpp.def
+TeX:STY
+269496306 0 0 1 4 2 175 175 1312 573 0 0 32 68 -1 -1 0 0 -1 -1 -1 -1 1 0 2 4  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\text\oxdoc.sed
+DATA
+273678578 1 1 12 3 1 225 225 1603 840 1 0 72 51 -1 -1 0 0 189 0 0 189 1 0 1 3  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 8\ConfigEx\Fonts.ini
+DATA:INI:EDT
+269485050 0 80 21 90 1 25 25 938 449 1 1 88 374 -1 -1 0 0 83 0 0 83 1 0 1 90  0 -1 0
+:\Users\Chris\Documents\OFFICE\CLASSES\methods\lecture\training2013.tex
+TeX
+269496315 0 -1 0 -1 0 125 125 1741 740 0 1 40 0 -1 -1 0 0 -1 -1 -1 -1 1 0 0 -1  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\code.oxp
+DATA:UNIX
+273776882 0 0 1 0 1 0 0 1183 405 1 0 72 0 -1 -1 0 0 -1 -1 -1 -1 1 0 1 0  0 0 0
+:\Users\Chris\Documents\OFFICE\software\Microeconometrics\niqlow\examples\RustEmet1987.oxdoc
+DATA
+273678578 1 169 9 169 21 100 100 1283 524 1 0 232 289 -1 -1 0 0 108 0 0 108 1 0 21 169  0 0 0
+:\Users\Chris\AppData\Roaming\WinEdt Team\WinEdt 8\ConfigEx\MainMenu.ini
+DATA:INI:EDT
+269485050 0 3341 16 3338 17 125 125 1038 549 1 1 216 442 -1 -1 0 0 -1 -1 -1 -1 1 0 17 3338  0 -1 0
+:\Program Files\WinEdt Team\WinEdt 8\Exec\HTML\Preview.edt
+ASCII:EDT
+269494138 0 22 29 22 1 175 175 1088 599 1 0 72 374 -1 -1 0 0 -1 -1 -1 -1 1 0 1 22  0 0 0
+:\Program Files\WinEdt Team\WinEdt 8\Exec\HTML\Compile.edt
+ASCII:EDT
+269494138 0 0 1 15 1 150 150 1063 574 1 0 72 255 -1 -1 0 0 -1 -1 -1 -1 1 0 1 15  0 0 0
+:\Users\Chris\Documents\OFFICE\CLASSES\NumMeth\Textbook\ElementsOfProgrammingInEconomics.html
+HTML
+269486075 0 -1 181627 -1 40 0 0 1162 403 0 1 40 17 -1 -1 0 0 38 -1 -1 38 1 0 40 -1  0 -1 0
+

@@ -1,0 +1,7 @@
+<oxdoc>
+<option name="outputdir" value="./docs" />
+<option name="imagedir" value="./docs" />
+<option name="projectname" value="doc-build: dynamically built HTML+MathJax documents" />
+<option name="windowtitle" value="doc-build" />
+</oxdoc>
+
