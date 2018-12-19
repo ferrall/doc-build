@@ -1,6 +1,7 @@
 #include "oxstd.h"
 enum{FEND=-1,fmname=0,fmtitle,fptr,FMparts}
 enum{TOC,FIG,DEF,ALG,TAB,GLOSS,Fsections}
+enum{PUBLISH,OUTLINE,PUBOPTIONS}
 mreplace(tmplt,list);
 struct document {
     static const decl 	lvtag = "*",
@@ -43,14 +44,14 @@ struct document {
             lev,contents,exsec, fign, fm, fignicks;
     static lbeg(f,nlev,tclass="");
     static lend(f);
-    static build(sdir="",bdir="",tocfile="");
+    static build(sdir="",bdir="",tocfile="",puboption=PUBLISH);
     static printheader(h,title);
     }
 
 struct section : document{
     decl index,parent,level,pref,title,dir,source,output,anch,ord,
          child,uplev,myexer,notempty,ndefn;
-    make(inh=0);
+    make(inh=0,puboption=PUBLISH);
     section(index=0);
     slides();
     virtual entry(f);
@@ -60,12 +61,12 @@ struct section : document{
 struct titlepage : section {
     decl title,subtitle,made;
     titlepage(tocf);
-    make(inh=0);
+    make(inh=0,puboption=PUBLISH);
     }
 struct exercises : section {
     exercises(sect);
     append(ord,fn);
-    make(inh=0);
+    make(inh=0,puboption=PUBLISH);
     accum(line);
     entry(f);
     decl exdoc;

@@ -28,7 +28,7 @@ titlepage::titlepage(tocf) {
     parent=-1;
     }
 
-titlepage::make(inh) {
+titlepage::make(inh,puboption) {
     if (isfile(inh)) {
         decl s,fp,line,inbody,nn;
         fprintln(inh,"<div class=\"tp\" style=\"background:url(img/titlepage.png) no-repeat  bottom center; background-size:70%;\" ><h1>",booktitle,"</h1><hr/>",subtitle,"<br/>&nbsp;<br/>&nbsp;<br/><h3>",bookauthor,"<br/></h3><br/>Version ",version,"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________</div>");
@@ -85,13 +85,13 @@ exercises::append(ord,fn) {
     entry(fn);
     contents |= this;
     }
-exercises::make(inh) {
+exercises::make(inh,puboption) {
     if (isfile(exdoc)) {
         fprintln(exdoc,"</OL>");
         fclose(exdoc);
         exdoc = 0;
         }
-    section::make(inh);
+    section::make(inh,puboption);
     }
 section::parse(line) {
     decl eb,ch;
@@ -141,7 +141,7 @@ section::section(index) {
     title = output = "";
     notempty = TRUE;
     }
-section::make(inh) {
+section::make(inh,puboption) {
     decl h,ftype,ftemp;
     ftype = 0;  //initialize to avoid error until first figure is found
     if (isfile(inh)) {
@@ -164,38 +164,38 @@ section::make(inh) {
         decl ss = fopen(sdir+source+inext,"r"),line,curtit = "", nsc,eof;
         if (isfile(ss)) {
             while(( (nsc=fscan(ss,"%z",&line))>FEND)) {
-                if (nsc==0) { fprintln(h,""); continue;}  //zero character line read in
+                if (nsc==0) { if (puboption==PUBLISH) fprintln(h,""); continue;}  //zero character line read in
                 if (line==exstart) {
                     //print("E");
                     if (isclass(exsec)) {
-                        fprintln(h,"<details><summary>Exercises</summary><UL class=\"steps\">");
+                        if (puboption==PUBLISH) fprintln(h,"<details><summary>Exercises</summary><UL class=\"steps\">");
                         exsec.notempty = TRUE;
                         }
                     do {
                         eof = fscan(ss,"%z",&line)==FEND;
                         if (line!=exend) {
                             if (isclass(exsec) ){
-                                fprintln(h,line);
+                                if (puboption==PUBLISH) fprintln(h,line);
                                 exsec->accum(line);
                                 }
                             }
                         } while(line!=exend && !eof);
                     //println("X");
-                    if (isclass(exsec) ) fprintln(h,"</UL></details>");
+                    if (isclass(exsec) ) if (puboption==PUBLISH) fprintln(h,"</UL></details>");
                     }
                 else {
                     if ((sizeof(line)>fmlast && (ftemp=find(figmarks,line[:fmlast]))>-1)) {
                          ftype = ftemp;  // This sets ftype until a new figmark shows up
                          ++fign[ftype];
-                         fprintln(h,"<a name=\"",figprefix[ftype],fign[ftype],"\"></a>");
+                         if (puboption==PUBLISH) fprintln(h,"<a name=\"",figprefix[ftype],fign[ftype],"\"></a>");
                          curtit = line[fmlast+1:strfind(line,exend)-1];
                          if (isfile(fm[1+ftype][fptr]))
-                            fprintln(fm[1+ftype][fptr],"<li><a href=\"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+                            if (puboption==PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
                          }
                     else {
                        if (strfind(line,dfbeg)>-1) glossentry(&line);
                         //next line uses current ftype, so figtag replace with the last one encountered
-                       fprintln(h,replace(line,figtag,"<h4>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h4>"));
+                       if (puboption==PUBLISH) fprintln(h,replace(line,figtag,"<h4>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h4>"));
                        }
                     }
                 }
@@ -203,22 +203,22 @@ section::make(inh) {
             }
         else {
             oxwarning("Source file not found: "+source);
-            fprintln(h,"<div class=\"break\"></div><blockquote class=\"upshot\"><h5>",title,"</h5> is not ready. This page is left blank to provide some room for taking notes.</blockquote><div class=\"break\"></div>");
+            if (puboption==PUBLISH) fprintln(h,"<div class=\"break\"></div><blockquote class=\"upshot\"><h5>",title,"</h5> is not ready. This page is left blank to provide some room for taking notes.</blockquote><div class=\"break\"></div>");
             //notempty = FALSE;
             }
         }
     else if (level<2 && child>0) {
-        fprintln(h,"<blockquote class=\"toc\"><h4>Contents</h4>");
+        if (puboption==PUBLISH) fprintln(h,"<blockquote class=\"toc\"><h4>Contents</h4>");
         lbeg(h,level+1);
         decl c=index+1;
         do {
             if (contents[c].level==level+1 && contents[c].notempty) contents[c]->entry(h);
             } while (++c<sizeof(contents)&&contents[c].level>level);
         lend(h);
-        fprintln(h,"</blockquote>");
+        if (puboption==PUBLISH) fprintln(h,"</blockquote>");
         }
     if (!isfile(inh)) {
-        fprintln(h,mreplace(footer,{{"%prev%",sprint("%03u",index-1)},
+        if (puboption==PUBLISH) fprintln(h,mreplace(footer,{{"%prev%",sprint("%03u",index-1)},
                                     {"%next%",sprint("%03u",index+1)}}));
         fclose(h);
         }
@@ -268,7 +268,7 @@ section::slides() {
     }
 
 
-document::build(sdir,bdir,tocfile) {
+document::build(sdir,bdir,tocfile,puboption) {
     decl done, htoc, toc, ind, book,  ch,line,n,iprev,sect,curp, curx,nlev;
     fm =        {{"toc","Table of Contents",0},
                 {"figlist","List of Figures",0},
@@ -354,29 +354,28 @@ document::build(sdir,bdir,tocfile) {
     }
   fprintln(fm[TOC][fptr],"</span>");
   fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
-  foreach(s in contents) {
+  foreach(s in contents[f]) {
     if (isclass(s.myexer)) exsec=s.myexer;
-    s->make();
+    s->make(0,puboption);
     }
-  exsec = 0;  //exercises already made.
-  fign[] = 0;   // reset figure numbers
-  htoc = fopen(bdir+"book"+outext,"w");
-  for (f=TOC+1;f<sizeof(fm);++f) {
-//    println("$$$ ",f," ",fm[f][fmname]+outext);
-    lend(fm[f][fptr]);
-    fprintln(fm[f][fptr],"</span>");
-    fclose(fm[f][fptr]);
-    fm[f][fptr] = 0;
-//    println(fm[f][fmtitle]," closed");
-    }
-  printheader(htoc,booktitle);
-  //fprintln(htoc,replace(head,ttag,booktitle));
-  foreach(s in contents)    if (s.notempty) s->make(htoc);
-  lend(htoc);
-  fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
-  fclose(htoc);
-  htoc = 0;
-  exsec = 0;  //exercises already made.
-  fign[] = 0;   // reset figure numbers
-  foreach(s in contents) if (s.notempty) s->slides();
+    exsec = 0;  //exercises already made.
+    fign[] = 0;   // reset figure numbers
+    htoc = fopen(bdir+"book"+outext,"w");
+    for (f=TOC+1;f<sizeof(fm);++f) {
+        lend(fm[f][fptr]);
+        fprintln(fm[f][fptr],"</span>");
+        fclose(fm[f][fptr]);
+        fm[f][fptr] = 0;
+        }
+    printheader(htoc,booktitle);
+    //fprintln(htoc,replace(head,ttag,booktitle));
+    foreach(s in contents[f])
+        if ( (!f||puboption==PUBLISH) && s.notempty) s->make(htoc,puboption);
+    lend(htoc);
+    fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
+    fclose(htoc);
+    htoc = 0;
+    exsec = 0;  //exercises already made.
+    fign[] = 0;   // reset figure numbers
+    foreach(s in contents) if (s.notempty) s->slides();
   }
