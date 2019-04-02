@@ -22,7 +22,7 @@ document::printheader(h,title) {
 document::printfooter(h,title,prev,next) {
     fprintln(h,mreplace(footer,{{"%prev%",prev},
                                 {"%next%",next},
-                                {"%tttag%",bkvals[BOOKTAG]+" "+title},
+                                {tttag,bkvals[BOOKTAG]+" "+title},
                                 {atag,bkvals[BOOKAUTHOR]},
                                 {"%year%",timestr(today())[:3]},
                                 {"%affiliation%",bkvals[AFFILIATION]}
@@ -93,7 +93,7 @@ titlepage::make(inh) {
         decl h = fopen(bdir+output+outext,"w");
         if (isint(h)) oxrunerror("output file "+bdir+output+outext+" failed to open");
         printheader(h,bkvals[BOOKTITLE]);
-        fprintln(h,"<div class=\"tp\"><h1>",bkvals[BOOKTITLE],"</h1><br/><h2>",bkvals[BOOKSUB],"</h2><h3>&nbsp;<br/>",bkvals[BOOKAUTHOR],"</h3></div>");
+        fprintln(h,"<div class=\"tp\" style=\"width:900px\"><h1>",bkvals[BOOKTITLE],"</h1><br/><h2>",bkvals[BOOKSUB],"</h2><h3>&nbsp;<br/>",bkvals[BOOKAUTHOR],"</h3></div>");
         printfooter(h,"","","001");
         //        fprintln(h,mreplace(footer,{{"%prev%",""},{"%next%","001"},}));
         fclose(h);

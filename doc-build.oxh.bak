@@ -1,6 +1,6 @@
 #include "oxstd.h"
 enum{FEND=-1,fmname=0,fmtitle,fptr,MinLev,FMparts}
-enum{TOC,FIG,DEF,ALG,TAB,CODE,GLOSS,INSTMAT,Fsections}
+enum{TOC,FIG,DEF,ALG,TAB,GLOSS,INSTMAT,Fsections}
 enum{OUTLINE,PUBLISH,KEY,PUBOPTIONS}
 enum{BOOKTITLE,BOOKSUB,BOOKAUTHOR,AFFILIATION,VERSION,BOOKTAG,NBOOKPARAMS}
 mreplace(tmplt,list);
