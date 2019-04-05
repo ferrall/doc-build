@@ -1,12 +1,15 @@
 #include "oxstd.h"
 enum{FEND=-1,fmname=0,fmtitle,fptr,MinLev,FMparts}
-enum{TOC,FIG,DEF,ALG,TAB,GLOSS,INSTMAT,Fsections}
+enum{TOC,FIG,DEF,ALG,TAB,CODE,GLOSS,INSTMAT,Fsections}
 enum{OUTLINE,PUBLISH,KEY,PUBOPTIONS}
 enum{BOOKTITLE,BOOKSUB,BOOKAUTHOR,AFFILIATION,VERSION,BOOKTAG,NBOOKPARAMS}
 mreplace(tmplt,list);
 struct document {
     static const decl partags = {"title","subtitle","author","affiliation","version","tag"};
-    static const decl 	lvtag = "*",
+    static const decl
+			lvtag = '*',
+			tocendtag = '#',
+			skiptag = '%',
             dfbeg = "<dfn ",
             dfend = "</dfn>",
             dfcontl = "<span>",
@@ -51,14 +54,15 @@ struct document {
             figtag,
             exstart,
             keystart,
-            bdir = "book/",
-            sdir = "source/",
+            bdir = "book/",	 //default build folder
+            sdir = "source/", //default source folder
+            TOCFILE = "book.toc",  //default table of contents file
+			tocf,				//file pointer for toc
             head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/452.png\" type=\"image/png\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/doc.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/screen.css\"></link>",
             /* <link rel=\"stylesheet\" type=\"text/css\" href=\"C:/Users/Chris/Documents/OFFICE/software/pubcss/dist/css/pubcss-acm-sig.css\"></link>\n", */
             mathjax="<script type=\"text/x-mathjax-config\"> MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\\\(\",\"\\\\)\"]], processEscapes: true}, TeX: {Macros: {RR: \"{\\\\bf R}\",bold: [\"{\\\\bf #1}\",1]}, equationNumbers: {autoNumber:\"all\" }}});</script>\n<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML\">\n</script>",
             headtitle="<title>%title%</title></head><body>\n",
             footer = "<footer><table width=\"100%\"><tr><td width=\"20px\"><a href=\"s%prev%.html\">&larr;</a></td><td style=\"text-align:center\">%tttag%. &copy; %author% %year%. %affiliation%.</td><td width=\"20px\"><a href=\"s%next%.html\">&rarr;</a></td></tr></table></footer></body></html>",
-            TOCFILE = "book.toc",
 //            booktitle = "Title",
 //            bookauthor = "Author",
 //            affiliation = "Queen's University",
@@ -73,7 +77,7 @@ struct document {
 
 struct section : document{
     decl index,parent,level,pref,title,dir,source,output,anch,ord,
-         child,uplev,myexer,notempty,ndefn;
+         child,uplev,myexer,notempty,ndefn,minprintlev;
     make(inh=0);
     section(index=0);
     slides();
@@ -83,7 +87,7 @@ struct section : document{
     }
 struct titlepage : section {
     decl title,subtitle,made;
-    titlepage(tocf);
+    titlepage();
     make(inh=0);
     }
 struct exercises : section {

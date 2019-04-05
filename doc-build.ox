@@ -31,7 +31,7 @@ document::printfooter(h,title,prev,next) {
 
 
 /**Create the cover page of the book, reading info from the TOC file.**/
-titlepage::titlepage(tocf) {
+titlepage::titlepage() {
     section(0);
     decl line, ch, pind,done;
     do {
@@ -162,9 +162,7 @@ section::glossentry(line) {
         fprint(fm[GLOSS][fptr],"<LI><a href=\"",output,outext,"#D",ndefn,"\" target=\"contentx\">");
         fprint(fm[GLOSS][fptr],line[0][ipl:de],"</a>");
         fprintln(fm[GLOSS][fptr],"<DD>",line[0][max(db+ib,0):max(0,db+ib,db+ib+ie-1)],"&emsp; &emsp;<em>See:",replace(title,"<br/>",":","i"),"</em></DD></LI>");
-        //  println("** ",line[0]);
         line[0] = line[0][:ipl-2]+" id=\"D"+sprint(ndefn)+"\""+line[0][ipl-1:];
-        // println(line[0],"**");
         ++ndefn;
     }
     }
@@ -180,6 +178,7 @@ section::section(index) {
     ndefn = uplev = myexer = child = level =source = anch = 0;
     title = output = "";
     notempty = TRUE;
+	minprintlev = OUTLINE;
     }
 section::make(inh) {
     decl h,ftype,ftemp,notdone,curxname;
@@ -325,7 +324,7 @@ section::slides() {
 
 
 document::build(sdir,bdir,tocfile,puboption) {
-    decl done, htoc, toc, ind, book,  ch,line,n,iprev,sect,curp, curx,nlev;
+    decl done, htoc,  ind, book,  ch,line,n,iprev,sect,curp, curx,nlev;
     bkvals = new array[NBOOKPARAMS];
     fm =        {{"toc","Table of Contents",0,OUTLINE},
                 {"figlist","List of Figures",0,PUBLISH},
@@ -347,13 +346,12 @@ document::build(sdir,bdir,tocfile,puboption) {
     if (tocfile!="") this.TOCFILE = tocfile+tocext;
     fign = zeros(sizerc(figmarks),1);
     fignicks = new array[sizerc(figmarks)];
-    toc = fopen(sdir+TOCFILE);
-    if (isint(toc)) oxrunerror("input file "+sdir+TOCFILE+" failed to open");
-    sect = new titlepage(toc);
+    tocf = fopen(sdir+TOCFILE);
+    if (isint(tocf)) oxrunerror("input file "+sdir+TOCFILE+" failed to open");
+    sect = new titlepage();
     decl s;
     for(s =0; s<sizeof(fm); ++s)
-       if (puboption>=fm[s][MinLev])
-        {
+       if (puboption>=fm[s][MinLev]) {
         fm[s][fptr] = fopen(bdir+fm[s][fmname]+outext,"w");
 //        println("#### ",s," ",bdir+fm[s][fmname]+outext);
         if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
@@ -368,26 +366,31 @@ document::build(sdir,bdir,tocfile,puboption) {
     contents = {sect};
     exsec = 0;
     do {
-       fscan(toc,OxScan,&line);
-       sscan(line,"%c",&ch);
-       println(ch," ",line);
-       done = ch=='#';
+       fscan(tocf,OxScan,&line);
+       sscan(line,"%c",&ch); 		//println(ch," ",line);
+       done = ch==tocendtag;		// rest of toc file ignored
+	   if (ch==skiptag)	continue;   // comment line in toc
        if (!done) {
             sect = new section(sizeof(contents));
             iprev = sect.index-1;
             nlev = 0;
             do {
                 sscan(&line,"%c",&ch);
-                if (ch=='*') ++nlev;
-                } while(ch=='*');
+                if (ch==lvtag) ++nlev;
+                } while(ch==lvtag);
+            sscan(&line,"%1u",&ch);   //minimum print level for this section.
+			sect.minprintlev = ch;
+			sscan(&line,"%c",&ch,"%c",&ch);  //skip closing and opening bracket
             sect.level=nlev;
             if (nlev>contents[iprev].level) {
                 sect.ord = 1;
                 contents[iprev].child = sect.index;
                 curp |= sect.parent = iprev;
                 curx |= 0;
-                if (nlev>=2) fprintln(fm[TOC][fptr],tocopen);
-                lbeg(fm[TOC][fptr],nlev);
+				if (puboption>=sect.minprintlev) {
+                	if (nlev>=2) fprintln(fm[TOC][fptr],tocopen);
+                	lbeg(fm[TOC][fptr],nlev);
+					}
                 ++lev;
                 }
             else {
@@ -397,15 +400,17 @@ document::build(sdir,bdir,tocfile,puboption) {
             }
         if (done) nlev = 1;
         while(nlev<lev) {
-            lend(fm[TOC][fptr]);
-            if (lev>=2) fprintln(fm[TOC][fptr],tocclose);
+            if (puboption>=sect.minprintlev) {
+				lend(fm[TOC][fptr]);
+	            if (lev>=2) fprintln(fm[TOC][fptr],tocclose);
+				}
             ++sect.uplev;
             --lev;
             curp = curp[:max(0,rows(curp)-2)];
             curx = curx[:max(0,rows(curp)-2)];
             }
         if (nlev==1) {
-            if (isclass(exsec)) {
+            if (isclass(exsec)&&puboption>=sect.minprintlev) {
                 exsec->append(sect.ord+1,fm[TOC][fptr]);
 //                lend(fm[0][fptr]);
                 }
@@ -427,27 +432,27 @@ document::build(sdir,bdir,tocfile,puboption) {
   fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
   foreach(s in contents[f]) {
     if (isclass(s.myexer)) exsec=s.myexer;
-    s->make(0);
+    if (puboption>=s.minprintlev) s->make(0);
     }
-    exsec = 0;  //exercises already made.
-    fign[] = 0;   // reset figure numbers
-    htoc = fopen(bdir+"book"+outext,"w");
-    for (f=TOC+1;f<sizeof(fm);++f)
-        if (isfile(fm[f][fptr])) {
-            lend(fm[f][fptr]);
-            fprintln(fm[f][fptr],"</span>");
-            fclose(fm[f][fptr]);
-            fm[f][fptr] = 0;
-            }
-    printheader(htoc,bkvals[BOOKTITLE]);
+  exsec = 0;  //exercises already made.
+  fign[] = 0;   // reset figure numbers
+  htoc = fopen(bdir+"book"+outext,"w");
+  for (f=TOC+1;f<sizeof(fm);++f)
+  	if (isfile(fm[f][fptr])) {
+		lend(fm[f][fptr]);
+        fprintln(fm[f][fptr],"</span>");
+        fclose(fm[f][fptr]);
+        fm[f][fptr] = 0;
+        }
+  printheader(htoc,bkvals[BOOKTITLE]);
     //fprintln(htoc,replace(head,ttag,booktitle));
-    foreach(s in contents[f])
-        if ( (!f||puboption>=PUBLISH) && s.notempty) s->make(htoc);
-    lend(htoc);
-    fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
-    fclose(htoc);
-    htoc = 0;
-    exsec = 0;  //exercises already made.
-    fign[] = 0;   // reset figure numbers
-    foreach(s in contents) if (s.notempty) s->slides();
+  foreach(s in contents[f])
+  	if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) s->make(htoc);
+  lend(htoc);
+  fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
+  fclose(htoc);
+  htoc = 0;
+  exsec = 0;  //exercises already made.
+  fign[] = 0;   // reset figure numbers
+  foreach(s in contents) if (s.notempty) s->slides();
   }
