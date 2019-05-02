@@ -149,7 +149,6 @@ section::entry(f) {
     }
 section::glossentry(line) {
     if (isfile(fm[GLOSS][fptr])) {
-        //print("found a term: ");
         decl sb, se, ib, ie, tb,db,de,ipl;
         sb = strifind(line[0],dfcontl)+sizeof(dfcontl);
         se = strifindr(line[0],dfcontr)-1;
@@ -159,7 +158,7 @@ section::glossentry(line) {
             tb = strifind(line[0][db+ib+ie:],">")+1;
             ipl = db+ib+ie+tb;
             de = ipl+strifind(line[0][ipl:],dfend)-1;
-        fprint(fm[GLOSS][fptr],"<LI><a href=\"",output,outext,"#D",ndefn,"\" target=\"contentx\">");
+        fprint(fm[GLOSS][fptr],"<LI><a id=\"",line[0][ipl:de],"\" href=\"",output,outext,"#D",ndefn,"\" target=\"contentx\">");
         fprint(fm[GLOSS][fptr],line[0][ipl:de],"</a>");
         fprintln(fm[GLOSS][fptr],"<DD>",line[0][max(db+ib,0):max(0,db+ib,db+ib+ie-1)],"&emsp; &emsp;<em>See:",replace(title,"<br/>",":","i"),"</em></DD></LI>");
         line[0] = line[0][:ipl-2]+" id=\"D"+sprint(ndefn)+"\""+line[0][ipl-1:];
@@ -190,7 +189,7 @@ section::make(inh) {
          else for(decl i=0;i<uplev;++i) lend(h);
          fprintln(h,"<h",level,"><a name=\"",output,"\"><LI>",title,"</LI></a></h",level,">");*/
          fprint(h,"<OL  type=\"",ltypes[level],"\" class=\"toc",level,"\" >");
-         fprintln(h,"<h",level,"><a name=\"",output,"\"><LI value=",ord,">",title,"</LI></a></h",level,"></OL>");
+         fprintln(h,"<h",level,"><a id=\"",output,"\"><LI value=",ord,">",title,"</LI></a></h",level,"></OL>");
 
          }
     else {
@@ -198,7 +197,7 @@ section::make(inh) {
         if (isint(h)) oxrunerror("output file "+bdir+output+outext+" failed to open");
         printheader(h,title);
         fprintln(h,"\n<OL  type=\"",ltypes[level],"\" \">",
-                   "<h",level,"><a name=\"",output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>");
+                   "<h",level,"><a id=\"",output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>");
         }
     if (isstring(source)) {
         decl ss = fopen(sdir+source+inext,"r"),line,curtit = "", nsc,eof;
@@ -208,7 +207,7 @@ section::make(inh) {
                 if (line==exstart) {   //Exercises beginning
                     if (isclass(exsec)) {
                         if (puboption>=PUBLISH) {
-							fprintln(h,"<a name=\"EB",++curxname,"\"></a>");
+							fprintln(h,"<a id=\"EB",++curxname,"\"></a>");
 							fprintln(h,exopen);
 							exsec->eblock(output+outext+"#EB"+sprint(curxname));
 							}
@@ -240,7 +239,8 @@ section::make(inh) {
                         if ((sizeof(line)>fmlast && (ftemp=find(figmarks,line[:fmlast]))>-1)) {
                             ftype = ftemp;  // This sets ftype until a new figmark shows up
                             ++fign[ftype];
-                            if (puboption>=PUBLISH) fprintln(h,"<a name=\"",figprefix[ftype],fign[ftype],"\"></a>");
+                            if (puboption>=PUBLISH) fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
+							if (strfind(line,comend)==FEND) println("Error: ",comend,"\n",line);
                             curtit = line[fmlast+1:strfind(line,comend)-1];
                             if (isfile(fm[1+ftype][fptr]))
                                 if (puboption>=PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"",output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
@@ -286,7 +286,7 @@ section::slides() {
         h = fopen(bdir+spref+output+outext,"w");
         if (isint(h)) oxrunerror("output file "+bdir+spref+output+outext+" failed to open");
         printheader(h,title);
-        fprintln(h,"<OL  type=\"",ltypes[level],"\" \"><h",level,"><a name=\"",output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>");
+        fprintln(h,"<OL  type=\"",ltypes[level],"\" \"><h",level,"><a id=\"",output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>");
         decl ss = fopen(sdir+source+inext,"r"),line,curtit = "", nsc,eof;
         if (isfile(ss)) {
             while(( (nsc=fscan(ss,OxScan,&line))>FEND)) {
@@ -307,7 +307,7 @@ section::slides() {
                 else {
                     if ((sizeof(line)>fmlast && (ftype=find(figmarks,line[:fmlast]))>-1)) {
                          ++fign[ftype];
-                         fprintln(h,"<a name=\"",figprefix[ftype],fign[ftype],"\"></a>");
+                         fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
                          curtit = line[sizeof(figmarks[ftype]):strfind(line,comend)-1];
                          }
 //                    else{
@@ -329,10 +329,11 @@ document::build(sdir,bdir,tocfile,puboption) {
     fm =        {{"toc","Table of Contents",0,OUTLINE},
                 {"figlist","List of Figures",0,PUBLISH},
                 {"deflist","List of Definitions",0,PUBLISH},
+                {"thlist","List of Theorems",0,PUBLISH},
                 {"alglist","List of Algorithms",0,PUBLISH},
                 {"tablist","List of Tables",0,PUBLISH},
-                {"codelist","List of Code Files",0,PUBLISH},
                 {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH},
+                {"codelist","List of Code Files",0,PUBLISH},
                 {"imanual","Instructor Material",0,KEY}};
 	document::puboption = puboption;
 	figmarks = {};

@@ -29,9 +29,9 @@ struct document {
             atag = "%author%",
             ttag = "%title%",
             tttag = "%tag%",
-            figtags = {"F","D","A","T","C"},
-            figtypes = {"Exhibit ","Definition ","Algorithm ","Table "},
-            figprefix= {"FIG","DEF","ALG","TAB"},
+            figtags = {"F","D","R","A","T","C"},
+            figtypes = {"Exhibit ","Definition ","Theorem","Algorithm ","Table "},
+            figprefix= {"FIG","DEF","THM","ALG","TAB"},
 			tocopen = "<details class=\"toc\"><summary>Sections</summary>",
 			tocclose = "</details>",
 			exopen = "<details><summary>Exercises</summary><UL class=\"steps\">",
@@ -58,7 +58,7 @@ struct document {
             sdir = "source/", //default source folder
             TOCFILE = "book.toc",  //default table of contents file
 			tocf,				//file pointer for toc
-            head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/452.png\" type=\"image/png\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/doc.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/screen.css\"></link>",
+            head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/452.png\" type=\"image/png\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/doc.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/screen.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/print.css\"></link>",
             /* <link rel=\"stylesheet\" type=\"text/css\" href=\"C:/Users/Chris/Documents/OFFICE/software/pubcss/dist/css/pubcss-acm-sig.css\"></link>\n", */
             mathjax="<script type=\"text/x-mathjax-config\"> MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\\\(\",\"\\\\)\"]], processEscapes: true}, TeX: {Macros: {RR: \"{\\\\bf R}\",bold: [\"{\\\\bf #1}\",1]}, equationNumbers: {autoNumber:\"all\" }}});</script>\n<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML\">\n</script>",
             headtitle="<title>%title%</title></head><body>\n",
