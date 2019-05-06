@@ -24,6 +24,7 @@ struct document {
             comend = "X-->",
             extag  = "E",
             keytag = "K",
+			TitleHolder = "Q",
 //            exstart = "<!--E",
 //            exend = "X-->",
             atag = "%author%",
@@ -60,13 +61,10 @@ struct document {
 			tocf,				//file pointer for toc
             head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/452.png\" type=\"image/png\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/doc.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/screen.css\"></link>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"css/print.css\"></link>",
             /* <link rel=\"stylesheet\" type=\"text/css\" href=\"C:/Users/Chris/Documents/OFFICE/software/pubcss/dist/css/pubcss-acm-sig.css\"></link>\n", */
-            mathjax="<script type=\"text/x-mathjax-config\"> MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\\\(\",\"\\\\)\"]], processEscapes: true}, TeX: {Macros: {RR: \"{\\\\bf R}\",bold: [\"{\\\\bf #1}\",1]}, equationNumbers: {autoNumber:\"all\" }}});</script>\n<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML\">\n</script>",
+            mathjax="<script type=\"text/x-mathjax-config\"> MathJax.Hub.Config({tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\\\(\",\"\\\\)\"]], processEscapes: true}, TeX: {Macros: {RR: \"{\\\\bf R}\",bold: [\"{\\\\bf #1}\",1]}, equationNumbers: {autoNumber:\"all\" }}});</script>\n<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML\">\n</script>",			
             headtitle="<title>%title%</title></head><body>\n",
-            footer = "<footer><table width=\"100%\"><tr><td width=\"20px\"><a rel=prev href=\"s%prev%.html\">&larr;</a></td><td style=\"text-align:center\">%tttag%. &copy; %author% %year%. %affiliation%.</td><td width=\"20px\"><a rel=next href=\"s%next%.html\">&rarr;</a></td></tr></table></footer></body></html>",
-//            booktitle = "Title",
-//            bookauthor = "Author",
-//            affiliation = "Queen's University",
-//            version = "1.0",
+			license = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"30px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
+            footer = "<footer><table width=\"100%\"><tr><td width=\"20px\"><a rel=prev href=\"s%prev%.html\">&larr;</a></td><td style=\"text-align:center\">%tttag%. &copy; %author% %year%. %affiliation%. %license%</td><td width=\"20px\"><a rel=next href=\"s%next%.html\">&rarr;</a></td></tr></table></footer></body></html>",
             lev,contents,exsec, fign, fm, fignicks;
     static lbeg(f,nlev,tclass="");
     static lend(f);

@@ -25,7 +25,8 @@ document::printfooter(h,title,prev,next) {
                                 {"%tttag%",bkvals[BOOKTAG]+" "+title},
                                 {atag,bkvals[BOOKAUTHOR]},
                                 {"%year%",timestr(today())[:3]},
-                                {"%affiliation%",bkvals[AFFILIATION]}
+                                {"%affiliation%",bkvals[AFFILIATION]},
+								{"%license%",license}
                                 }));
     }
 
@@ -63,7 +64,7 @@ titlepage::titlepage() {
 titlepage::make(inh) {
     if (isfile(inh)) {
         decl s,fp,line,inbody,nn;
-        fprintln(inh,"<div class=\"tp\" style=\"background:url(img/titlepage.png) no-repeat  bottom center; background-size:70%;\" ><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________</div>");
+        fprintln(inh,"<div class=\"tp\" style=\"background:url(img/titlepage.png) no-repeat  bottom center; background-size:70%;\" ><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________<br/>License:",license,"</div>");
         fprintln(inh,"<div class=\"preface\"><h1>Front Matter</h1><OL type=\"",ltypes[0],"\">");
         foreach (s in fm[nn])
            if (puboption>=s[MinLev]){
@@ -332,8 +333,8 @@ document::build(sdir,bdir,tocfile,puboption) {
                 {"thlist","List of Theorems",0,PUBLISH},
                 {"alglist","List of Algorithms",0,PUBLISH},
                 {"tablist","List of Tables",0,PUBLISH},
-                {"codelist","List of Code Files",0,PUBLISH},
                 {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH},
+                {"codelist","List of Code Files",0,PUBLISH},
                 {"imanual","Instructor Material",0,KEY}};
 	document::puboption = puboption;
 	figmarks = {};

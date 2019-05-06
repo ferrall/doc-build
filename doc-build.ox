@@ -25,7 +25,8 @@ document::printfooter(h,title,prev,next) {
                                 {"%tttag%",bkvals[BOOKTAG]+" "+title},
                                 {atag,bkvals[BOOKAUTHOR]},
                                 {"%year%",timestr(today())[:3]},
-                                {"%affiliation%",bkvals[AFFILIATION]}
+                                {"%affiliation%",bkvals[AFFILIATION]},
+								{"%license%",license}
                                 }));
     }
 
@@ -63,7 +64,7 @@ titlepage::titlepage() {
 titlepage::make(inh) {
     if (isfile(inh)) {
         decl s,fp,line,inbody,nn;
-        fprintln(inh,"<div class=\"tp\" style=\"background:url(img/titlepage.png) no-repeat  bottom center; background-size:70%;\" ><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________</div>");
+        fprintln(inh,"<div class=\"tp\" style=\"background:url(img/titlepage.png) no-repeat  bottom center; background-size:70%;\" ><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________<br/>License:",license,"</div>");
         fprintln(inh,"<div class=\"preface\"><h1>Front Matter</h1><OL type=\"",ltypes[0],"\">");
         foreach (s in fm[nn])
            if (puboption>=s[MinLev]){
@@ -249,7 +250,7 @@ section::make(inh) {
                             if (strfind(line,dfbeg)>-1) glossentry(&line);
                             //next line uses current ftype, so figtag replace with the last one encountered
                             if (puboption>=PUBLISH)
-                                fprintln(h,replace(line,figtag,"<h4>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h4>"));
+                                fprintln(h,replace(line,figtag,"<h3>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"));
                             }
                         }
                     }
@@ -338,7 +339,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 	document::puboption = puboption;
 	figmarks = {};
     foreach (n in figtags) figmarks |= {comstart+n};
-    figtag = comstart+"F"+"-->"; //<!--F-->",
+    figtag = comstart+TitleHolder+"-->"; //<!--F-->",
     exstart = comstart+extag;
     keystart = comstart+keytag;
     lev = 0;
