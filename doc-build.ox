@@ -170,7 +170,7 @@ exercises::entry(f) {
     fprintln(f,"<DT><a href=\"",output,outext,"\" target=\"contentx\">",title,"</a></DT>");
     }
 exercises::eblock(href) {
-    fprintln(exdoc,"<DD><a href=\"",href,"\" target=\"contentx\">&larr;</a></DD>");
+    fprintln(exdoc,"<DD class=\"noprint\"><a href=\"",href,"\" target=\"contentx\">&larr;</a></DD>");
 	}
 section::section(index) {
     this.index = index;
@@ -250,7 +250,7 @@ section::make(inh) {
                             if (strfind(line,dfbeg)>-1) glossentry(&line);
                             //next line uses current ftype, so figtag replace with the last one encountered
                             if (puboption>=PUBLISH)
-                                fprintln(h,replace(line,figtag,"<h3>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"));
+                                fprintln(h,replace(line,figtag,"<h3 class=\"fig\">"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"));
                             }
                         }
                     }

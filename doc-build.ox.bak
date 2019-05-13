@@ -250,7 +250,7 @@ section::make(inh) {
                             if (strfind(line,dfbeg)>-1) glossentry(&line);
                             //next line uses current ftype, so figtag replace with the last one encountered
                             if (puboption>=PUBLISH)
-                                fprintln(h,replace(line,figtag,"<h4>"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h4>"));
+                                fprintln(h,replace(line,figtag,"<h3 class=\"fig\">"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"));
                             }
                         }
                     }
@@ -339,7 +339,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 	document::puboption = puboption;
 	figmarks = {};
     foreach (n in figtags) figmarks |= {comstart+n};
-    figtag = comstart+"F"+"-->"; //<!--F-->",
+    figtag = comstart+TitleHolder+"-->"; //<!--F-->",
     exstart = comstart+extag;
     keystart = comstart+keytag;
     lev = 0;
