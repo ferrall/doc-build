@@ -1,5 +1,9 @@
 #include "doc-build.oxh"
 
+document::findmark(line) {
+	return strfind(figmarks,line[:min(fmlast,sizeof(line)-1)]);
+	}
+
 mreplace(tmplt,list) {
     decl txt = tmplt, r;
     foreach(r in list) txt = replace(txt,r[0],r[1]);
@@ -11,7 +15,7 @@ document::lbeg(f,nlev,tclass) {
     fprintln(f,"<OL type=\"",ltypes[nlev],"\" class=\"toc",sprint(nlev),"\">");
     }
 /**End a list of sub-sections.**/
-document::lend(f) { fprintln(f,"</OL>"); }
+document::lend(f,nlev) { fprintln(f,"</OL type=\"",ltypes[nlev],"\">"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title) {
@@ -148,8 +152,35 @@ section::parse(line) {
 section::entry(f) {
     fprintln(f,"<LI><a href=\"",output,outext,"\" target=\"contentx\">",title,"</a></LI>");
     }
+
+section::codesegment(h,line) {
+	decl fname,lno,cf,cline,templ, oline;
+	fname = line[fmlast+2:strfindr(line,codeend)-2];
+	templ = 		
+	"<DD id=\"%FFF%\"><pre><span class=\"fname\"><em><a href=\"./code/%FFF%\">%FFF%</a></em></span>\n";
+	oline = replace(templ,"%FFF%",fname);
+	cf = fopen(bdir+"code\\"+fname,"r");
+	lno = 0;
+	if (isfile(cf)) { 
+		do {
+			if (fscan(cf,OxScan,&cline)==FEND) break;
+			++lno;
+			oline ~= sprint("%2.0f",lno,":    ",cline,"\n");
+			} while (TRUE);
+		fclose(cf);
+		}
+	else
+		oxwarning("Code file "+fname+" not found"); 
+	oline ~= "</pre></dd>";
+	fprintln(h,oline);
+	if (isfile(fm[CODE+1][fptr])) {
+		fprintln(fm[CODE+1][fptr],"<li><a href=\"",output+outext,"#",fname,"\">",fname,"</a></li>");
+		}
+	return oline;
+	}
+
 section::glossentry(line) {
-    if (isfile(fm[GLOSS][fptr])) {
+    if (isfile(fm[GLOSS+1][fptr])) {
         decl sb, se, ib, ie, tb,db,de,ipl;
         sb = strifind(line[0],dfcontl)+sizeof(dfcontl);
         se = strifindr(line[0],dfcontr)-1;
@@ -159,9 +190,9 @@ section::glossentry(line) {
             tb = strifind(line[0][db+ib+ie:],">")+1;
             ipl = db+ib+ie+tb;
             de = ipl+strifind(line[0][ipl:],dfend)-1;
-        fprint(fm[GLOSS][fptr],"<LI><a id=\"",line[0][ipl:de],"\" href=\"",output,outext,"#D",ndefn,"\" target=\"contentx\">");
-        fprint(fm[GLOSS][fptr],line[0][ipl:de],"</a>");
-        fprintln(fm[GLOSS][fptr],"<DD>",line[0][max(db+ib,0):max(0,db+ib,db+ib+ie-1)],"&emsp; &emsp;<em>See:",replace(title,"<br/>",":","i"),"</em></DD></LI>");
+        fprint(fm[GLOSS+1][fptr],"<LI><a id=\"",line[0][ipl:de],"\" href=\"",output,outext,"#D",ndefn,"\" target=\"contentx\">");
+        fprint(fm[GLOSS+1][fptr],line[0][ipl:de],"</a>");
+        fprintln(fm[GLOSS+1][fptr],"<DD>",line[0][max(db+ib,0):max(0,db+ib,db+ib+ie-1)],"&emsp; &emsp;<em>See:",replace(title,"<br/>",":","i"),"</em></DD></LI>");
         line[0] = line[0][:ipl-2]+" id=\"D"+sprint(ndefn)+"\""+line[0][ipl-1:];
         ++ndefn;
     }
@@ -186,9 +217,6 @@ section::make(inh) {
 	curxname = 0;
     if (isfile(inh)) {
          h = inh;
-/*         if (ord==1) fprintln(h,"<OL  type=\"",ltypes[level],"\" class=\"toc",level,"\" >");
-         else for(decl i=0;i<uplev;++i) lend(h);
-         fprintln(h,"<h",level,"><a name=\"",output,"\"><LI>",title,"</LI></a></h",level,">");*/
          fprint(h,"<OL  type=\"",ltypes[level],"\" class=\"toc",level,"\" >");
          fprintln(h,"<h",level,"><a id=\"",output,"\"><LI value=",ord,">",title,"</LI></a></h",level,"></OL>");
 
@@ -215,10 +243,17 @@ section::make(inh) {
                         exsec.notempty = TRUE;
                         }
                     do {
-                        eof = fscan(ss,OxScan,&line)==FEND;
-						notdone = strfind(line,comend)==FEND;
-                        if (notdone) {
+                        nsc = fscan(ss,OxScan,&line);
+                		if (nsc==0) { if (puboption>=PUBLISH) fprintln(h,""); continue;}  //zero character line read in
+						eof = nsc==FEND;
+						notdone = strfind(line,exend)==FEND;
+						if (notdone) {
+							ftemp=strfind(figmarks[CODE-1],line);
                             if (isclass(exsec) ){
+								if (ftemp!=FEND) {
+                            		++fign[CODE-1];
+									if (puboption>=PUBLISH) line=codesegment(h,line);
+									}
                                 if (puboption>=PUBLISH) fprintln(h,line);
                                 exsec->accum(line);
                                 }
@@ -231,25 +266,31 @@ section::make(inh) {
 						if (puboption>=KEY) fprintln(h,keyopen);
 						do {
                             eof = fscan(ss,OxScan,&line)==FEND;
-							notdone = strfind(line,comend)==FEND;
+							notdone = strfind(line,keytag+comend)==FEND;
                             if (puboption>=KEY&&notdone) fprintln(h,line);
                             } while (notdone && !eof);
                         if (puboption>=KEY) fprintln(h,keyclose);
                         }
                     else {	//Ordinary text
-                        if ((sizeof(line)>fmlast && (ftemp=find(figmarks,line[:fmlast]))>-1)) {
+                        if (( (ftemp=findmark(line))!=FEND )) {
                             ftype = ftemp;  // This sets ftype until a new figmark shows up
                             ++fign[ftype];
-                            if (puboption>=PUBLISH) fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
-							if (strfind(line,comend)==FEND) println("Error: ",comend,"\n",line);
-                            curtit = line[fmlast+1:strfind(line,comend)-1];
-                            if (isfile(fm[1+ftype][fptr]))
-                                if (puboption>=PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"",output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+							if (1+ftype==CODE && (puboption>=PUBLISH)){
+									codesegment(h,line);
+									continue;
+									}
+							else {
+                            	if (puboption>=PUBLISH) fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
+								if (strfind(line,figtags[ftype]+comend)==FEND) println("Error: ",figtags[ftype]+comend,"\n",line);
+                            	curtit = line[fmlast+2:strfindr(line,figtags[ftype]+comend)-1];
+                            	if (isfile(fm[1+ftype][fptr]))
+                                	if (puboption>=PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"",output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+								}									
                             }
                         else {
                             if (strfind(line,dfbeg)>-1) glossentry(&line);
                             //next line uses current ftype, so figtag replace with the last one encountered
-                            if (puboption>=PUBLISH)
+                            if (puboption>=PUBLISH )
                                 fprintln(h,replace(line,figtag,"<h3 class=\"fig\">"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"));
                             }
                         }
@@ -270,7 +311,7 @@ section::make(inh) {
         do {
             if (contents[c].level==level+1 && contents[c].notempty) contents[c]->entry(h);
             } while (++c<sizeof(contents)&&contents[c].level>level);
-        lend(h);
+        lend(h,level+1);
         if (puboption>=PUBLISH) fprintln(h,"</blockquote>");
         }
     if (!isfile(inh)) {
@@ -296,20 +337,20 @@ section::slides() {
                     if (isclass(exsec)) fprintln(h,exopen);
                     do {
                         eof = fscan(ss,OxScan,&line)==FEND;
-                        if (line!=comend) {
+                        if (line!=exend) {
                             if (isclass(exsec) ){
                                 fprintln(h,line);
                                 exsec->accum(line);
                                 }
                             }
-                        } while(line!=comend && !eof);
+                        } while(line!=exend && !eof);
                     if (isclass(exsec) ) fprintln(h,exclose);
                     }
                 else {
-                    if ((sizeof(line)>fmlast && (ftype=find(figmarks,line[:fmlast]))>-1)) {
+                    if (( (ftype=findmark(line))!=FEND)) {
                          ++fign[ftype];
                          fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
-                         curtit = line[sizeof(figmarks[ftype]):strfind(line,comend)-1];
+                         curtit = line[fmlast+1:strfindr(line,figtags[ftype]+comend)-1];
                          }
 //                    else{
 //                       fprintln(h,replace(line,figtag,"Exhibit "+sprint(fign[ftype])+". "+curtit));
@@ -325,21 +366,14 @@ section::slides() {
 
 
 document::build(sdir,bdir,tocfile,puboption) {
-    decl done, htoc,  ind, book,  ch,line,n,iprev,sect,curp, curx,nlev;
+    decl done, htoc,  ind, book,  ch,line,n,iprev,sect,curp, curx,nlev, begun;
     bkvals = new array[NBOOKPARAMS];
-    fm =        {{"toc","Table of Contents",0,OUTLINE},
-                {"figlist","List of Figures",0,PUBLISH},
-                {"deflist","List of Definitions",0,PUBLISH},
-                {"thlist","List of Theorems",0,PUBLISH},
-                {"alglist","List of Algorithms",0,PUBLISH},
-                {"tablist","List of Tables",0,PUBLISH},
-                {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH},
-                {"codelist","List of Code Files",0,PUBLISH},
-                {"imanual","Instructor Material",0,KEY}};
+	begun = zeros(8,1); //up to 8 subsections	
 	document::puboption = puboption;
 	figmarks = {};
     foreach (n in figtags) figmarks |= {comstart+n};
-    figtag = comstart+TitleHolder+"-->"; //<!--F-->",
+
+    figtag = comstart+TitleHolder+"-->";
     exstart = comstart+extag;
     keystart = comstart+keytag;
     lev = 0;
@@ -355,7 +389,6 @@ document::build(sdir,bdir,tocfile,puboption) {
     for(s =0; s<sizeof(fm); ++s)
        if (puboption>=fm[s][MinLev]) {
         fm[s][fptr] = fopen(bdir+fm[s][fmname]+outext,"w");
-//        println("#### ",s," ",bdir+fm[s][fmname]+outext);
         if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
         printheader(fm[s][fptr],bkvals[BOOKTITLE]);
         if (!s)
@@ -389,9 +422,11 @@ document::build(sdir,bdir,tocfile,puboption) {
                 contents[iprev].child = sect.index;
                 curp |= sect.parent = iprev;
                 curx |= 0;
-				if (puboption>=sect.minprintlev) {
+				begun[nlev] = FALSE;
+ 				if (puboption>=sect.minprintlev) {
                 	if (nlev>=2) fprintln(fm[TOC][fptr],tocopen);
                 	lbeg(fm[TOC][fptr],nlev);
+					begun[nlev]=TRUE;
 					}
                 ++lev;
                 }
@@ -403,7 +438,7 @@ document::build(sdir,bdir,tocfile,puboption) {
         if (done) nlev = 1;
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
-				lend(fm[TOC][fptr]);
+				if (begun[nlev]) lend(fm[TOC][fptr],nlev);
 	            if (lev>=2) fprintln(fm[TOC][fptr],tocclose);
 				}
             ++sect.uplev;
@@ -441,7 +476,7 @@ document::build(sdir,bdir,tocfile,puboption) {
   htoc = fopen(bdir+"book"+outext,"w");
   for (f=TOC+1;f<sizeof(fm);++f)
   	if (isfile(fm[f][fptr])) {
-		lend(fm[f][fptr]);
+		lend(fm[f][fptr],0);
         fprintln(fm[f][fptr],"</span>");
         fclose(fm[f][fptr]);
         fm[f][fptr] = 0;
@@ -450,7 +485,7 @@ document::build(sdir,bdir,tocfile,puboption) {
     //fprintln(htoc,replace(head,ttag,booktitle));
   foreach(s in contents[f])
   	if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) s->make(htoc);
-  lend(htoc);
+  lend(htoc,0);
   fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
   fclose(htoc);
   htoc = 0;
