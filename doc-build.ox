@@ -139,6 +139,7 @@ section::parse(line) {
     decl eb,ch;
     sscan(line,OxScan,&ch);
     eb = strfind(ch,rbr);
+	if (eb==FEND) println("Error in TOC :",line);
     title = ch[:eb-1];
     output = pref+sprint("%03u",index);
     if (eb<sizeof(ch)-2) {
@@ -247,7 +248,7 @@ section::make(inh) {
                 		if (nsc==0) { if (puboption>=PUBLISH) fprintln(h,""); continue;}  //zero character line read in
 						eof = nsc==FEND;
 						notdone = strfind(line,exend)==FEND;
-						if (notdone) {
+						if (notdone && !eof) {
 							ftemp=strfind(figmarks[CODE-1],line);
                             if (isclass(exsec) ){
 								if (ftemp!=FEND) {
@@ -281,7 +282,7 @@ section::make(inh) {
 									}
 							else {
                             	if (puboption>=PUBLISH) fprintln(h,"<a id=\"",figprefix[ftype],fign[ftype],"\"></a>");
-								if (strfind(line,figtags[ftype]+comend)==FEND) println("Error: ",figtags[ftype]+comend,"\n",line);
+								if (strfind(line,figtags[ftype]+comend)==FEND) println("Error in ",title,"\n   ",figtags[ftype]+comend,"\n",line);
                             	curtit = line[fmlast+2:strfindr(line,figtags[ftype]+comend)-1];
                             	if (isfile(fm[1+ftype][fptr]))
                                 	if (puboption>=PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"",output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
@@ -468,12 +469,15 @@ document::build(sdir,bdir,tocfile,puboption) {
   fprintln(fm[TOC][fptr],"</span></body></html>");
   fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
   foreach(s in contents[f]) {
-    if (isclass(s.myexer)) exsec=s.myexer;
+    if (isclass(s.myexer)) {
+		exsec=s.myexer;
+		}
     if (puboption>=s.minprintlev) s->make(0);
     }
   exsec = 0;  //exercises already made.
   fign[] = 0;   // reset figure numbers
   htoc = fopen(bdir+"book"+outext,"w");
+  println("\n here 2 ");
   for (f=TOC+1;f<sizeof(fm);++f)
   	if (isfile(fm[f][fptr])) {
 		lend(fm[f][fptr],0);
