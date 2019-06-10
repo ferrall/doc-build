@@ -20,7 +20,10 @@ document::lend(f,nlev) { fprintln(f,"</OL type=\"",ltypes[nlev],"\">"); }
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title) {
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
-        fprintln(h,mathjax);
+//        fprintln(h,mathjax);
+		decl s;
+		fread(sdir+"mathjax"+inext,&s,'s');
+		fprintln(h,s);
         fprintln(h,mreplace(headtitle,{{ttag,bkvals[BOOKTITLE]},{"<br/>",": "}}));
         }
 document::printfooter(h,title,prev,next) {
@@ -474,10 +477,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 		}
     if (puboption>=s.minprintlev) s->make(0);
     }
-  exsec = 0;  //exercises already made.
-  fign[] = 0;   // reset figure numbers
-  htoc = fopen(bdir+"book"+outext,"w");
-  println("\n here 2 ");
+ println("first pass");
   for (f=TOC+1;f<sizeof(fm);++f)
   	if (isfile(fm[f][fptr])) {
 		lend(fm[f][fptr],0);
@@ -485,13 +485,19 @@ document::build(sdir,bdir,tocfile,puboption) {
         fclose(fm[f][fptr]);
         fm[f][fptr] = 0;
         }
+  exsec = 0;  //exercises already made.
+  fign[] = 0;   // reset figure numbers
+  htoc = fopen(bdir+"book"+outext,"w");
+  //slidesf = fopen(bdir+"slides"+outext,"w");
   printheader(htoc,bkvals[BOOKTITLE]);
-    //fprintln(htoc,replace(head,ttag,booktitle));
+  //fprintln(htoc,replace(head,ttag,booktitle));
   foreach(s in contents[f])
-  	if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) s->make(htoc);
+  	if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
+		s->make(htoc);		
   lend(htoc,0);
   fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
   fclose(htoc);
+  println("book done pass");
   htoc = 0;
   exsec = 0;  //exercises already made.
   fign[] = 0;   // reset figure numbers

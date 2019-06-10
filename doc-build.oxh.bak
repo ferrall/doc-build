@@ -82,6 +82,7 @@ struct document {
     static build(sdir="",bdir="",tocfile="",puboption=PUBLISH);
     static printheader(h,title);
     static printfooter(h,title,prev,next);
+    static findmark(line);
     }
 
 struct section : document{
