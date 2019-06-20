@@ -396,7 +396,7 @@ document::build(sdir,bdir,tocfile,puboption) {
         if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
         printheader(fm[s][fptr],bkvals[BOOKTITLE]);
         if (!s)
-            fprintln(fm[s][fptr],"<span style=\"font-size:small;\">\n<details><summary>Contents</summary>"); //<h3>",fm[s][fmtitle],"</h3>
+            fprintln(fm[s][fptr],"<span style=\"font-size:small;line-height:12pt;\">\n<details><summary>Contents</summary>"); //<h3>",fm[s][fmtitle],"</h3>
         else
             fprintln(fm[s][fptr],"<span>\n<h3>",fm[s][fmtitle],"</h3><OL>"); //
         }

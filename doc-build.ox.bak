@@ -477,6 +477,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 		}
     if (puboption>=s.minprintlev) s->make(0);
     }
+ println("first pass");
   for (f=TOC+1;f<sizeof(fm);++f)
   	if (isfile(fm[f][fptr])) {
 		lend(fm[f][fptr],0);
@@ -496,6 +497,7 @@ document::build(sdir,bdir,tocfile,puboption) {
   lend(htoc,0);
   fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
   fclose(htoc);
+  println("book done pass");
   htoc = 0;
   exsec = 0;  //exercises already made.
   fign[] = 0;   // reset figure numbers
