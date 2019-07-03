@@ -235,12 +235,17 @@ section::section(index) {
 	minprintlev = OUTLINE;
     }
 countkbs(ss){
-	decl kbvals = "1 2 3 4 5 6 7 8 9 0",
-		nxti, nxtf, lsti = 0, tmp, targ = "\"kb\" value=\"", outs="", mxfrag=0,etarg="</span>";
-	 while(( (nxti=strifind(ss[lsti:],targ))!=FEND)) {
+	decl kbvals = "1 2 3 4 5 6 7 8 9 0",smxi=sizeof(ss),
+		nxti, nxtf, lsti = 0, tstart,tend, tmp, targ = "\"kb\" value=\"", outs="", mxfrag=0,etarg;
+	 while(( lsti<smxi && (nxti=strifind(ss[lsti:],targ))!=FEND)) {
+		tstart = strfindr(ss[lsti:lsti+nxti],"<");
+//		if (tstart<0) println(ss[lsti:lsti+nxti]);
+		tend = strfind(ss[lsti+tstart:lsti+nxti]," ");
+		etarg = "</"+ss[lsti+tstart+1:lsti+tstart+tend-1]+">";
 		nxti+=sizeof(targ)-1;
 		outs|=ss[lsti:lsti+nxti];
 		++nxti;
+//		if (lsti+nxti<0) println(ss[lsti+tstart:lsti+nxti]);
 	 	sscan(ss[lsti+nxti:lsti+nxti],"%u",&nxtf);
 //		println("** ",nxtf,"\n   ",ss[lsti:nxti]);
 		mxfrag=max(nxtf,mxfrag);
@@ -251,7 +256,7 @@ countkbs(ss){
 		outs |= ss[tmp:lsti];
 		++lsti;  //get past </span>
 	 	}
-	outs |= ss[lsti:];
+	if (lsti<smxi) outs |= ss[lsti:];
 	return {outs,mxfrag};
 	}
 section::make(inh) {
@@ -346,7 +351,7 @@ section::make(inh) {
 				fprintln(h,outlines);
 				fprintln(h,"</div>");
 				++slideno;
-				} while(slideno<mxkb);
+				} while(slideno<=mxkb);
 								
 //            fclose(ss);
             }
@@ -416,42 +421,8 @@ section::slides() {
         }
     }
 
-
-document::build(sdir,bdir,tocfile,puboption) {
-    decl done, htoc,  ind, book,  ch,line,n,iprev,sect,curp, curx,nlev, begun;
-    bkvals = new array[NBOOKPARAMS];
-	begun = zeros(8,1); //up to 8 subsections	
-	document::puboption = puboption;
-	figmarks = {};
-    foreach (n in figtags) figmarks |= {comstart+n};
-
-    figtag = comstart+TitleHolder+"-->";
-    exstart = comstart+extag;
-    keystart = comstart+keytag;
-    lev = 0;
-    if (sdir!="") this.sdir = sdir;
-    if (bdir!="") this.bdir = bdir;
-    if (tocfile!="") this.TOCFILE = tocfile+tocext;
-    fign = zeros(sizerc(figmarks),1);
-    fignicks = new array[sizerc(figmarks)];
-    tocf = fopen(sdir+TOCFILE);
-    if (isint(tocf)) oxrunerror("input file "+sdir+TOCFILE+" failed to open");
-    sect = new titlepage();
-    decl s;
-    for(s =0; s<sizeof(fm); ++s)
-       if (puboption>=fm[s][MinLev]) {
-        fm[s][fptr] = fopen(bdir+fm[s][fmname]+outext,"w");
-        if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
-        printheader(fm[s][fptr],bkvals[BOOKTITLE]);
-        if (!s)
-            fprintln(fm[s][fptr],"<span style=\"font-size:small;line-height:12pt;\">\n<details><summary>Contents</summary>"); //<h3>",fm[s][fmtitle],"</h3>
-        else
-            fprintln(fm[s][fptr],"<span>\n<h3>",fm[s][fmtitle],"</h3><OL>"); //
-        }
-    curx = curp = matrix(0);
-    sect.title = bkvals[BOOKTITLE];
-    contents = {sect};
-    exsec = 0;
+document::readtoc() {
+	decl ch,done,line, iprev,nlev, begun;
     do {
        fscan(tocf,OxScan,&line);
        sscan(line,"%c",&ch); 		//println(ch," ",line);
@@ -501,7 +472,6 @@ document::build(sdir,bdir,tocfile,puboption) {
         if (nlev==1) {
             if (isclass(exsec)&&puboption>=sect.minprintlev) {
                 exsec->append(sect.ord+1,fm[TOC][fptr]);
-//                lend(fm[0][fptr]);
                 }
             }
         if (!done) {
@@ -511,43 +481,88 @@ document::build(sdir,bdir,tocfile,puboption) {
             contents |= sect;
             }
         } while(!done);
-//  lend(fm[TOC][fptr]);
   fprintln(fm[TOC][fptr],"</details></OL><details><summary>Lists of Items</summary><UL>");
-  decl f;
-  for (f=1;f<sizeof(fm);++f)
+	}
+
+document::build(sdir,bdir,tocfile,puboption) {
+    decl  htoc,  ind, book, n;
+    bkvals = new array[NBOOKPARAMS];
+	begun = zeros(8,1); //up to 8 subsections	
+	document::puboption = puboption;
+	figmarks = {};
+    foreach (n in figtags) figmarks |= {comstart+n};
+
+    figtag = comstart+TitleHolder+"-->";
+    exstart = comstart+extag;
+    keystart = comstart+keytag;
+    lev = 0;
+    if (sdir!="") this.sdir = sdir;
+    if (bdir!="") this.bdir = bdir;
+    if (tocfile!="") this.TOCFILE = tocfile+tocext;
+    fign = zeros(sizerc(figmarks),1);
+    fignicks = new array[sizerc(figmarks)];
+    tocf = fopen(sdir+TOCFILE);
+    if (isint(tocf)) oxrunerror("input file "+sdir+TOCFILE+" failed to open");
+    sect = new titlepage();
+    decl s;
+    for(s =0; s<sizeof(fm); ++s)
+       if (puboption>=fm[s][MinLev]) {
+        fm[s][fptr] = fopen(bdir+fm[s][fmname]+outext,"w");
+        if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
+        printheader(fm[s][fptr],bkvals[BOOKTITLE]);
+        if (!s)
+            fprintln(fm[s][fptr],"<span style=\"font-size:small;line-height:12pt;\">\n<details><summary>Contents</summary>"); //<h3>",fm[s][fmtitle],"</h3>
+        else
+            fprintln(fm[s][fptr],"<span>\n<h3>",fm[s][fmtitle],"</h3><OL>"); //
+        }
+    curx = curp = matrix(0);
+    sect.title = bkvals[BOOKTITLE];
+    contents = {sect};
+    exsec = 0;
+	readtoc();
+
+	/*add links to front section files.*/
+  	decl f;
+  	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev])
         fprintln(fm[TOC][fptr],"<LI><a href=\"",fm[f][fmname],outext,"\" target=\"contentx\">",fm[f][fmtitle],"</a></LI>");
-  fprintln(fm[TOC][fptr],"</UL></details></span></body></html>");
-  fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
-  foreach(s in contents[f]) {
-    if (isclass(s.myexer)) {
-		exsec=s.myexer;
-		}
-    if (puboption>=s.minprintlev) s->make(0);
-    }
- println("first pass");
-  for (f=TOC+1;f<sizeof(fm);++f)
-  	if (isfile(fm[f][fptr])) {
-		lend(fm[f][fptr],0);
-        fprintln(fm[f][fptr],"</span>");
-        fclose(fm[f][fptr]);
-        fm[f][fptr] = 0;
-        }
-  exsec = 0;  //exercises already made.
-  fign[] = 0;   // reset figure numbers
-  htoc = fopen(bdir+"book"+outext,"w");
-  //slidesf = fopen(bdir+"slides"+outext,"w");
-  printheader(htoc,bkvals[BOOKTITLE]);
-  //fprintln(htoc,replace(head,ttag,booktitle));
-  foreach(s in contents[f])
-  	if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
-		s->make(htoc);		
-  lend(htoc,0);
-  fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
-  fclose(htoc);
-  println("book done pass");
-/*  htoc = 0;
-  exsec = 0;  //exercises already made.
-  fign[] = 0;   // reset figure numbers
-  foreach(s in contents) if (s.notempty) s->slides(); **/
+  	fprintln(fm[TOC][fptr],"</UL></details></span></body></html>");
+  	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
+
+	/*Create individual section files */
+	foreach(s in contents[f]) {
+    	if (isclass(s.myexer)) exsec=s.myexer;
+    	if (puboption>=s.minprintlev) s->make(0);
+    	}
+ 	println("first pass");
+	/* Complete front section files */
+  	for (f=TOC+1;f<sizeof(fm);++f)
+  		if (isfile(fm[f][fptr])) {
+			lend(fm[f][fptr],0);
+        	fprintln(fm[f][fptr],"</span>");
+        	fclose(fm[f][fptr]);
+        	fm[f][fptr] = 0;
+        	}
+	/* Produce slide fragment files 
+  	exsec = 0;  //exercises already made.
+  	fign[] = 0;   // reset figure numbers
+  	foreach(s in contents)
+  		if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
+			s->make(??);
+	*/
+	
+	/* Produce book file for printing */
+  	exsec = 0;  //exercises already made.
+  	fign[] = 0;   // reset figure numbers
+  	htoc = fopen(bdir+"book"+outext,"w");
+  	printheader(htoc,bkvals[BOOKTITLE]);
+
+  	foreach(s in contents[f])
+  		if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
+			s->make(htoc);		
+  	lend(htoc,0);
+	fprintln(htoc,mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
+  	fclose(htoc);
+	htoc = 0;
+  	println("book done pass");		
   }

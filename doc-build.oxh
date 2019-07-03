@@ -49,6 +49,10 @@ struct document {
             outext=".html";
 
     static decl
+			begun,
+			curx,
+			curp,
+			sect,
             bkvals,
 			puboption,
             figmarks,
@@ -88,6 +92,7 @@ struct document {
     static printfooter(h,title,prev,next);
     static printslidefooter(h,title,prev,next);
     static findmark(line);
+	static readtoc();
     }
 
 struct section : document{
