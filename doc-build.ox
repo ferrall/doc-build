@@ -15,7 +15,7 @@ document::lbeg(f,nlev,tclass) {
     fprintln(f,"<OL type=\"",ltypes[nlev],"\" class=\"toc",sprint(nlev),"\">");
     }
 /**End a list of sub-sections.**/
-document::lend(f,nlev) { fprintln(f,"</OL type=\"",ltypes[nlev],"\">"); }
+document::lend(f,nlev) { fprintln(f,"</OL>"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title,next) {
@@ -25,7 +25,7 @@ document::printheader(h,title,next) {
         fprintln(h,mreplace(headtitle,{{ttag,bkvals[BOOKTITLE]},{"<br/>",": "}}));
         }
 /**Print the HTML header for an individual slide, inserting book-specific tags.**/
-document::printslideheader(h,title,next) {
+section::printslideheader(h) {
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
 		fprintln(h,mreplace(csstemp,{{csstag,csstypes[buildtype]}}));
 		fprintln(h,mathjax);
@@ -81,39 +81,26 @@ titlepage::titlepage() {
     pref = "";
     source = "title";
     output = source;
-    made = FALSE;
     ord = 1;
     parent=-1;
     }
 
 titlepage::make(inh) {
     if (isfile(inh)) {
-        decl s,fp,line,inbody,nn;
-        fprintln(inh,"<div class=\"tp\" style=\" no-repeat  bottom center; background-size:70%;\" ><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________<br/>License:",license,"</div>");
+        decl s,sfname,inlines,begbody,endbody,nn;
+        fprintln(inh,"<div class=\"tp\"><h1>",bkvals[BOOKTITLE],"</h1><h2>",bkvals[BOOKSUB],"</h2><br/>&nbsp;<br/><h3>",bkvals[BOOKAUTHOR],"<br/></h3><br/>Version ",bkvals[VERSION],"<br/>Printed: ","%C",dayofcalendar(),"<br/>&nbsp;</br>&nbsp;</br>#:  __________<br/>License:",license,"</div>");
         fprintln(inh,"<div class=\"preface\"><h1>Front Matter</h1><OL type=\"",ltypes[0],"\">");
         foreach (s in fm[nn])
-           if (puboption>=s[MinLev]){
-            fp = fopen(bdir+s[fmname]+outext,"r");
-            if (isint(fp)) oxrunerror("output file "+bdir+s[fmname]+outext+" failed to open");
-            if (nn==GLOSS) fprintln(inh,"<div class=\"break\"> </div>");
-//            fprintln(inh,"<h3><LI>",s[fmtitle],"</LI></h3><div ",nn!=GLOSS ? "id=\"split\">" : ">");
-            inbody = FALSE;
-            while(fscan(fp,OxScan,&line)>FEND) {
-                if (!inbody)
-                    inbody = strfind(line,"<body>")>-1;
-                else {
-                    if (strfind(line,"</body>")>-1)
-                        inbody=FALSE;
-                    else fprintln(inh,line);
-                    }
-                }
-            fprintln(inh,"</div>");
-            if (nn==TOC) fprintln(inh,"<div class=\"break\"> </div>");
-            fclose(fp);
+           if ( puboption>=s[MinLev] && s[fnotempty]){
+            	if ((fread(sfname= bdir+s[fmname]+outext,&inlines,'s')<=0))
+					oxrunerror("output file "+sfname+" failed to open");
+				if (( (begbody = strfind(inlines,"<body>"))!=FEND)) {
+					endbody = strfind(inlines,"</body");
+					fprintln(inh,nl,inlines[begbody+6:endbody-1]);
+            		if (nn==TOC) fprintln(inh,"<div class=\"break\"> </div>");
+					}
             }
-        fprintln(inh,"</OL></div><div class=\"break\"> </div>");
-        //fprintln(inh,"<OL type=\"I\"");
-        made = TRUE;
+        fprintln(inh,"</OL><h1>",bkvals[BOOKTITLE],"</h1></div><div class=\"break\"> </div>");
         }
     else {
         decl h = fopen(bdir+prefs[buildtype]+output+outext,"w");
@@ -122,13 +109,15 @@ titlepage::make(inh) {
         fprintln(h,"<div class=\"tp\"><h1>",bkvals[BOOKTITLE],"</h1><br/><h2>",bkvals[BOOKSUB],"</h2><h3>&nbsp;<br/>",bkvals[BOOKAUTHOR],"</h3></div>");
         printfooter(h,"","","001");
         //        fprintln(h,mreplace(footer,{{"%prev%",""},{"%next%","001"},}));
+		fprintln(h,endhtml);
         fclose(h);
         }
     }
 
 /**Exercises associated with a section.**/
 exercises::exercises(sect) {
-    section(0);
+    section(sect.index);
+	myclass="text";
     notempty = FALSE;
     parent = sect;
     sect.myexer = this;
@@ -137,8 +126,9 @@ exercises::exercises(sect) {
     pref = "ex";
     source = pref+sprint("%03u",parent.index);
     output = source;
-    exdoc = fopen(sdir+source+inext,"w");
-    if (isint(exdoc)) oxrunerror("output file "+sdir+source+inext+" failed to open");
+    exdoc = fopen(sect.mysdir+source+inext,"w");
+    if (isint(exdoc)) oxrunerror("output file "+sect.mysdir+source+inext+" failed to open");
+	//printslideheader(exdoc);
     fprintln(exdoc,"<OL class=\"exer\">");
     }
 exercises::accum(line) {    fprintln(exdoc,line);    }
@@ -155,7 +145,7 @@ exercises::make(inh) {
         }
     section::make(inh);
     }
-/** Parse a line from the **/
+/** Parse a line fro the **/
 section::parse(line) {
     decl eb,ch;
     sscan(line,OxScan,&ch);
@@ -187,7 +177,7 @@ section::codesegment(line) {
 		do {
 			if (sscan(&inlines,OxScan,&cline)==FEND) break;
 			++lno;
-			oline |= sprint("%2.0f",lno,":    ",cline,"\n");
+			oline |= sprint("%2.0f",lno,":    ",cline,nl);
 			} while (TRUE);
 		}
 	else
@@ -196,6 +186,8 @@ section::codesegment(line) {
 	//fprintln(h,oline);
 	if (isfile(fm[CODE+1][fptr])) {
 		fprintln(fm[CODE+1][fptr],"<li><a href=\"",prefs[SECTION]+output+outext,"#",fname,"\">",fname,"</a></li>");
+//		if (!fm[CODE+1][fnotempty]) println(fm[CODE+1][fmname]);
+		fm[CODE+1][fnotempty]=TRUE;		
 		}
 	return oline;
 	}
@@ -216,10 +208,12 @@ section::glossentry(line) {
         fprintln(fm[GLOSS+1][fptr],"<DD>",line[0][max(db+ib,0):max(0,db+ib,db+ib+ie-1)],"&emsp; &emsp;<em>See:",replace(title,"<br/>",":","i"),"</em></DD></LI>");
         line[0] = line[0][:ipl-2]+" id=\"D"+sprint(ndefn)+"\""+line[0][ipl-1:];
         ++ndefn;
+//		if (!fm[GLOSS+1][fnotempty]) println(fm[GLOSS+1][fmname]);
+		fm[GLOSS+1][fnotempty]=TRUE;
     }
     }
 exercises::entry(f) {
-    fprintln(f,"<DT><a href=\"",output,outext,"\" target=\"content\">",title,"</a></DT>");
+    fprintln(f,"<DT><a href=\"",prefs[SECTION]+output,outext,"\" target=\"content\">",title,"</a></DT>");
     }
 exercises::eblock(href) {
     fprintln(exdoc,"<DD class=\"noprint\"><a href=\"",href,"\" target=\"content\">&larr;</a></DD>");
@@ -231,11 +225,13 @@ section::section(index) {
     title = output = "";
     notempty = TRUE;
 	minprintlev = OUTLINE;
+	myclass=slideclass;
+	mysdir = sdir;  //copies current source from toc if changed.
     }
 countkbs(ss){
-	decl kbvals = "1 2 3 4 5 6 7 8 9 0",smxi=sizeof(ss),dds="$$",
+	decl kbvals = "1 2 3 4 5 6 7 8 9 0 A B C D",smxi=sizeof(ss),dds="$$",
 		nxti, nxtf, tstart,tend, tmp, outs="", mxfrag=0,etarg,
-		 alld,lsti,ndsp,dstart,dend,targ = "\"kb\" value=\"";
+		 alld,lsti,ndsp,dstart,dend,targ = "\"kb\"",vtarg=" value=\"", eqt;
 
 	/* find all display math */
 	alld = <>; dend = 0;
@@ -250,28 +246,35 @@ countkbs(ss){
 		tstart = strfindr(ss[lsti:lsti+nxti],"<");
 		// find if tag is inside display math
 		ndsp=0;
-		while(ndsp<rows(alld) && ((alld[ndsp][0]>=lsti+tstart)||(lsti+tstart>=alld[ndsp][1])) ) ++ndsp;
+		while( ndsp!=FEND && ndsp<rows(alld) && ((alld[ndsp][0]>=lsti+tstart)||(lsti+tstart>=alld[ndsp][1])) )
+			{
+			++ndsp;
+			}
 		if (ndsp>=rows(alld)) ndsp=FEND;
 
 		//find value of kb and end of tag
 		tend = strfind(ss[lsti+tstart:lsti+nxti]," ");
 		etarg = "</"+ss[lsti+tstart+1:lsti+tstart+tend-1]+">";
-		nxti+=sizeof(targ)-1;
+		nxti+=sizeof(targ)+sizeof(vtarg)-1;
 		++nxti;
-		sscan(ss[lsti+nxti:lsti+nxti],"%u",&nxtf);
+		eqt = strfind(ss[lsti+nxti:],"\"");
+		sscan(ss[lsti+nxti:lsti+nxti+eqt-1],"%u",&nxtf);
+		nxtf = min(nxtf,kblim);
+//		if (2*(nxtf-1)>=sizeof(kbvals)) println(ss[lsti+tstart:]);
 		mxfrag=max(nxtf,mxfrag);
 
 		//replace input tag without output, depending on if display math or not
 		if (ndsp==FEND) {
 			outs|=ss[lsti:lsti+nxti-1];
 			outs|=kbvals[2*(nxtf-1):];
-			++nxti; //point to close-quote
+			nxti +=eqt; //point to close-quote
 			tmp = lsti+nxti;
 			lsti = tmp+strifind(ss[tmp:],etarg)+sizeof(etarg);
 			outs |= ss[tmp:lsti];
 			++lsti;  //get past </span>
 			}
 		else {
+			println("Embedded ");
 			outs|=ss[lsti:lsti+tstart-1]
 			      + "\\class{kb}{\\style{value:\""
 				  +	kbvals[2*(nxtf-1):]
@@ -289,37 +292,33 @@ section::make(inh) {
     decl h,ftype,ftemp,notdone,curxname;
     ftype = 0;  //initialize to avoid error until first figure is found
 	curxname = 0;
-    if (isfile(inh)) {
+    if (isfile(inh)) 
          h = inh;
-/*         fprint(h,"<OL  type=\"",ltypes[level],"\" class=\"toc",level,"\" >");
-         fprintln(h,"<h",level,"><a id=\"",prefs[SECTION]+output,"\"><LI value=",ord,">",title,"</LI></a></h",level,"></OL>");
-*/
-		 }
     else {
         h = fopen(bdir+prefs[buildtype]+output+outext,"w");
         if (isint(h)) oxrunerror("output file "+bdir+prefs[buildtype]+output+outext+" failed to open");
         }
-    if (isstring(source)) {
+	if (isstring(source)&&source!=UD) {
         decl ss,inlines,line,curtit = "", nsc,eof,slideno,outlines;
-		ss=fread(sdir+source+inext,&inlines,'s');
+		ss=fread(mysdir+source+inext,&inlines,'s');
         if (ss>0) {
 			[inlines,mxkb]=countkbs(inlines);
-        	if (!isfile(inh)) printslideheader(h,title);
-        	outlines=sprint("\n<OL  type=\"",ltypes[level],"\" \">",
-                   "<h",level,"><a id=\"",prefs[SECTION]+output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>\n");
+        	if (!isfile(inh)) printslideheader(h);
+        	outlines=sprint(nl,"<OL  type=\"",ltypes[level],"\" \">",
+                   "<h",level,"><a id=\"",prefs[SECTION]+output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>",nl);
             while(( (nsc=sscan(&inlines,OxScan,&line))>FEND)) {
-                if (nsc==0) { if (puboption>=PUBLISH) outlines|="\n"; continue;}  //zero character line read in
+                if (nsc==0) { if (puboption>=PUBLISH) outlines|=nl; continue;}  //zero character line read in
                 if (line==exstart) {   //Exercises beginning
                     if (isclass(exsec)) {
                         if (puboption>=PUBLISH) {
-							outlines|=sprint("<span id=\"EB",++curxname,"\">",exopen,"</span>\n");
+							outlines|=sprint("<span id=\"EB",++curxname,"\">",exopen,"</span>",nl);
 							exsec->eblock(prefs[SECTION]+output+outext+"#EB"+sprint(curxname));
 							}
                         exsec.notempty = TRUE;
                         }
                     do {
                         nsc = sscan(&inlines,OxScan,&line);
-                		if (nsc==0) { if (puboption>=PUBLISH) outlines|="\n"; continue;}  //zero character line read in
+                		if (nsc==0) { if (puboption>=PUBLISH) outlines|=nl; continue;}  //zero character line read in
 						eof = nsc==FEND;
 						notdone = strfind(line,exend)==FEND;
 						if (notdone && !eof) {
@@ -356,30 +355,33 @@ section::make(inh) {
 									continue;
 									}
 							else {
-                            	if (puboption>=PUBLISH) outlines|=sprint("<a id=\"",figprefix[ftype],fign[ftype],"\"></a>\n");
-								if (strfind(line,figtags[ftype]+comend)==FEND) println("Error in ",title,"\n   ",figtags[ftype]+comend,"\n",line);
+                            	if (puboption>=PUBLISH) outlines|=sprint("<a id=\"",figprefix[ftype],fign[ftype],"\"></a>",nl);
+								if (strfind(line,figtags[ftype]+comend)==FEND) println("Error in ",title,nl,"   ",figtags[ftype]+comend,nl,line);
                             	curtit = line[fmlast+2:strfindr(line,figtags[ftype]+comend)-1];
                             	if (isfile(fm[1+ftype][fptr]))
-                                	if (puboption>=PUBLISH) fprintln(fm[1+ftype][fptr],"<li><a href=\"",prefs[SECTION]+output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+                                	if (puboption>=PUBLISH) {
+										fprintln(fm[1+ftype][fptr],"<li><a href=\"",prefs[SECTION]+output+outext,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+//										if (!fm[ftype+1][fnotempty]) println(fm[ftype+1][fmname]);										
+										fm[1+ftype][fnotempty]=TRUE;
+										}										
 								}									
                             }
                         else {
                             if (strfind(line,dfbeg)>-1) glossentry(&line);
                             //next line uses current ftype, so figtag replace with the last one encountered
                             if (puboption>=PUBLISH )
-                                outlines|=replace(line,figtag,"<h3 class=\"fig\">"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>\n");
+                                outlines|=replace(line,figtag,"<h3 class=\"fig\">"+figtypes[ftype]+sprint(fign[ftype])+". "+curtit+"</h3>"+nl)+nl;
                             }
                         }
                     }
                 }
 			if (buildtype==SLIDE) {
 				for (slideno=0;slideno<=mxkb;++slideno) 
-					fprintln(h,"<div class=\"slide\" id=\"",sclass[slideno:slideno],"\" onclick=\"window.location.href='",slideno==mxkb ? prefs[buildtype]+sprint("%03u",index+1)+outext : "#"+sclass[slideno+1:slideno+1],"'\" >\n",
-								outlines,"\n</div>");
+					fprintln(h,"<div class=\"slide\" id=\"",sclass[slideno:slideno],"\" onclick=\"window.location.href='",slideno==mxkb ? prefs[buildtype]+sprint("%03u",index+1)+outext : "#"+sclass[slideno+1:slideno+1],"'\" >"+nl,
+								outlines,nl,"</div>");
 				}
 			else 
-				fprintln(h,"<div class=\"slide\" id=\"",sclass[0:0],"\">\n",outlines);
-//				,outlines,"</div>\n<footer>",title,"&emsp;&bull;&emsp;",source,"&emsp;&bull;&emsp; Page ",index,"</footer>");
+				fprintln(h,"<div class=\"",myclass,"\" id=\"",sclass[0:0],"\">",nl,outlines);
             }
         else {
             oxwarning("Source file not found: "+source);
@@ -388,21 +390,31 @@ section::make(inh) {
             //notempty = FALSE;
             }
         }
-    else if (level<2 && child>0) {
-        if (puboption>=PUBLISH) fprintln(h,"<blockquote class=\"toc\"><h4>Contents</h4>");
+	else if (isstring(source) && puboption>=PUBLISH) {  //MUST BE UDRAW.
+		if (!isfile(inh)) printslideheader(h);
+		fprintln(h,"<div class=\"slide\" id=\"a\" onclick=\"window.location.href='",prefs[buildtype]+sprint("%03u",index+1)+outext,"'\" >",nl,
+		"<h",level,">",title,"<br/>Space to draw the illustration</h",level,">");
+		}
+    else if (level<2 && child>0 && puboption>=PUBLISH ) {
+		if (!isfile(inh)) printslideheader(h);
+		fprintln(h,"<div class=\"slide\" id=\"a\" onclick=\"window.location.href='",
+					prefs[buildtype]+sprint("%03u",index+1)+outext,"'\" >\n<blockquote class=\"toc\"><h4>Contents</h4>");
         lbeg(h,level+1);
         decl c=index+1;
         do {
             if (contents[c].level==level+1 && contents[c].notempty) contents[c]->entry(h);
             } while (++c<sizeof(contents)&&contents[c].level>level);
         lend(h,level+1);
-        if (puboption>=PUBLISH) fprintln(h,"</blockquote>");
+        fprintln(h,"</blockquote>");
         }
     if (!isfile(inh)) {
-        if (puboption>=PUBLISH) 
-                printslidefooter(h);
+        if (puboption>=PUBLISH) {
+			printslidefooter(h);
+			fprintln(h,endhtml);
+			}
         fclose(h);
         }
+	else printslidefooter(inh);
     }
 
 
@@ -413,10 +425,19 @@ document::readtoc() {
        sscan(line,"%c",&ch); 		//println(ch," ",line);
        done = ch==tocendtag;		// rest of toc file ignored
 	   if (ch==skiptag)	continue;   // comment line in toc
+	   if (ch==tocsectag) {
+	   		slideclass=line[1:];
+			continue;
+	   		}
+	   if (ch==srctag) {
+	   		sdir = line[1:];
+			continue;
+	   		}
        if (!done) {
             sect = new section(sizeof(contents));
             iprev = sect.index-1;
             nlev = 0;
+			println(line);
             do {
                 sscan(&line,"%c",&ch);
                 if (ch==lvtag) ++nlev;
@@ -466,7 +487,7 @@ document::readtoc() {
             contents |= sect;
             }
         } while(!done);
-  fprintln(fm[TOC][fptr],"</details></OL><details open><summary>Lists of Items</summary><UL>");
+  fprintln(fm[TOC][fptr],"</details><LI><h3>Lists of Items</h3></LI><details open>");
 	}
 
 document::build(sdir,bdir,tocfile,puboption) {
@@ -497,9 +518,9 @@ document::build(sdir,bdir,tocfile,puboption) {
         if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
         printheader(fm[s][fptr],bkvals[BOOKTITLE]);
         if (!s)
-            fprintln(fm[s][fptr],"<span style=\"font-size:small;line-height:12pt;\">\n<details open><summary>Contents</summary>"); //<h3>",fm[s][fmtitle],"</h3>
+            fprintln(fm[s][fptr],"<div class=\"toc\"\">\n<h3>",fm[s][fmtitle],"</h3>\n<details open>"); //<h3>",fm[s][fmtitle],"</h3>
         else
-            fprintln(fm[s][fptr],"<span>\n<h3>",fm[s][fmtitle],"</h3><OL>"); //
+            fprintln(fm[s][fptr],"<div>\n<h3>",fm[s][fmtitle],"</h3>\n<OL>\n<div class=\"split\">"); //
         }
     curx = curp = matrix(0);
     sect.title = bkvals[BOOKTITLE];
@@ -512,7 +533,7 @@ document::build(sdir,bdir,tocfile,puboption) {
   	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev])
         fprintln(fm[TOC][fptr],"<LI><a href=\"",fm[f][fmname],outext,"\" target=\"content\">",fm[f][fmtitle],"</a></LI>");
-  	fprintln(fm[TOC][fptr],"</UL></details></span></body></html>");
+  	fprintln(fm[TOC][fptr],"</details></OL></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
 
 	/*Create All builds of the book*/
@@ -532,11 +553,12 @@ document::build(sdir,bdir,tocfile,puboption) {
     		if ( (!f||puboption>=PUBLISH) && puboption>=s.minprintlev && (s.notempty||buildtype==SECTION) )
 				s->make(htoc);
     		}
-		if (buildtype==SECTION)			/* Complete front section files */
+		if (buildtype==SECTION)			/* Complete front section files (not including TOC)*/
 	  		for (f=TOC+1;f<sizeof(fm);++f)
 				if (isfile(fm[f][fptr])) {
+				    fprintln(fm[f][fptr],"</div>");
 					lend(fm[f][fptr],0);
-        			fprintln(fm[f][fptr],"</span>");
+        			fprintln(fm[f][fptr],"</div></body></html>");
         			fclose(fm[f][fptr]);
         		fm[f][fptr] = 0;
         		}
@@ -548,21 +570,4 @@ document::build(sdir,bdir,tocfile,puboption) {
  		println("pass ",prefs[buildtype]," done");
 		}
 
-	/* Produce slide fragment files 
-	buildtype = SLIDE;
-  	foreach(s in contents)
-  		if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
-			s->make(0);
-	*/	
-
-	/* Produce book file for printing 
-	buildtype = BOOK;
-  	exsec = 0;  //exercises already made.
-  	fign[] = 0;   // reset figure numbers
-	
-  	foreach(s in contents[f])
-  		if ( (!f||puboption>=PUBLISH) && s.notempty && puboption>=s.minprintlev) 
-			s->make(htoc);		
-  	println("book done pass");		
-	*/
   }

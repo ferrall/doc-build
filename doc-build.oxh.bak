@@ -1,22 +1,24 @@
 #include "oxstd.h"
-enum{FEND=-1,fmname=0,fmtitle,fptr,MinLev,FMparts}
+enum{FEND=-1,fmname=0,fmtitle,fptr,MinLev,fnotempty,FMparts}
 enum{OUTLINE,PUBLISH,KEY,PUBOPTIONS}
 enum{BOOK,SLIDE,SECTION,OUTTYPES}
 enum{BOOKTITLE,BOOKSUB,BOOKAUTHOR,AFFILIATION,VERSION,BOOKTAG,NBOOKPARAMS}
 enum{TOC,FIG,DEF,ALG,TAB,GLOSS,CODE,INSTMAT,Fsections}
+enum{kblim = 14}
 mreplace(tmplt,list);
 countkbs(ss);
 struct document {
     static const decl partags = {"title","subtitle","author","affiliation","version","tag"};
     static const decl
-			lvtag = '*',			tocendtag = '#',			skiptag = '%',
+			UD = "UDRAW",
+			lvtag = '*',			tocendtag = '#',			skiptag = '%',    tocsectag='!',
+			srctag = '@',
             dfbeg = "<dfn ",        dfend = "</dfn>",            dfcontl = "<span>",
             dfcontr = "</span>",	lbr = "[",            		rbr = "]",
             lp = "(",            	rp = ")",            		SKIP = "%",
             OxScan = "%z",          comstart = "<!--",			comend = "-->", 
             exend = "X-->",         codeend = "C-->",            extag  = "E",
             keytag = "K",			TitleHolder = "Q",
-//            exstart = "<!--E",            exend = "X-->",
             atag = "%author%",            ttag = "%title%",            tttag = "%tag%",
 			csstag = "%css%",
 
@@ -32,12 +34,13 @@ struct document {
             fmlast = 4,
             prefs = {"b","z","s"},
 			ltypes = {"i","I","A","1","a"},
-			csstypes = {"book","doc-build","doc-build"},
+			csstypes = {"book","book","book"},
 			
 			inext=".htm",            	  tocext=".toc",            outext=".html";
 
     static decl
 			begun,
+			mathjax,
 			buildtype,
 			curx,
 			curp,
@@ -50,6 +53,7 @@ struct document {
             figtag,
             exstart,
             keystart,
+			slideclass="text", //default class for each section ("text" or "slide")
             bdir = "book/",	 //default build folder
             sdir = "source/", //default source folder
             TOCFILE = "book.toc",  //default table of contents file
@@ -59,32 +63,32 @@ struct document {
             headtitle="<title>%title%</title></head><body>\n",
             slidetitle="<title>%title%</title></head><body>\n",
 			license = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"30px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
-            footer = "<footer><a rel=prev href=\"%prev%.html\">&larr;</a> %tttag%. &copy; %author% %year%. %affiliation%. <!--%license%--> Page %page% <a href=\"%next%.html\">&rarr;</a></footer></body></html>",
+            footer = "<footer><a rel=prev href=\"%prev%.html\">&larr;</a> %tttag%. &copy; %author% %year%. %affiliation%. <!--%license%--> Page %page% <a href=\"%next%.html\">&rarr;</a></footer>",
+			endhtml = "</body></html>",
             lev,contents,exsec, fign, fignicks,
-			fm ={{"toc","Table of Contents",0,OUTLINE},
-                 {"figlist","List of Figures",0,PUBLISH},
-                 {"deflist","List of Definitions",0,PUBLISH},
-                 {"thlist","List of Theorems",0,PUBLISH},
-                 {"alglist","List of Algorithms",0,PUBLISH},
-                 {"tablist","List of Tables",0,PUBLISH},
-                 {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH},
-                 {"codelist","List of Code Files",0,PUBLISH},
-                 {"imanual","Instructor Material",0,KEY}},
-			sclass="abcdefghijk";
+			fm ={{"toc","Table of Contents",0,OUTLINE,TRUE},
+                 {"figlist","List of Figures",0,PUBLISH,FALSE},
+                 {"deflist","List of Definitions",0,PUBLISH,FALSE},
+                 {"thlist","List of Theorems",0,PUBLISH,FALSE},
+                 {"alglist","List of Algorithms",0,PUBLISH,FALSE},
+                 {"tablist","List of Tables",0,PUBLISH,FALSE},
+                 {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH,FALSE},
+                 {"codelist","List of Code Files",0,PUBLISH,FALSE},
+                 {"imanual","Instructor Material",0,KEY,FALSE}},
+			sclass="abcdefghijklmnop";
 
 			
     static lbeg(f,nlev,tclass="");
     static lend(f,nlev=0);
     static build(sdir="",bdir="",tocfile="",puboption=PUBLISH);
     static printheader(h,title,next="");
-    static printslideheader(h,title,next="");
     static findmark(line);
 	static readtoc();
     }
 
 struct section : document{
     decl index,parent,level,pref,title,dir,source,output,anch,ord,
-         child,uplev,myexer,notempty,ndefn,minprintlev,mxkb;
+         child,uplev,myexer,notempty,ndefn,minprintlev,mxkb,myclass,mysdir;
     make(inh=0);
     section(index=0);
     slides();
@@ -92,11 +96,12 @@ struct section : document{
     virtual glossentry(line);
 	codesegment(line);
     parse(line);
+    printslideheader(h);
     static printfooter(h,title,prev,next);
     printslidefooter(h);
     }
 struct titlepage : section {
-    decl title,subtitle,made;
+    decl title,subtitle;
     titlepage();
     make(inh=0);
     }
