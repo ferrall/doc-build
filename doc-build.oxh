@@ -34,7 +34,7 @@ struct document {
             fmlast = 4,
             prefs = {"b","z","s"},
 			ltypes = {"i","I","A","1","a"},
-			csstypes = {"book","book","book"},
+			csstypes = {"book","slide","book"},
 			
 			inext=".htm",            	  tocext=".toc",            outext=".html";
 

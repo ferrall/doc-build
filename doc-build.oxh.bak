@@ -10,7 +10,7 @@ countkbs(ss);
 struct document {
     static const decl partags = {"title","subtitle","author","affiliation","version","tag"};
     static const decl
-			UD = "UDRAW",
+			UD = "UDRAW", 			nl = "\n",
 			lvtag = '*',			tocendtag = '#',			skiptag = '%',    tocsectag='!',
 			srctag = '@',
             dfbeg = "<dfn ",        dfend = "</dfn>",            dfcontl = "<span>",
