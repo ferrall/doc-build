@@ -335,7 +335,7 @@ section::make(inh) {
                                         line=codesegment(line);
                                         }
 									}
-                                if (puboption>=PUBLISH) outlines|=line;
+                                if (puboption>=PUBLISH) outlines|=line+nl;
                                 exsec->accum(line);
                                 }
                             }
