@@ -21,14 +21,14 @@ document::lend(f,nlev) { fprintln(f,"</OL>"); }
 document::printheader(h,title,next) {
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
 		fprintln(h,mreplace(csstemp,{{csstag,csstypes[buildtype]}}));
-		fprintln(h,mathjax);
+        fprintln(h,mreplace(mathjax,{{"%scale%",scales[buildtype]}}));
         fprintln(h,mreplace(headtitle,{{ttag,bkvals[BOOKTITLE]},{"<br/>",": "}}));
         }
 /**Print the HTML header for an individual slide, inserting book-specific tags.**/
 section::printslideheader(h) {
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
-		fprintln(h,mreplace(csstemp,{{csstag,csstypes[buildtype]}}));
-		fprintln(h,mathjax);
+		fprintln(h,mreplace(csstemp, {{csstag,csstypes[buildtype]}}));
+		fprintln(h,mreplace(mathjax,{{"%scale%",scales[buildtype]}}));
         fprintln(h,mreplace(slidetitle,{{ttag,bkvals[BOOKTITLE]},{"<br/>",": "}}));
         }
 		
@@ -293,7 +293,7 @@ countkbs(ss){
 	return {outs,mxfrag};
 	}
 section::make(inh) {
-    decl h,ftype,ftemp,notdone,curxname;
+    decl h,ftype,ftemp,notdone,curxname,outlines;
     ftype = 0;  //initialize to avoid error until first figure is found
 	curxname = 0;
     if (isfile(inh))
@@ -302,14 +302,14 @@ section::make(inh) {
         h = fopen(bdir+prefs[buildtype]+output+outext,"w");
         if (isint(h)) oxrunerror("output file "+bdir+prefs[buildtype]+output+outext+" failed to open");
         }
+    outlines=sprint(nl,"<OL  type=\"",ltypes[level],"\" \">",
+                   "<h",level,"><a id=\"",prefs[SECTION]+output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>",nl);
 	if (isstring(source)&&source!=UD) {
-        decl ss,inlines,line,curtit = "", nsc,eof,slideno,outlines;
+        decl ss,inlines,line,curtit = "", nsc,eof,slideno;
 		ss=fread(mysdir+source+inext,&inlines,'s');
         if (ss>0) {
 			[inlines,mxkb]=countkbs(inlines);
         	if (!isfile(inh)) printslideheader(h);
-        	outlines=sprint(nl,"<OL  type=\"",ltypes[level],"\" \">",
-                   "<h",level,"><a id=\"",prefs[SECTION]+output,"\"><LI value=",ord,">",title,"</a></LI></h",sprint(level),"></OL>",nl);
             while(( (nsc=sscan(&inlines,OxScan,&line))>FEND)) {
                 if (nsc==0) { if (puboption>=PUBLISH) outlines|=nl; continue;}  //zero character line read in
                 if (line==exstart) {   //Exercises beginning
@@ -403,10 +403,10 @@ section::make(inh) {
 		fprintln(h,"<div class=\"slide\" id=\"a\" onclick=\"window.location.href='",prefs[buildtype]+sprint("%03u",index+1)+outext,"'\" >",nl,
 		"<h",level,">",title,"<br/>Space to draw the illustration</h",level,">");
 		}
-    else if (level<2 && child>0 && puboption>=PUBLISH ) {
+    else if (level<3 && child>0 && puboption>=PUBLISH ) {
 		if (!isfile(inh)) printslideheader(h);
 		fprintln(h,"<div class=\"slide\" id=\"a\" onclick=\"window.location.href='",
-					prefs[buildtype]+sprint("%03u",index+1)+outext,"'\" >\n<blockquote class=\"toc\"><h4>Contents</h4>");
+					prefs[buildtype]+sprint("%03u",index+1)+outext,"'\" >\n",outlines,"\n<blockquote class=\"toc\"><h4>Contents</h4>");
         lbeg(h,level+1);
         decl c=index+1;
         do {
@@ -454,7 +454,7 @@ document::readtoc() {
 			sect.minprintlev = ch;
 			sscan(&line,"%c",&ch,"%c",&ch);  //skip closing and opening bracket
             sect.level=nlev;
-            if (nlev>contents[iprev].level) {
+            if (nlev>contents[iprev].level) {  // going down a level
                 sect.ord = 1;
                 contents[iprev].child = sect.index;
                 curp |= sect.parent = iprev;
@@ -467,8 +467,23 @@ document::readtoc() {
 					}
                 ++lev;
                 }
-            else {
-                sect.ord = contents[curx[nlev-1]].ord+1;
+            else
+/*            if (nlev<contents[iprev].level) {  //going up levels
+                    println("*** ",isclass(contents[curx[nlev]-1],"exercise")," ",nlev," ",curx');
+                    sect.ord = (isclass(contents[curx[nlev]-1],"exercise"))
+                                 ? contents[curx[nlev-1]].parent.ord+1
+                                 : contents[curx[nlev-1]].ord+1;
+                    curx[nlev-1] = sect.index;
+                }
+            else */
+            {      //same level
+//                if (nlev<contents[iprev].level) println("--- ",nlev," ",curx');
+                if (nlev==EXERLEV && isclass(contents[curx[nlev-1]],"exercises"))
+                    {println(curx[nlev-1]," ",classname(contents[curx[nlev-1]])," ",contents[curx[nlev-1]].title);
+                        sect.ord = contents[curx[nlev-1]].parent.ord+1;
+                        }
+                else
+                    sect.ord = contents[curx[nlev-1]].ord+1;
                 curx[nlev-1] = sect.index;
                 }
             }
@@ -476,14 +491,14 @@ document::readtoc() {
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
 				if (begun[nlev]) lend(fm[TOC][fptr],nlev);
-	            if (lev>=2) fprintln(fm[TOC][fptr],tocclose);
+	            if (lev>EXERLEV) fprintln(fm[TOC][fptr],tocclose);
 				}
             ++sect.uplev;
             --lev;
             curp = curp[:max(0,rows(curp)-2)];
             curx = curx[:max(0,rows(curp)-2)];
             }
-        if (nlev==1) {
+        if (nlev==EXERLEV) {
             if (isclass(exsec)&&puboption>=sect.minprintlev) {
                 exsec->append(sect.ord+1,fm[TOC][fptr]);
                 }
@@ -491,7 +506,7 @@ document::readtoc() {
         if (!done) {
             sect->parse(line);
             sect->entry(fm[TOC][fptr]);
-            if (nlev==1) exsec = new exercises(sect);
+            if (nlev==EXERLEV) exsec = new exercises(sect);
             contents |= sect;
             }
         } while(!done);

@@ -4,7 +4,7 @@ enum{OUTLINE,PUBLISH,KEY,PUBOPTIONS}
 enum{BOOK,SLIDE,SECTION,OUTTYPES}
 enum{BOOKTITLE,BOOKSUB,BOOKAUTHOR,AFFILIATION,VERSION,BOOKTAG,NBOOKPARAMS}
 enum{TOC,FIG,DEF,ALG,TAB,GLOSS,CODE,INSTMAT,Fsections}
-enum{kblim = 14}
+enum{kblim = 14,EXERLEV=1}
 mreplace(tmplt,list);
 countkbs(ss);
 struct document {
@@ -34,7 +34,8 @@ struct document {
             fmlast = 4,
             prefs = {"b","z","s"},
 			ltypes = {"i","I","A","1","a"},
-			csstypes = {"book","slide","book"},
+			csstypes = {"book","slide","section"},
+            scales =   {"180"   ,"100",  "100"},
 			
 			inext=".htm",            	  tocext=".toc",            outext=".html";
 
