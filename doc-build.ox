@@ -422,7 +422,7 @@ section::make(inh) {
 			}
         fclose(h);
         }
-	else printslidefooter(inh);
+	else fprintln(inh,"</div>"); // printslidefooter(inh);
     }
 
 
