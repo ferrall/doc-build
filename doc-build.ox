@@ -491,17 +491,17 @@ document::readtoc() {
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
 				if (begun[nlev]) lend(fm[TOC][fptr],nlev);
+        if (nlev==EXERLEV) {
+            if (isclass(exsec)&&puboption>=sect.minprintlev) {
+                exsec->append(sect.ord+1,fm[TOC][fptr]);
+                }
+            }
 	            if (lev>EXERLEV) fprintln(fm[TOC][fptr],tocclose);
 				}
             ++sect.uplev;
             --lev;
             curp = curp[:max(0,rows(curp)-2)];
             curx = curx[:max(0,rows(curp)-2)];
-            }
-        if (nlev==EXERLEV) {
-            if (isclass(exsec)&&puboption>=sect.minprintlev) {
-                exsec->append(sect.ord+1,fm[TOC][fptr]);
-                }
             }
         if (!done) {
             sect->parse(line);
@@ -564,7 +564,6 @@ document::build(sdir,bdir,tocfile,puboption) {
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
 
 	/*Create All builds of the book*/
-	buildtype = SECTION;
 	htoc = 0;
 	for (buildtype=OUTTYPES-1;buildtype>=0;--buildtype) {
 	  	fign[] = 0;   // reset figure numbers
