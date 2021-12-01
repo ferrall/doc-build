@@ -12,10 +12,10 @@ mreplace(tmplt,list) {
 
 /**Begin a list of sub-sections at level nlev.**/
 document::lbeg(f,nlev,tclass) {
-    fprintln(f,"<OL type=\"",ltypes[nlev],"\" class=\"toc",sprint(nlev),"\">");
+    fprintln(f,replace(navbutton,"%targ%",nlev));  //nlev is wrong
     }
 /**End a list of sub-sections.**/
-document::lend(f,nlev) { fprintln(f,"</OL>"); }
+document::lend(f,nlev) { fprintln(f,"</UL>"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title,next) {
@@ -510,7 +510,7 @@ document::readtoc() {
             contents |= sect;
             }
         } while(!done);
-  fprintln(fm[TOC][fptr],"</details><LI><h3>Lists of Items</h3></LI><details open>");
+  fprintln(fm[TOC][fptr],"</details><div class=\"<img src=\"img/AtoZ.jpg\"><div class=\"toc-content\">");
 	}
 
 document::build(sdir,bdir,tocfile,puboption) {
@@ -558,9 +558,9 @@ document::build(sdir,bdir,tocfile,puboption) {
   	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev]) {
         loc = buildtype==BOOK ? "#"+fm[f][fmname] : fm[f][fmname]+outext;
-        fprintln(fm[TOC][fptr],"<LI><a href=\"",loc,"\" target=\"content\">",fm[f][fmtitle],"</a></LI>");
+        fprintln(fm[TOC][fptr],"<LI><a href=\"",loc,"\" target=\"content\" class=\"nav-item\">",fm[f][fmtitle],"</a></LI>");
         }
-  	fprintln(fm[TOC][fptr],"</details></OL></div></body></html>");
+  	fprintln(fm[TOC][fptr],"</div></UL></div></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
 
 	/*Create All builds of the book*/
