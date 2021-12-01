@@ -510,7 +510,9 @@ document::readtoc() {
             contents |= sect;
             }
         } while(!done);
-  fprintln(fm[TOC][fptr],"</details><LI><h3>Lists of Items</h3></LI><details open>");
+	println("Made it this far");	
+    fprintln(fm[TOC][fptr],"</details></OL></div></body></html>");
+  	fclose(fm[TOC][fptr]);
 	}
 
 document::build(sdir,bdir,tocfile,puboption) {
@@ -551,16 +553,20 @@ document::build(sdir,bdir,tocfile,puboption) {
     contents = {sect};
 
 	readtoc();
-
 	/*add links to front section files.*/
-  	decl f;
+  	fclose(fm[TOC][fptr]);
+	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
+    printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
+	fprintln(fm[TOC][fptr],"<div class=\"toc\"\">\n<h3></h3>\n<details open><UL>");
+	println("**** ",isfile(fm[TOC][fptr]);
+	decl f;
     decl loc;
   	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev]) {
         loc = buildtype==BOOK ? "#"+fm[f][fmname] : fm[f][fmname]+outext;
         fprintln(fm[TOC][fptr],"<LI><a href=\"",loc,"\" target=\"content\">",fm[f][fmtitle],"</a></LI>");
         }
-  	fprintln(fm[TOC][fptr],"</details></OL></div></body></html>");
+  	fprintln(fm[TOC][fptr],"</UL></details></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
 
 	/*Create All builds of the book*/
