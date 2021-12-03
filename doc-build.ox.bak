@@ -15,7 +15,7 @@ document::lbeg(f,nlev,tclass) {
     fprintln(f,"<OL type=\"",ltypes[nlev],"\" class=\"toc",sprint(nlev),"\">");
     }
 /**End a list of sub-sections.**/
-document::lend(f,nlev) { fprintln(f,"</OL>"); }
+document::lend(f,nlev) { fprintln(f,"</OL ",nlev," >"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title,next) {
@@ -51,7 +51,8 @@ section::printslidefooter(h) {
                                 {"%year%",timestr(today())[:3]},
                                 {"%affiliation%",bkvals[AFFILIATION]},
 								{"%license%",license},
-								{"%page%",sprint(index)}
+								{"%ppage%",sprint(index-2)},
+								{"%npage%",sprint(index)}
                                 }));
     }
 
@@ -170,7 +171,7 @@ section::codesegment(line) {
 	decl fname,lno,cf,cline,templ, oline, inlines;
 	fname = line[fmlast+2:strfindr(line,codeend)-2];
 	templ = 		
-	"<DD id=\"%FFF%\"><pre><span class=\"fname\"><em><a href=\"./code/%FFF%\">%FFF%</a></em></span>\n";
+	"<DD id=\"%FFF%\"><pre><span class=\"fname\"><em><a targ=\"_blank\" href=\"./code/%FFF%\">%FFF%</a></em></span>\n";
 	oline = replace(templ,"%FFF%",fname);
 	cf = fread(bdir+"code\\"+fname,&inlines,'s');
 	lno = 0;
@@ -187,7 +188,7 @@ section::codesegment(line) {
 	//fprintln(h,oline);
 	if (isfile(fm[CODE+1][fptr])) {
         decl loc = buildtype==BOOK ? "" : sprint(prefs[SECTION],output,outext);
-		fprintln(fm[CODE+1][fptr],"<li><a href=\"",loc,"#",fname,"\">",fname,"</a></li>");
+		fprintln(fm[CODE+1][fptr],"<li><a target=\"content\" href=\"",loc,"#",fname,"\">",fname,"</a></li>");
 //		if (!fm[CODE+1][fnotempty]) println(fm[CODE+1][fmname]);
 		fm[CODE+1][fnotempty]=TRUE;		
 		}
@@ -427,7 +428,7 @@ section::make(inh) {
 
 
 document::readtoc() {
-	decl ch,done,line, iprev,nlev;
+	decl ch,done,line, iprev,nlev,exappended;
     do {
        fscan(tocf,OxScan,&line);
        sscan(line,"%c",&ch); 		//println(ch," ",line);
@@ -487,15 +488,17 @@ document::readtoc() {
                 curx[nlev-1] = sect.index;
                 }
             }
-        if (done) nlev = 1;
+        if (done) { nlev = 1; }
+		exappended = FALSE; 
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
+        		if (nlev==EXERLEV && !exappended) {
+            		if (isclass(exsec)&&puboption>=sect.minprintlev) {
+                		exsec->append(sect.ord+1,fm[TOC][fptr]);
+						exappended = TRUE;
+						}
+            		}
 				if (begun[nlev]) lend(fm[TOC][fptr],nlev);
-        if (nlev==EXERLEV) {
-            if (isclass(exsec)&&puboption>=sect.minprintlev) {
-                exsec->append(sect.ord+1,fm[TOC][fptr]);
-                }
-            }
 	            if (lev>EXERLEV) fprintln(fm[TOC][fptr],tocclose);
 				}
             ++sect.uplev;
@@ -510,7 +513,7 @@ document::readtoc() {
             contents |= sect;
             }
         } while(!done);
-    fprintln(fm[TOC][fptr],"</details></OL></div></body></html>");
+    fprintln(fm[TOC][fptr],"</OL></div></body></html>");  //</details>
   	fclose(fm[TOC][fptr]);
 	}
 
@@ -543,30 +546,33 @@ document::build(sdir,bdir,tocfile,puboption) {
         if (isint(fm[s][fptr])) oxrunerror("output file "+bdir+fm[s][fmname]+outext+" failed to open");
         printheader(fm[s][fptr],bkvals[BOOKTITLE]);
         if (!s)
-            fprintln(fm[s][fptr],"<div class=\"toc\"\">\n<h3>",fm[s][fmtitle],"</h3>\n<details open>"); //<h3>",fm[s][fmtitle],"</h3>
+            fprintln(fm[s][fptr],"<div class=\"toc\"\">\n<h3><a href=\"",fm[s][fmname]+outext,"\" target=\"content\">",fm[s][fmtitle],"</a></h3>\n"); //<details open> <h3>",fm[s][fmtitle],"</h3>
         else
-            fprintln(fm[s][fptr],"<div>\n<h3>",fm[s][fmtitle],"</h3>\n<OL>\n<div class=\"split\">"); //
+            fprintln(fm[s][fptr],"<div>\n<h3><a href=\"",fm[s][fmname]+outext,"\" target=\"content\">",fm[s][fmtitle],"</a></h3>\n<OL>\n<div>"); //class=\"split\"
         }
     curx = curp = matrix(0);
     sect.title = bkvals[BOOKTITLE];
     contents = {sect};
 
 	readtoc();
-		 fprintln("Made it this far");
 	/*add links to front section files.*/
   	fclose(fm[TOC][fptr]);
 	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
     printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
-	fprintln(fm[TOC][fptr],"<div class=\"toc\"\">\n<h3></h3>\n<details open><UL>");
-	println("**** ",isfile(fm[TOC][fptr]);
+	fprintln(fm[TOC][fptr],"<div class=\"toc\"\">\n<h2>Lists of Items</h2><div class=\"accordion\" id=\"lists\" style=\"width : 100%\">\n");
 	decl f;
     decl loc;
   	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev]) {
         loc = buildtype==BOOK ? "#"+fm[f][fmname] : fm[f][fmname]+outext;
-        fprintln(fm[TOC][fptr],"<LI><a href=\"",loc,"\" target=\"content\">",fm[f][fmtitle],"</a></LI>");
+//        fprintln(fm[TOC][fptr],"<LI><a href=\"",loc,"\" target=\"content\">",fm[f][fmtitle],"</a></LI>");
+		fprintln(fm[TOC][fptr],"<div class=\"accordion-item\"><h2 class=\"accordion-header\" id=\"H",f,"\">");
+		fprintln(fm[TOC][fptr],"<button class=\"accordion-button\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#C",f,"\" aria-expanded=\"false\" aria-controls=\"C,f,\">",fm[f][fmtitle],"</button></h2>");
+		fprintln(fm[TOC][fptr],"<div id=\"C",f,"\" class=\"accordion-collapse collapse\" aria-labelledby=\"H",f,"\" data-bs-parent=\"#lists\"><div class=\"accordion-body\">");
+		fprintln(fm[TOC][fptr],"<iframe style=\"position : relative;top : 0%;left : 0%;width: 100%; height:100%\" src=\"",fm[f][fmname]+outext,"\"></iframe>");
+		fprintln(fm[TOC][fptr],"</div></div></div>");		
         }
-  	fprintln(fm[TOC][fptr],"</UL></details></div></body></html>");
+  	fprintln(fm[TOC][fptr],"</div></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
 
 	/*Create All builds of the book*/

@@ -1,3 +1,4 @@
+
 #include "oxstd.h"
 enum{FEND=-1,fmname=0,fmtitle,fptr,MinLev,fnotempty,FMparts}
 enum{OUTLINE,PUBLISH,KEY,PUBOPTIONS}
@@ -25,10 +26,10 @@ struct document {
 			figtags = {"F","D","R","A","T","C"},
             figtypes = {"Exhibit ","Definition ","Theorem ","Algorithm ","Table ","Code "},
             figprefix= {"FIG","DEF","THM","ALG","TAB",""},
-			tocopen = "<details class=\"toc\"><summary>Sections</summary>",
-			tocclose = "</details>",
-			exopen = "<details><summary>Exercises</summary><UL class=\"steps\">",
-			exclose = "</UL></details>",
+			tocopen = "", //<DD><details class=\"toc\"><summary>Sections</summary>
+			tocclose = "", //</DD></details>
+			exopen = "<h3>Exercises</h3><UL class=\"steps\">", //<details>
+			exclose = "</UL>", //</details>
 			keyopen = "<details class=\"key\"><summary>Instructor Tip</summary>",
 			keyclose = "</details>",
             fmlast = 4,
@@ -59,23 +60,23 @@ struct document {
             sdir = "source/", //default source folder
             TOCFILE = "book.toc",  //default table of contents file
 			tocf,				//file pointer for toc
-            head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/book.png\" type=\"image/png\">\n",
+            head0= "<!DOCTYPE html><html>\n<head><meta name=\"author\" content=\"%author%\"><link href=\'http://fonts.googleapis.com/css?family=PT+Mono|Open+Sans:400italic,700italic,400,700,800,300&subset=latin,latin-ext,greek-ext,greek\' rel=\'stylesheet\' type=\'text/css\'></link>\n<link rel=\"icon\" href=\"img/book.png\" type=\"image/png\"><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css\"><link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"><script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js\"></script>\n",
 			csstemp = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/%css%.css\">\n",
             headtitle="<title>%title%</title></head><body>\n",
             slidetitle="<title>%title%</title></head><body>\n",
 			license = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"10px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
 			biglicense = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"30px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
-            footer = "<footer><a rel=prev href=\"%prev%.html\">&larr;</a> %tttag%. &copy; %author% %year%. %affiliation%. %license% Page %page% <a href=\"%next%.html\">&rarr;</a></footer>",
+            footer = "<footer><a rel=prev href=\"%prev%.html\"><i class=\"bi bi-arrow-left\"></i> %ppage% </a> %tttag%. &copy; %author% %year%. %affiliation%. %license% %npage% <a href=\"%next%.html\"><i class=\"bi bi-arrow-right\"></i> %npage% </a></footer>",
 			endhtml = "</body></html>",
             lev,contents,exsec, fign, fignicks,
-			fm ={{"toc","Table of Contents",0,OUTLINE,TRUE},
-                 {"figlist","List of Figures",0,PUBLISH,FALSE},
-                 {"deflist","List of Definitions",0,PUBLISH,FALSE},
-                 {"thlist","List of Theorems",0,PUBLISH,FALSE},
-                 {"alglist","List of Algorithms",0,PUBLISH,FALSE},
-                 {"tablist","List of Tables",0,PUBLISH,FALSE},
-                 {"glossary","Glossary of Defined Terms &amp; Special Symbols",0,PUBLISH,FALSE},
-                 {"codelist","List of Code Files",0,PUBLISH,FALSE},
+			fm ={{"toc","Contents",0,OUTLINE,TRUE},
+                 {"figlist","Figures",0,PUBLISH,FALSE},
+                 {"deflist","Definitions",0,PUBLISH,FALSE},
+                 {"thlist","Theorems",0,PUBLISH,FALSE},
+                 {"alglist","Algorithms",0,PUBLISH,FALSE},
+                 {"tablist","Tables",0,PUBLISH,FALSE},
+                 {"glossary","Glossary",0,PUBLISH,FALSE},
+                 {"codelist","Code Files",0,PUBLISH,FALSE},
                  {"imanual","Instructor Material",0,KEY,FALSE}},
 			sclass="abcdefghijklmnop";
 
