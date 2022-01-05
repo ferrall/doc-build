@@ -19,6 +19,7 @@ document::lend(f,nlev) { fprintln(f,"</OL ",nlev," >"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title,next) {
+//        println(mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}});
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
 		fprintln(h,mreplace(csstemp,{{csstag,csstypes[buildtype]}}));
         fprintln(h,mreplace(mathjax,{{"%scale%",scales[buildtype]}}));
@@ -489,7 +490,7 @@ document::readtoc() {
                 }
             }
         if (done) { nlev = 1; }
-		exappended = FALSE; 
+		exappended = FALSE;
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
         		if (nlev==EXERLEV && !exappended) {
