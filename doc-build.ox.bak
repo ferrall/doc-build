@@ -19,6 +19,7 @@ document::lend(f,nlev) { fprintln(f,"</OL ",nlev," >"); }
 
 /**Print the HTML header for a file, inserting book-specific tags.**/
 document::printheader(h,title,next) {
+//        println(mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}});
         fprintln(h,mreplace(head0,{{atag,bkvals[BOOKAUTHOR]},{"<br/>",": "}}));
 		fprintln(h,mreplace(csstemp,{{csstag,csstypes[buildtype]}}));
         fprintln(h,mreplace(mathjax,{{"%scale%",scales[buildtype]}}));
@@ -169,6 +170,8 @@ section::entry(f) {
 
 section::codesegment(line) {
 	decl fname,lno,cf,cline,templ, oline, inlines;
+	if (strfindr(line,codeend)==FEND)
+		oxrunerror("Missing end of code segment ",line);
 	fname = line[fmlast+2:strfindr(line,codeend)-2];
 	templ = 		
 	"<DD id=\"%FFF%\"><pre><span class=\"fname\"><em><a targ=\"_blank\" href=\"./code/%FFF%\">%FFF%</a></em></span>\n";
@@ -369,7 +372,7 @@ section::make(inh) {
                             	if (isfile(fm[1+ftype][fptr]))
                                 	if (puboption>=PUBLISH) {
                                         decl loc = buildtype==BOOK ? "" : sprint(prefs[SECTION],output,outext);
-										fprintln(fm[1+ftype][fptr],"<li><a href=\"",loc,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
+										fprintln(fm[1+ftype][fptr],"<li><a target=\"content\" href=\"",loc,"#",figprefix[ftype],fign[ftype],"\">",curtit,"</a></li>");
 //										if (!fm[ftype+1][fnotempty]) println(fm[ftype+1][fmname]);										
 										fm[1+ftype][fnotempty]=TRUE;
 										}										
@@ -489,7 +492,7 @@ document::readtoc() {
                 }
             }
         if (done) { nlev = 1; }
-		exappended = FALSE; 
+		exappended = FALSE;
         while(nlev<lev) {
             if (puboption>=sect.minprintlev) {
         		if (nlev==EXERLEV && !exappended) {
@@ -556,6 +559,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 
 	readtoc();
 	/*add links to front section files.*/
+	println("Past readtoc");
   	fclose(fm[TOC][fptr]);
 	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
     printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
@@ -585,8 +589,9 @@ document::build(sdir,bdir,tocfile,puboption) {
 			htoc = fopen(bdir+"book"+outext,"w");
 			printheader(htoc,bkvals[BOOKTITLE]);
 			}
+		println("systemcall:  ");
         systemcall(sprint("erase /Q ",bdir+prefs[buildtype]+"???"+outext));
-
+		println("finished");
 		/* build individual sections of the book for this build */
 		foreach(s in contents[f]) {
     		if (buildtype==SECTION && isclass(s.myexer)) exsec=s.myexer;
@@ -606,8 +611,9 @@ document::build(sdir,bdir,tocfile,puboption) {
 		  	lend(htoc,0);
 			fprintln(htoc,"</body></html>"); //mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
   			fclose(htoc);
+			htoc = 0;
 			}
  		println("pass ",prefs[buildtype]," done");
 		}
-
+   println("finished");
   }

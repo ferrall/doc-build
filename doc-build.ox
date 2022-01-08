@@ -170,6 +170,8 @@ section::entry(f) {
 
 section::codesegment(line) {
 	decl fname,lno,cf,cline,templ, oline, inlines;
+	if (strfindr(line,codeend)==FEND)
+		oxrunerror("Missing end of code segment ",line);
 	fname = line[fmlast+2:strfindr(line,codeend)-2];
 	templ = 		
 	"<DD id=\"%FFF%\"><pre><span class=\"fname\"><em><a targ=\"_blank\" href=\"./code/%FFF%\">%FFF%</a></em></span>\n";
@@ -557,6 +559,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 
 	readtoc();
 	/*add links to front section files.*/
+	println("Past readtoc");
   	fclose(fm[TOC][fptr]);
 	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
     printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
@@ -582,12 +585,13 @@ document::build(sdir,bdir,tocfile,puboption) {
 	  	fign[] = 0;   // reset figure numbers
     	exsec = 0;
 		htoc = buildtype==BOOK;
+		println("systemcall:  ");
+        systemcall(sprint("erase /Q ",bdir+prefs[buildtype]+"???"+outext));
+		println("finished");
 		if (htoc) {
 			htoc = fopen(bdir+"book"+outext,"w");
 			printheader(htoc,bkvals[BOOKTITLE]);
 			}
-        systemcall(sprint("erase /Q ",bdir+prefs[buildtype]+"???"+outext));
-
 		/* build individual sections of the book for this build */
 		foreach(s in contents[f]) {
     		if (buildtype==SECTION && isclass(s.myexer)) exsec=s.myexer;
@@ -607,8 +611,9 @@ document::build(sdir,bdir,tocfile,puboption) {
 		  	lend(htoc,0);
 			fprintln(htoc,"</body></html>"); //mreplace(footer,{ {"%prev%",""},{"%next%",""}}));
   			fclose(htoc);
+			htoc = 0;
 			}
  		println("pass ",prefs[buildtype]," done");
 		}
-
+   println("finished");
   }
