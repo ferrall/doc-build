@@ -560,12 +560,10 @@ document::build(sdir,bdir,tocfile,puboption) {
 	readtoc();
 	/*add links to front section files.*/
 	println("Past readtoc");
-  	fclose(fm[TOC][fptr]);
 	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
     printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
 	fprintln(fm[TOC][fptr],"<div class=\"toc\"\">\n<h2>Lists of Items</h2><div class=\"accordion\" id=\"lists\" style=\"width : 100%\">\n");
-	decl f;
-    decl loc;
+	decl f, loc;
   	for (f=1;f<sizeof(fm);++f)
       if (puboption>=fm[f][MinLev]) {
         loc = buildtype==BOOK ? "#"+fm[f][fmname] : fm[f][fmname]+outext;
@@ -582,6 +580,7 @@ document::build(sdir,bdir,tocfile,puboption) {
 	/*Create All builds of the book*/
 	htoc = 0;
 	for (buildtype=OUTTYPES-1;buildtype>=0;--buildtype) {
+        println("here");
 	  	fign[] = 0;   // reset figure numbers
     	exsec = 0;
 		htoc = buildtype==BOOK;
