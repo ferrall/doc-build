@@ -560,7 +560,6 @@ document::build(sdir,bdir,tocfile,puboption) {
 	readtoc();
 	/*add links to front section files.*/
 	println("Past readtoc");
-	println("past close ",sizeof(fm));
 	fm[TOC][fptr] = fopen(bdir+"lists"+outext,"w");
     printheader(fm[TOC][fptr],bkvals[BOOKTITLE]);	
 	fprintln(fm[TOC][fptr],"<div class=\"toc\"\">\n<h2>Lists of Items</h2><div class=\"accordion\" id=\"lists\" style=\"width : 100%\">\n");
@@ -574,7 +573,6 @@ document::build(sdir,bdir,tocfile,puboption) {
 		fprintln(fm[TOC][fptr],"<div id=\"C",f,"\" class=\"accordion-collapse collapse\" aria-labelledby=\"H",f,"\" data-bs-parent=\"#lists\"><div class=\"accordion-body\">");
 		fprintln(fm[TOC][fptr],"<iframe style=\"position : relative;top : 0%;left : 0%;width: 100%; height:100%\" src=\"",fm[f][fmname]+outext,"\"></iframe>");
 		fprintln(fm[TOC][fptr],"</div></div></div>");		
-        println("Here ",f);
         }
   	fprintln(fm[TOC][fptr],"</div></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;

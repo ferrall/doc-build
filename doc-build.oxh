@@ -64,7 +64,7 @@ struct document {
 			csstemp = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/%css%.css\">\n",
             headtitle="<title>%title%</title></head><body>\n",
             slidetitle="<title>%title%</title></head><body>\n",
-			license = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"10px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"10px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
+			license = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0</a>",
 			biglicense = "<a href=\"https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html\">CC BY-NC-SA 2.0<img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc_icon.svg\"/><img height=\"30px\"  src=\"https://search.creativecommons.org/static/img/cc-by_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-nc_icon.svg\"/><img height=\"30px\" src=\"https://search.creativecommons.org/static/img/cc-sa_icon.svg\"/></a>",
             footer = "<footer><a rel=prev href=\"%prev%.html\"><i class=\"bi bi-arrow-left\"></i> %ppage% </a> %tttag%. &copy; %author% %year%. %affiliation%. %license% <a href=\"%next%.html\"><i class=\"bi bi-arrow-right\"></i> %npage% </a></footer>",
 			endhtml = "</body></html>",

@@ -576,7 +576,7 @@ document::build(sdir,bdir,tocfile,puboption) {
         }
   	fprintln(fm[TOC][fptr],"</div></div></body></html>");
   	fclose(fm[TOC][fptr]); fm[TOC][fptr] = 0;
-
+	println("Past toc closed");
 	/*Create All builds of the book*/
 	htoc = 0;
 	for (buildtype=OUTTYPES-1;buildtype>=0;--buildtype) {
