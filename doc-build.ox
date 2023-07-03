@@ -588,7 +588,7 @@ document::build(sdir,bdir,tocfile,puboption) {
         systemcall(sprint("erase /Q ",bdir+prefs[buildtype]+"???"+outext));
 		println("finished");
 		if (htoc) {
-			htoc = fopen(bdir+"book"+outext,"w");
+			htoc = fopen(bdir+"book_"+bkvals[BOOKTAG]+outext,"w");
 			printheader(htoc,bkvals[BOOKTITLE]);
 			}
 		/* build individual sections of the book for this build */
